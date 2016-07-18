@@ -10,10 +10,23 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var verifyPasswordTextField: UITextField!
+    @IBOutlet weak var socialSecurityNumber: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        nextButton.layer.cornerRadius = 5
     }
 
     override func didReceiveMemoryWarning() {
