@@ -11,12 +11,15 @@ import UIKit
 class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate,UITextFieldDelegate {
     
     
-    
     @IBOutlet weak var documentImage: UIImageView!
     
     @IBOutlet weak var saveButton: UIButton!
 
     @IBOutlet weak var selectPhotoButton: UIButton!
+    
+    @IBOutlet weak var titleTextBox: UITextField!
+    
+    @IBOutlet weak var dateTextBox: UIDateField!
     
     let imagePicker = UIImagePickerController()
     
@@ -56,6 +59,10 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
     
     
     @IBAction func saveButtonTapped(sender: UIButton) {
+        //create a catch if there is no image or no record
+        let newRecord = MedicalRecord(name:titleTextBox.text!, description: "", date: dateTextBox.date, image: documentImage.image!)
+        UserController.sharedInstance.addMedicalRecord(newRecord)
+        
     }
     
     

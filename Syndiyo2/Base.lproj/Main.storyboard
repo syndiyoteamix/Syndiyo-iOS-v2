@@ -274,9 +274,11 @@
                     <navigationItem key="navigationItem" title="Select a Photo" id="38I-2V-oCn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="dateTextBox" destination="927-2V-C5v" id="Slp-T1-cY7"/>
                         <outlet property="documentImage" destination="40V-nK-OA9" id="q8C-Oc-ajO"/>
                         <outlet property="saveButton" destination="ojX-U5-chL" id="rCX-Ui-a1A"/>
                         <outlet property="selectPhotoButton" destination="t51-h0-RHF" id="KSe-5c-a3t"/>
+                        <outlet property="titleTextBox" destination="Aqa-HN-1Ir" id="eEY-O0-fXz"/>
                         <segue destination="9kr-A8-I7G" kind="presentation" identifier="presentDocumentImage" id="da9-gg-mhC"/>
                     </connections>
                 </viewController>
