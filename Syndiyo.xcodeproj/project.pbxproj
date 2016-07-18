@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4E187B7C1D3CC92200864DCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E187B7B1D3CC92200864DCB /* AppDelegate.swift */; };
-		4E187B7E1D3CC92200864DCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E187B7D1D3CC92200864DCB /* ViewController.swift */; };
 		4E187B811D3CC92200864DCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E187B7F1D3CC92200864DCB /* Main.storyboard */; };
 		4E187B831D3CC92200864DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E187B821D3CC92200864DCB /* Assets.xcassets */; };
 		4E187B861D3CC92200864DCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E187B841D3CC92200864DCB /* LaunchScreen.storyboard */; };
+		4E187B8E1D3CD0D300864DCB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E187B8D1D3CD0D300864DCB /* TabBarController.swift */; };
+		4E187B901D3CD3E800864DCB /* ImportDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E187B8F1D3CD3E800864DCB /* ImportDocVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E187B781D3CC92200864DCB /* Syndiyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Syndiyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E187B7B1D3CC92200864DCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E187B7D1D3CC92200864DCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4E187B801D3CC92200864DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E187B821D3CC92200864DCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E187B851D3CC92200864DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E187B871D3CC92200864DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E187B8D1D3CD0D300864DCB /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4E187B8F1D3CD3E800864DCB /* ImportDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportDocVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				4E187B7B1D3CC92200864DCB /* AppDelegate.swift */,
-				4E187B7D1D3CC92200864DCB /* ViewController.swift */,
 				4E187B7F1D3CC92200864DCB /* Main.storyboard */,
+				4E187B8F1D3CD3E800864DCB /* ImportDocVC.swift */,
 				4E187B821D3CC92200864DCB /* Assets.xcassets */,
 				4E187B841D3CC92200864DCB /* LaunchScreen.storyboard */,
 				4E187B871D3CC92200864DCB /* Info.plist */,
+				4E187B8D1D3CD0D300864DCB /* TabBarController.swift */,
 			);
 			path = Syndiyo;
 			sourceTree = "<group>";
@@ -135,8 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E187B7E1D3CC92200864DCB /* ViewController.swift in Sources */,
+				4E187B901D3CD3E800864DCB /* ImportDocVC.swift in Sources */,
 				4E187B7C1D3CC92200864DCB /* AppDelegate.swift in Sources */,
+				4E187B8E1D3CD0D300864DCB /* TabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
