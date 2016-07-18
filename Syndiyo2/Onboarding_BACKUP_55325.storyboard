@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jB2-ue-pBh">
+<<<<<<< HEAD
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jB2-ue-pBh">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aVO-qh-ebK">
+>>>>>>> 144227ea6601989f300e66f5dfb74e7a943a163e
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -31,7 +35,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="jcx-HX-OUW">
             <objects>
-                <viewController id="aVO-qh-ebK" userLabel="Welcome View Controller" customClass="LandingViewController" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aVO-qh-ebK" userLabel="Welcome View Controller" customClass="LandingViewController" customModule="Syndiyo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y2k-9W-xHv"/>
                         <viewControllerLayoutGuide type="bottom" id="oS8-dB-cZb"/>
@@ -70,29 +74,15 @@
                                     <segue destination="hPK-56-dUg" kind="show" id="0jT-hu-Hsp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Q1-O1-vAU">
-                                <rect key="frame" x="250" y="425" width="100" height="50"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Rr3-dD-KJz"/>
-                                    <constraint firstAttribute="height" constant="50" id="kfV-lD-8ce"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="ButtonPressed:" destination="aVO-qh-ebK" eventType="touchUpInside" id="GBa-qn-hF6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16595259414828104" green="0.43240347416098124" blue="0.7492637434554974" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="B2w-Zr-UMY" firstAttribute="centerX" secondItem="zd9-dx-q0g" secondAttribute="centerX" id="7Kc-kF-S4M"/>
-                            <constraint firstItem="3Q1-O1-vAU" firstAttribute="centerY" secondItem="zd9-dx-q0g" secondAttribute="centerY" constant="150" id="JSC-sh-n2E"/>
                             <constraint firstItem="Wqo-VG-E8a" firstAttribute="centerY" secondItem="zd9-dx-q0g" secondAttribute="centerY" multiplier="0.7" id="Kgo-fE-YhB"/>
                             <constraint firstItem="B2w-Zr-UMY" firstAttribute="centerY" secondItem="zd9-dx-q0g" secondAttribute="centerY" multiplier="1.15" id="NDz-QI-Di2"/>
                             <constraint firstItem="Wqo-VG-E8a" firstAttribute="centerX" secondItem="zd9-dx-q0g" secondAttribute="centerX" id="pcj-do-Hkl"/>
                             <constraint firstItem="n8I-5L-g8Y" firstAttribute="centerY" secondItem="zd9-dx-q0g" secondAttribute="centerY" multiplier="1.3" id="rbW-Qn-N3M"/>
                             <constraint firstItem="n8I-5L-g8Y" firstAttribute="centerX" secondItem="zd9-dx-q0g" secondAttribute="centerX" id="rrK-fA-g03"/>
-                            <constraint firstItem="3Q1-O1-vAU" firstAttribute="centerX" secondItem="zd9-dx-q0g" secondAttribute="centerX" id="xiK-9Y-Yel"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HHu-mG-j7V"/>
@@ -101,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="247" y="380"/>
         </scene>
-        <!--Sign In-->
+        <!--Landing View Controller-->
         <scene sceneID="Gn9-Ga-bIg">
             <objects>
-                <viewController id="hPK-56-dUg" sceneMemberID="viewController">
+                <viewController id="hPK-56-dUg" customClass="LandingViewController" customModule="Syndiyo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nic-Lz-WK4"/>
                         <viewControllerLayoutGuide type="bottom" id="Snn-ha-fMp"/>
@@ -264,7 +254,16 @@
                             <constraint firstItem="BX7-hV-8Xm" firstAttribute="leading" secondItem="Ajv-F3-mo3" secondAttribute="leading" constant="20" id="s4O-9P-ibn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sign In" id="3aU-A5-6pq"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="dpB-wW-kfl" id="RYy-yP-HLx"/>
+                        <outlet property="firtNameTextField" destination="ADa-AN-DS8" id="hZO-ns-tcu"/>
+                        <outlet property="lastNameTextField" destination="txE-xt-SaI" id="HLa-kM-KRz"/>
+                        <outlet property="nextButton" destination="hv0-oK-yVM" id="okV-kA-RdQ"/>
+                        <outlet property="passwordTextField" destination="Dsd-sf-vyX" id="XaL-Ob-VsA"/>
+                        <outlet property="ssnTextField" destination="bEi-Gb-3a0" id="kGr-4o-V95"/>
+                        <outlet property="usernameTextField" destination="yJH-nO-SNC" id="gNo-TZ-cQP"/>
+                        <outlet property="verifyPasswordTextField" destination="Ajd-Cf-LjH" id="eTI-zc-2Ch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsK-o7-4iF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -273,7 +272,7 @@
         <!--Medical Information-->
         <scene sceneID="4em-Q5-8fj">
             <objects>
-                <viewController id="IuT-nL-ZNc" userLabel="Medical Information" customClass="MedicalInformationViewController" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IuT-nL-ZNc" userLabel="Medical Information" customClass="MedicalInformationViewController" customModule="Syndiyo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hRM-GZ-n7q"/>
                         <viewControllerLayoutGuide type="bottom" id="sCW-7H-anJ"/>
