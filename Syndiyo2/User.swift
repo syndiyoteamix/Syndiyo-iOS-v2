@@ -18,26 +18,27 @@ class User {
     var ssn: Int
     var doctorsArray: [Doctor]
     var medicalInfo: MedicalInformation
+    var medicalRecords: [MedicalRecord] = []
     
-    init() {
-        self.firstName = ""
-        self.lastName = ""
-        self.email = ""
-        self.username = ""
-        self.password = ""
-        self.ssn = 0
-        self.doctorsArray = [Doctor]()
-        self.medicalInfo = MedicalInformation()
-    }
+//    init() {
+//        self.firstName = ""
+//        self.lastName = ""
+//        self.email = ""
+//        self.username = ""
+//        self.password = ""
+//        self.ssn = 0
+//        self.doctorsArray = [Doctor]()
+//        self.medicalInfo = MedicalInformation()
+//    }
     
-    init(firtName: String, lastName: String, email: String, username: String, password: String, ssn: Int, doctorsArray: [Doctor], medicalInfo: MedicalInformation) {
-        self.firstName = firtName
-        self.lastName = lastName
-        self.email = email
-        self.username = username
-        self.password = password
-        self.ssn = ssn
-        self.doctorsArray = doctorsArray
+    init(firtName: String?, lastName: String?, email: String?, username: String?, password: String?, ssn: Int, doctorsArray: [Doctor]?, medicalInfo: MedicalInformation) {
+        self.firstName = firtName ?? "No name"
+        self.lastName = lastName ?? "no last name"
+        self.email = email ?? ""
+        self.username = username ?? ""
+        self.password = password ?? ""
+        self.ssn = ssn ?? 0000
+        self.doctorsArray = doctorsArray ?? []
         self.medicalInfo = medicalInfo
     }
     

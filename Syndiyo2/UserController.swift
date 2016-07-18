@@ -15,6 +15,7 @@ class UserController {
     static let sharedInstance = UserController()
     var currentUser: User?
     
+   
     func updateUserInfo() {
         
     }
