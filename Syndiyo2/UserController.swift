@@ -17,7 +17,6 @@ class UserController {
     
    
     func addMedicalRecord(record:MedicalRecord){
-        
         currentUser?.medicalRecords.append(record)
     }
     

@@ -10,7 +10,10 @@ import UIKit
 
 class MyRecordsTabTableVC: UITableViewController {
     
-    var medicalRecords:[MedicalRecord] = []
+    
+    //fake info for shit
+    var medicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!)
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,9 @@ class MyRecordsTabTableVC: UITableViewController {
         
         
         
-        medicalRecords = UserController.sharedInstance.currentUser!.medicalRecords
+        
+        //disregard because there is currently no user data
+        //medicalRecords = UserController.sharedInstance.currentUser!.medicalRecords
 
         
     }
@@ -47,7 +52,7 @@ class MyRecordsTabTableVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return UserController.sharedInstance.currentUser!.medicalRecords.count
+        return medicalRecords.count
     }
 
     
@@ -68,15 +73,15 @@ class MyRecordsTabTableVC: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+ 
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -86,7 +91,12 @@ class MyRecordsTabTableVC: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 
     /*
     // Override to support rearranging the table view.

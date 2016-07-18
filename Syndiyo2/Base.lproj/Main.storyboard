@@ -5,25 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--MyAppts-->
-        <scene sceneID="aPc-Qo-AlA">
-            <objects>
-                <viewController id="hNg-k2-Iku" userLabel="MyAppts" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n0m-la-u5T"/>
-                        <viewControllerLayoutGuide type="bottom" id="hOU-RQ-Qtx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Bbu-Dy-KIT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Appointments" id="bth-zC-EVy" userLabel="item 3 "/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ej-Fe-hzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="690" y="1465"/>
-        </scene>
         <!--Home-->
         <scene sceneID="rwR-pW-6jw">
             <objects>
@@ -105,30 +86,20 @@
             </objects>
             <point key="canvasLocation" x="963.5" y="-648.5"/>
         </scene>
-        <!--Root View Controller-->
+        <!--My Records-->
         <scene sceneID="1jZ-gg-2wR">
             <objects>
-                <tableViewController id="0lT-g3-dRf" sceneMemberID="viewController">
+                <tableViewController id="0lT-g3-dRf" customClass="MyRecordsTabTableVC" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WHO-qD-kCC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vex-8h-oan" customClass="RecordTabCustomCell" customModule="Syndiyo2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vex-8h-oan" id="u5a-hN-cfN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="0lT-g3-dRf" id="3sw-9w-I26"/>
                             <outlet property="delegate" destination="0lT-g3-dRf" id="oqL-x7-vrN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Ukg-oj-nEe"/>
+                    <navigationItem key="navigationItem" title="My Records" id="Ukg-oj-nEe"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7E7-m8-Pcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,7 +340,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="E5A-xk-fyr" kind="relationship" relationship="viewControllers" id="UHK-uP-h5a"/>
-                        <segue destination="hNg-k2-Iku" kind="relationship" relationship="viewControllers" id="ExZ-Jp-alU"/>
                         <segue destination="D2D-mJ-slz" kind="relationship" relationship="viewControllers" id="ffX-gp-OUd"/>
                     </connections>
                 </tabBarController>
