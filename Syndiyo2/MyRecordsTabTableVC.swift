@@ -9,6 +9,8 @@
 import UIKit
 
 class MyRecordsTabTableVC: UITableViewController {
+    
+    var medicalRecords:[MedicalRecord] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,19 @@ class MyRecordsTabTableVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        
+        let nibCell = UINib(nibName: "RecordTabCustomCell", bundle: nil)
+        self.tableView.registerNib(nibCell, forCellReuseIdentifier: "cell1")
+        self.tableView.dataSource = self
+        
+        
+        
+        
+        medicalRecords = UserController.sharedInstance.currentUser!.medicalRecords
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +43,30 @@ class MyRecordsTabTableVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return UserController.sharedInstance.currentUser!.medicalRecords.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        //check more about this code
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell1") as? RecordTabCustomCell
 
         // Configure the cell...
+        cell?.titleLabel.text = medicalRecords[indexPath.row].name
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMMM d, YYYY"
+        
+        
+        cell?.dateLabel.text = formatter.stringFromDate(medicalRecords[indexPath.row].date)
+        
 
-        return cell
+        return cell!
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
