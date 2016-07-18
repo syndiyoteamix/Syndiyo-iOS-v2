@@ -82,28 +82,68 @@
 		4E518E701D3D7D49007C2CCF /* Syndiyo2 */ = {
 			isa = PBXGroup;
 			children = (
-				4E518E951D3D7E30007C2CCF /* RequestDocumentCustomVC.swift */,
-				4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */,
-				4E518E971D3D7E30007C2CCF /* TabBarController.swift */,
-				4E518E981D3D7E30007C2CCF /* UIDateField.swift */,
-				4E518E991D3D7E30007C2CCF /* User.swift */,
-				4E518E9A1D3D7E30007C2CCF /* UserController.swift */,
-				4E518E931D3D7E1B007C2CCF /* Onboarding.storyboard */,
-				4E518E8B1D3D7E08007C2CCF /* LandingViewController.swift */,
-				4E518E8C1D3D7E08007C2CCF /* MedicalInformation.swift */,
-				4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */,
-				4E518E8E1D3D7E08007C2CCF /* MedicalRecord.swift */,
-				4E518E831D3D7DF6007C2CCF /* Doctor.swift */,
-				4E518E841D3D7DF6007C2CCF /* DocumentImageVC.swift */,
-				4E518E851D3D7DF6007C2CCF /* HomePageVC.swift */,
-				4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */,
 				4E518E711D3D7D49007C2CCF /* AppDelegate.swift */,
-				4E518E751D3D7D49007C2CCF /* Main.storyboard */,
+				4E518EA11D3D80CE007C2CCF /* Model */,
+				4E518EA51D3D8126007C2CCF /* Model Controllers */,
+				4E518EA31D3D810A007C2CCF /* View Controllers */,
+				4E518EA61D3D814A007C2CCF /* Storyboards */,
+				4E518EA41D3D811B007C2CCF /* Extensions */,
 				4E518E781D3D7D49007C2CCF /* Assets.xcassets */,
-				4E518E7A1D3D7D49007C2CCF /* LaunchScreen.storyboard */,
 				4E518E7D1D3D7D49007C2CCF /* Info.plist */,
 			);
 			path = Syndiyo2;
+			sourceTree = "<group>";
+		};
+		4E518EA11D3D80CE007C2CCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E518E991D3D7E30007C2CCF /* User.swift */,
+				4E518E831D3D7DF6007C2CCF /* Doctor.swift */,
+				4E518E8C1D3D7E08007C2CCF /* MedicalInformation.swift */,
+				4E518E8E1D3D7E08007C2CCF /* MedicalRecord.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4E518EA31D3D810A007C2CCF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E518E971D3D7E30007C2CCF /* TabBarController.swift */,
+				4E518E951D3D7E30007C2CCF /* RequestDocumentCustomVC.swift */,
+				4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */,
+				4E518E8B1D3D7E08007C2CCF /* LandingViewController.swift */,
+				4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */,
+				4E518E841D3D7DF6007C2CCF /* DocumentImageVC.swift */,
+				4E518E851D3D7DF6007C2CCF /* HomePageVC.swift */,
+				4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4E518EA41D3D811B007C2CCF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4E518E981D3D7E30007C2CCF /* UIDateField.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4E518EA51D3D8126007C2CCF /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E518E9A1D3D7E30007C2CCF /* UserController.swift */,
+			);
+			name = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		4E518EA61D3D814A007C2CCF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4E518E931D3D7E1B007C2CCF /* Onboarding.storyboard */,
+				4E518E751D3D7D49007C2CCF /* Main.storyboard */,
+				4E518E7A1D3D7D49007C2CCF /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
