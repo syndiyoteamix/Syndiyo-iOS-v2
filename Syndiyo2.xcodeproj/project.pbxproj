@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1966061D3E84B000DE2982 /* DisplayRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1966051D3E84B000DE2982 /* DisplayRecordVC.swift */; };
 		4E518E721D3D7D49007C2CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E711D3D7D49007C2CCF /* AppDelegate.swift */; };
 		4E518E791D3D7D49007C2CCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E518E781D3D7D49007C2CCF /* Assets.xcassets */; };
 		4E518E7C1D3D7D49007C2CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E518E7A1D3D7D49007C2CCF /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E1966051D3E84B000DE2982 /* DisplayRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRecordVC.swift; sourceTree = "<group>"; };
 		4E518E6E1D3D7D48007C2CCF /* Syndiyo2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Syndiyo2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E518E711D3D7D49007C2CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E518E781D3D7D49007C2CCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				4E518E851D3D7DF6007C2CCF /* HomePageVC.swift */,
 				4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */,
 				4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */,
+				4E1966051D3E84B000DE2982 /* DisplayRecordVC.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				4E518E8A1D3D7DF6007C2CCF /* ImportDocVC.swift in Sources */,
 				4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */,
 				F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */,
+				4E1966061D3E84B000DE2982 /* DisplayRecordVC.swift in Sources */,
 				4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */,
 				4E518E891D3D7DF6007C2CCF /* HomePageVC.swift in Sources */,
 				4E518E9E1D3D7E30007C2CCF /* UIDateField.swift in Sources */,
