@@ -43,7 +43,7 @@ class MedicalInformationViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(sender: AnyObject) {
-        UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: Int(heightTextField.text!)!, weight: Int(weightTextField.text!)!, allergies: [allergiesTextField.text!], previousMedicalConditions: [previousMedicalConditionsTextfield.text!], medications: [medicationsTextField.text!])
+        UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: Int(heightTextField.text!) ?? 0, weight: Int(weightTextField.text!) ?? 0, allergies: [allergiesTextField.text!], previousMedicalConditions: [previousMedicalConditionsTextfield.text!], medications: [medicationsTextField.text!])
     }
     
     //Calls this function when the tap is recognized.

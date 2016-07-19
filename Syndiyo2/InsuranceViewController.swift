@@ -38,6 +38,7 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
         backImagePicker.sourceType = .PhotoLibrary
         
         nextButton.alpha = 0.5
+        nextButton.layer.cornerRadius = 5
         nextButton.enabled = false
         
     }
@@ -67,7 +68,7 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
                 self.frontImage.image = pickedImage
                 self.frontImage.contentMode = .ScaleAspectFill
             }
-            if backImage.image == UIImage(named: "CameraIcon") {
+            if backImage.image != UIImage(named: "CameraIcon") {
                 self.nextButton.alpha = 1
                 nextButton.enabled = true
             }
@@ -78,7 +79,7 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
                 self.backImage.image = pickedImage
                 self.backImage.contentMode = .ScaleAspectFill
             }
-            if frontImage.image == UIImage(named: "CameraIcon") {
+            if frontImage.image != UIImage(named: "CameraIcon") {
                 self.nextButton.alpha = 1
                 nextButton.enabled = true
             }

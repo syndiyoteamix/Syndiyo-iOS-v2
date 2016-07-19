@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet var containerView: UIView!
@@ -36,15 +36,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         nextButton.enabled = false
         
         // Set firstNameTextField to first responder
-        
-        // Setting delegates
-        firstNameTextField.delegate = self
-        lastNameTextField.delegate = self
-        emailTextField.delegate = self
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
-        verifyPasswordTextField.delegate = self
-        ssnTextField.delegate = self
         
     }
     
@@ -79,6 +70,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
+        if verified() {
+            nextButton.enabled = true
+            nextButton.alpha = 1
+        }
+        else {
+            nextButton.enabled = false
+            nextButton.alpha = 0.5
+        }
+    }
+    
+    @IBAction func textFieldChanged(sender: UITextField) {
         if verified() {
             nextButton.enabled = true
             nextButton.alpha = 1

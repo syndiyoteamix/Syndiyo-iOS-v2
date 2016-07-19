@@ -32,6 +32,7 @@
 		F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */; };
 		F3AC31F01D3E1B050005DD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AC31EE1D3E1B050005DD5A /* Main.storyboard */; };
 		F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */; };
+		F3AC31F61D3E4BF80005DD5A /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestVC.swift; sourceTree = "<group>"; };
 		F3AC31EF1D3E1B050005DD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
+		F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */,
 				F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */,
 				F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */,
+				F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				4E518E891D3D7DF6007C2CCF /* HomePageVC.swift in Sources */,
 				4E518E9E1D3D7E30007C2CCF /* UIDateField.swift in Sources */,
 				4E518E911D3D7E08007C2CCF /* MedicalInformationViewController.swift in Sources */,
+				F3AC31F61D3E4BF80005DD5A /* GetStartedViewController.swift in Sources */,
 				4E518E9F1D3D7E30007C2CCF /* User.swift in Sources */,
 				4E518E9C1D3D7E30007C2CCF /* SignUpViewController.swift in Sources */,
 				4E518E721D3D7D49007C2CCF /* AppDelegate.swift in Sources */,
