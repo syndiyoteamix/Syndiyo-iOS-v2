@@ -92,7 +92,7 @@
         <!--RecordsToAdd-->
         <scene sceneID="esg-H4-PBJ">
             <objects>
-                <tableViewController id="aqK-bt-3ii" userLabel="RecordsToAdd" sceneMemberID="viewController">
+                <tableViewController id="aqK-bt-3ii" userLabel="RecordsToAdd" customClass="RecordsToAddVC" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="leK-Pf-r1E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,6 +102,13 @@
                             <outlet property="delegate" destination="aqK-bt-3ii" id="xIQ-iK-nk2"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="BZf-uv-Dhp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="JAK-dS-KmE">
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="aqK-bt-3ii" id="aH5-Sj-EL5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lf-4G-GEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
