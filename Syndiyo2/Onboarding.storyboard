@@ -133,7 +133,6 @@
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txE-xt-SaI" userLabel="Last Name">
                                         <rect key="frame" x="295" y="0.0" width="265" height="30"/>
-                                        <color key="textColor" red="0.81262270940000003" green="0.26826118500000001" blue="0.23486455610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -194,6 +193,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="nextButtonPressed:" destination="hPK-56-dUg" eventType="touchUpInside" id="q05-eF-wol"/>
                                             <segue destination="FlK-NG-zJp" kind="show" id="nIp-Yo-QyR"/>
                                         </connections>
                                     </button>
@@ -266,12 +266,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="3aU-A5-6pq"/>
                     <connections>
+                        <outlet property="containerView" destination="Ajv-F3-mo3" id="W0S-Ir-22v"/>
                         <outlet property="emailTextField" destination="dpB-wW-kfl" id="Gj0-cS-GYe"/>
                         <outlet property="firstNameTextField" destination="ADa-AN-DS8" id="Arx-wD-71j"/>
                         <outlet property="lastNameTextField" destination="txE-xt-SaI" id="KFK-Pg-n6Z"/>
-                        <outlet property="nextButton" destination="hv0-oK-yVM" id="cUK-dA-Y4l"/>
+                        <outlet property="nextButton" destination="hv0-oK-yVM" id="7sN-di-m2r"/>
                         <outlet property="passwordTextField" destination="Dsd-sf-vyX" id="7yT-cc-S61"/>
-                        <outlet property="socialSecurityNumber" destination="bEi-Gb-3a0" id="AUU-yt-i5b"/>
+                        <outlet property="ssnTextField" destination="bEi-Gb-3a0" id="25N-Rk-aXj"/>
                         <outlet property="usernameTextField" destination="yJH-nO-SNC" id="hv5-Xf-cTi"/>
                         <outlet property="verifyPasswordTextField" destination="Ajd-Cf-LjH" id="jea-ed-Wy1"/>
                     </connections>
@@ -328,7 +329,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0I5-xf-kEF">
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0I5-xf-kEF" customClass="UIDateField" customModule="Syndiyo2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <color key="backgroundColor" red="0.94047229489999995" green="0.94047229489999995" blue="0.94047229489999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -348,6 +349,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="nextButtonPressed:" destination="IuT-nL-ZNc" eventType="touchUpInside" id="LRQ-YO-xMd"/>
                                             <segue destination="Q5A-gv-ZBZ" kind="show" id="y4M-Lq-Xv3"/>
                                         </connections>
                                     </button>
@@ -420,8 +422,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Medical Information" id="IX9-2w-UEp"/>
                     <connections>
+                        <outlet property="allergiesTextField" destination="eAS-Ik-OUc" id="5JF-KK-EWY"/>
+                        <outlet property="containerView" destination="4R8-Uj-9SD" id="o0D-p1-nK7"/>
+                        <outlet property="dateOfBirthTextField" destination="0I5-xf-kEF" id="ENK-rh-lCb"/>
+                        <outlet property="heightTextField" destination="SYP-JD-uAl" id="5JC-Kk-w3q"/>
+                        <outlet property="medicationsTextField" destination="Gzi-vG-eQ1" id="Pzh-0D-kRm"/>
                         <outlet property="nextButton" destination="piy-YN-hcX" id="FIg-yt-QSa"/>
+                        <outlet property="previousMedicalConditionsTextfield" destination="i3a-Ec-4Gn" id="rle-OF-Qln"/>
                         <outlet property="skipButton" destination="zZy-hT-zW5" id="7I4-wp-Jd5"/>
+                        <outlet property="weightTextField" destination="tm7-bf-QMl" id="KmG-qC-pZQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGC-Sf-wqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -500,7 +509,7 @@
         <!--Insurance-->
         <scene sceneID="f98-Qk-vD9">
             <objects>
-                <viewController id="Q5A-gv-ZBZ" userLabel="Insurance" sceneMemberID="viewController">
+                <viewController id="Q5A-gv-ZBZ" userLabel="Insurance" customClass="InsuranceViewController" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hHM-jl-i6S"/>
                         <viewControllerLayoutGuide type="bottom" id="5Do-6d-lbJ"/>
@@ -512,7 +521,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-df-9a9" userLabel="Front Card Upload">
                                 <rect key="frame" x="40" y="104" width="520" height="170"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-xa-WUP">
+                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-xa-WUP">
                                         <rect key="frame" x="140" y="42" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="VBx-jx-zES"/>
@@ -552,7 +561,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Q8D-37-5pa">
+                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Q8D-37-5pa">
                                         <rect key="frame" x="140" y="42" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="5SZ-XA-nkK"/>
@@ -583,6 +592,10 @@
                     <navigationItem key="navigationItem" title="Insurance" id="HDu-MV-ZJZ">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ODt-2Q-YbW"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backImage" destination="Q8D-37-5pa" id="f4b-Ju-KcA"/>
+                        <outlet property="frontImage" destination="3z9-xa-WUP" id="nAb-TV-pPR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QI-aM-2F5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

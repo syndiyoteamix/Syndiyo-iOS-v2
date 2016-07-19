@@ -26,7 +26,6 @@ class MedicalRecord {
     
     init(name: String, description: String?, date:NSDate, image: UIImage) {
         
-        
         self.name = name
         self.description = description ?? ""
         self.image = image

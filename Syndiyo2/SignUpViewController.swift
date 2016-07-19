@@ -8,25 +8,48 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet var containerView: UIView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var verifyPasswordTextField: UITextField!
-    @IBOutlet weak var socialSecurityNumber: UITextField!
+    @IBOutlet weak var ssnTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Tap to dismiss keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        containerView.addGestureRecognizer(tap)
+        
+        // Configuration of nextButton
+        nextButton.layer.cornerRadius = 5
+        nextButton.alpha = 0.5
+        nextButton.enabled = false
+        
+        // Set firstNameTextField to first responder
+        
+        // Setting delegates
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        verifyPasswordTextField.delegate = self
+        ssnTextField.delegate = self
+        
     }
     
     override func viewDidAppear(animated: Bool) {
-        nextButton.layer.cornerRadius = 5
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +57,44 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func nextButtonPressed(sender: AnyObject) {
+        UserController.sharedInstance.currentUser = User(firstName: firstNameTextField.text, lastName: lastNameTextField.text, email: emailTextField.text, username: usernameTextField.text, password: passwordTextField.text, ssn: Int(ssnTextField.text!), doctorsArray: nil, medicalInfo: nil)
+    }
+    
+    func verified() -> Bool {
+        
+        if firstNameTextField.text == "" || lastNameTextField.text == "" || emailTextField.text == "" || usernameTextField.text == "" || passwordTextField.text == "" || verifyPasswordTextField.text == "" || ssnTextField.text == "" {
+            return false
+        }
+        
+//        for subview in containerView.subviews as [UIView] {
+//           if let textField = subview as? UITextField {
+//                if let text = textField.text where text.isEmpty {
+//                    return false
+//                }
+//            }
+//        }
+        
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if verified() {
+            nextButton.enabled = true
+            nextButton.alpha = 1
+        }
+        else {
+            nextButton.enabled = false
+            nextButton.alpha = 0.5
+        }
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 

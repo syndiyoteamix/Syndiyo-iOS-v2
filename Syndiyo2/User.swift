@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class User {
     
@@ -17,8 +18,10 @@ class User {
     var password: String
     var ssn: Int
     var doctorsArray: [Doctor]
-    var medicalInfo: MedicalInformation
-    var medicalRecords: [MedicalRecord] = []
+    var medicalInfo: MedicalInformation?
+    var medicalRecords: [MedicalRecord]?
+    var frontInsuranceCard: UIImage?
+    var backInsuranceCard: UIImage?
     
 //    init() {
 //        self.firstName = ""
@@ -31,15 +34,15 @@ class User {
 //        self.medicalInfo = MedicalInformation()
 //    }
     
-    init(firtName: String?, lastName: String?, email: String?, username: String?, password: String?, ssn: Int, doctorsArray: [Doctor]?, medicalInfo: MedicalInformation) {
-        self.firstName = firtName ?? "No name"
+    init(firstName: String?, lastName: String?, email: String?, username: String?, password: String?, ssn: Int?, doctorsArray: [Doctor]?, medicalInfo: MedicalInformation?) {
+        self.firstName = firstName ?? "No name"
         self.lastName = lastName ?? "no last name"
         self.email = email ?? ""
         self.username = username ?? ""
         self.password = password ?? ""
-        self.ssn = ssn ?? 0000
+        self.ssn = ssn ?? 0
         self.doctorsArray = doctorsArray ?? []
-        self.medicalInfo = medicalInfo
+        self.medicalInfo = medicalInfo ?? MedicalInformation()
     }
     
 }

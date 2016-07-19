@@ -10,12 +10,12 @@ import Foundation
 
 class MedicalInformation {
     
-    var dob: NSDate
-    var height: Int
-    var weight: Int
-    var allergies: [String]
-    var previousMedicalConditions: [String]
-    var medications: [String]
+    var dob: NSDate?
+    var height: Int?
+    var weight: Int?
+    var allergies: [String]?
+    var previousMedicalConditions: [String]?
+    var medications: [String]?
     
     init() {
         self.dob = NSDate()
