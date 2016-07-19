@@ -549,7 +549,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzg-z4-PPv" userLabel="Back Card Upload">
-                                <rect key="frame" x="40" y="324" width="520" height="170"/>
+                                <rect key="frame" x="40" y="314" width="520" height="170"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back Of Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVL-RP-5uh">
                                         <rect key="frame" x="208" y="0.0" width="105" height="22"/>
@@ -578,11 +578,24 @@
                                     <constraint firstItem="dVL-RP-5uh" firstAttribute="centerX" secondItem="Tzg-z4-PPv" secondAttribute="centerX" id="zQV-01-6tJ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1d-8y-qT6">
+                                <rect key="frame" x="30" y="532" width="540" height="30"/>
+                                <color key="backgroundColor" red="0.14983727499999999" green="0.38349293130000001" blue="0.65684309549999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3eZ-9J-sy0"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Flh-df-9a9" secondAttribute="trailing" constant="40" id="6Lx-ah-PlB"/>
-                            <constraint firstItem="Tzg-z4-PPv" firstAttribute="top" secondItem="Flh-df-9a9" secondAttribute="bottom" constant="50" id="Wbb-gl-roY"/>
+                            <constraint firstItem="i1d-8y-qT6" firstAttribute="top" secondItem="Tzg-z4-PPv" secondAttribute="bottom" constant="48" id="H7U-r2-NzU"/>
+                            <constraint firstAttribute="trailing" secondItem="i1d-8y-qT6" secondAttribute="trailing" constant="30" id="IBq-2S-DgA"/>
+                            <constraint firstItem="i1d-8y-qT6" firstAttribute="leading" secondItem="1Za-xj-Wtp" secondAttribute="leading" constant="30" id="VT7-4g-nsQ"/>
+                            <constraint firstItem="Tzg-z4-PPv" firstAttribute="top" secondItem="Flh-df-9a9" secondAttribute="bottom" constant="40" id="Wbb-gl-roY"/>
                             <constraint firstItem="Flh-df-9a9" firstAttribute="top" secondItem="hHM-jl-i6S" secondAttribute="bottom" constant="40" id="Yvb-Nk-hOn"/>
                             <constraint firstItem="Tzg-z4-PPv" firstAttribute="leading" secondItem="1Za-xj-Wtp" secondAttribute="leading" constant="40" id="ZQU-zL-scU"/>
                             <constraint firstAttribute="trailing" secondItem="Tzg-z4-PPv" secondAttribute="trailing" constant="40" id="nbA-2F-AJc"/>
