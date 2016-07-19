@@ -78,7 +78,7 @@
                             <constraint firstItem="Srx-Lf-ROD" firstAttribute="centerX" secondItem="H4F-nU-8Q8" secondAttribute="centerX" id="pTh-lj-dM5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="HsI-aq-Gno"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="Small Doctor Button_zps3m0ept2w" id="HsI-aq-Gno"/>
                     <navigationItem key="navigationItem" id="vD7-A0-QFb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -107,6 +107,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7E7-m8-Pcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1332" y="623"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WHj-Ta-mY9">
+            <objects>
+                <viewController id="DY4-Xb-17R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0YO-hQ-bvt"/>
+                        <viewControllerLayoutGuide type="bottom" id="qbJ-nJ-etM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JBd-Al-Lxp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhw-oh-gbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1829.5" y="-333.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="XUp-k9-0qW">
@@ -173,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jg-Zj-MAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112" y="454"/>
+            <point key="canvasLocation" x="2111.5" y="622.5"/>
         </scene>
         <!--Records-->
         <scene sceneID="YNi-t8-1Mh">
@@ -273,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srm-oa-GJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2145.5" y="-913.5"/>
+            <point key="canvasLocation" x="2617.5" y="-1121.5"/>
         </scene>
         <!--ImportDocumentsVC-->
         <scene sceneID="m1h-Et-MsG">
@@ -433,4 +452,7 @@
             <point key="canvasLocation" x="-504" y="7"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Small Doctor Button_zps3m0ept2w" width="179" height="164"/>
+    </resources>
 </document>

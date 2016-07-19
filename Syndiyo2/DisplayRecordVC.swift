@@ -15,13 +15,7 @@ class DisplayRecordVC: UIViewController {
     
     
     
-    
-    var name: String?
-    var description: String?
-    var date: NSDate?
-    var image: UIImage?
-
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
