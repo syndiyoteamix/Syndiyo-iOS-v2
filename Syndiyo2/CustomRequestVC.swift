@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class CustomRequestVC: UIViewController,MFMailComposeViewControllerDelegate {
+class CustomRequestVC: UIViewController,MFMailComposeViewControllerDelegate, UITextFieldDelegate{
     
     
     @IBOutlet weak var doctorEmailTextField: UITextField!
@@ -43,13 +43,12 @@ class CustomRequestVC: UIViewController,MFMailComposeViewControllerDelegate {
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
+        
         mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["alejandro@ixperience.co.za"])
+        mailComposerVC.setSubject("hello")
+        mailComposerVC.setMessageBody(textView.text!, isHTML: false)
         
-        
-        //        mailComposerVC.setToRecipients([doctorEmailTextField.text!])
-        //        mailComposerVC.setSubject(subjectTextField.text!)
-        //        mailComposerVC.setMessageBody(textView.text!, isHTML: false)
-        //
         return mailComposerVC
     }
     
@@ -61,8 +60,20 @@ class CustomRequestVC: UIViewController,MFMailComposeViewControllerDelegate {
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+   
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    @IBAction func doctorEmailPrimaryAction(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func emailSubjectPrimaryAction(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    
     
     /*
      // MARK: - Navigation

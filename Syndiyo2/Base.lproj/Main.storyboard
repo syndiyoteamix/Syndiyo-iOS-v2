@@ -66,6 +66,9 @@
                                     <constraint firstAttribute="width" constant="200" id="GvU-Oa-91B"/>
                                 </constraints>
                                 <state key="normal" title="Send Documents"/>
+                                <connections>
+                                    <segue destination="ppX-v6-bg3" kind="show" id="QQh-ye-x7Q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,6 +145,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="doctorEmailPrimaryAction:" destination="UvL-d6-C1o" eventType="primaryActionTriggered" id="mtD-OB-2PO"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="COa-lz-1O2" userLabel="Subject">
                                 <rect key="frame" x="37" y="168" width="300" height="30"/>
@@ -151,6 +157,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="emailSubjectPrimaryAction:" destination="UvL-d6-C1o" eventType="primaryActionTriggered" id="tXs-2k-c6S"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEj-aI-7IO">
                                 <rect key="frame" x="137" y="508" width="100" height="50"/>
@@ -198,6 +207,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srm-oa-GJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2145.5" y="-913.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="acp-y1-rDA">
+            <objects>
+                <viewController id="ppX-v6-bg3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rZ3-Pb-sLu"/>
+                        <viewControllerLayoutGuide type="bottom" id="rhS-Iv-uaI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Fb-dA-AZn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciX-eZ-VbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="-201"/>
         </scene>
         <!--ImportDocumentsVC-->
         <scene sceneID="m1h-Et-MsG">
