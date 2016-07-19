@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jB2-ue-pBh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jB2-ue-pBh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -521,7 +521,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-df-9a9" userLabel="Front Card Upload">
                                 <rect key="frame" x="40" y="104" width="520" height="170"/>
                                 <subviews>
-                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-xa-WUP">
+                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-xa-WUP">
                                         <rect key="frame" x="140" y="42" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="VBx-jx-zES"/>
@@ -561,7 +561,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Q8D-37-5pa">
+                                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q8D-37-5pa">
                                         <rect key="frame" x="140" y="42" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="5SZ-XA-nkK"/>
@@ -590,7 +590,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Insurance" id="HDu-MV-ZJZ">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="ODt-2Q-YbW"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="ODt-2Q-YbW">
+                            <connections>
+                                <segue destination="mFY-yJ-JZF" kind="show" id="Gvk-ka-Bhh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backImage" destination="Q8D-37-5pa" id="f4b-Ju-KcA"/>
@@ -601,10 +605,25 @@
             </objects>
             <point key="canvasLocation" x="942" y="1145"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="GRc-Jd-h8g">
+            <objects>
+                <viewController id="mFY-yJ-JZF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d8J-6Y-B36"/>
+                        <viewControllerLayoutGuide type="bottom" id="mW7-7F-fiH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m0f-AR-cai">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rL8-TW-Sd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="1145"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="CameraIcon" width="28" height="22"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="y4M-Lq-Xv3"/>
     </inferredMetricsTieBreakers>

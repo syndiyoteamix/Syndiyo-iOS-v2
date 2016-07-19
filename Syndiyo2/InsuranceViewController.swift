@@ -28,6 +28,14 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
         self.frontImage.addGestureRecognizer(frontRecognizer)
         self.backImage.addGestureRecognizer(backRecognizer)
         
+        frontImage.image = UIImage(named: "CameraIcon")
+        backImage.image = UIImage(named: "CameraIcon")
+        
+        frontImagePicker.delegate = self
+        frontImagePicker.sourceType = .PhotoLibrary
+        backImagePicker.delegate = self
+        backImagePicker.sourceType = .PhotoLibrary
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +43,6 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    // IM SORRY TOBIN I COULDN'T FIGURE IT OUT
     func frontImageTapped() {
         self.presentViewController(frontImagePicker, animated: true, completion: nil)
     }
@@ -50,11 +57,20 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
-        if picker.title == "frontImagePicker" {
-            self.frontImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if picker == frontImagePicker {
+            if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+                UserController.sharedInstance.currentUser?.frontInsuranceCard = pickedImage
+                self.frontImage.image = pickedImage
+                self.frontImage.contentMode = .ScaleAspectFill
+            }
         }
         else {
-            self.backImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            print("wait what")
+            if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+                UserController.sharedInstance.currentUser?.backInsuranceCard = pickedImage
+                self.backImage.image = pickedImage
+                self.backImage.contentMode = .ScaleAspectFill
+            }
         }
         
         picker.dismissViewControllerAnimated(true, completion: nil)
