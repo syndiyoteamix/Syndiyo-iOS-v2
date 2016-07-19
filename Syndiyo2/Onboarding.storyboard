@@ -612,6 +612,7 @@
                     <connections>
                         <outlet property="backImage" destination="Q8D-37-5pa" id="f4b-Ju-KcA"/>
                         <outlet property="frontImage" destination="3z9-xa-WUP" id="nAb-TV-pPR"/>
+                        <outlet property="nextButton" destination="i1d-8y-qT6" id="arp-tO-R7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QI-aM-2F5" userLabel="First Responder" sceneMemberID="firstResponder"/>

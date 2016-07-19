@@ -12,6 +12,7 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
 
     @IBOutlet weak var frontImage: UIImageView!
     @IBOutlet weak var backImage: UIImageView!
+    @IBOutlet weak var nextButton: UIButton!
     
     let frontImagePicker = UIImagePickerController()
     let backImagePicker = UIImagePickerController()
@@ -35,6 +36,9 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
         frontImagePicker.sourceType = .PhotoLibrary
         backImagePicker.delegate = self
         backImagePicker.sourceType = .PhotoLibrary
+        
+        nextButton.alpha = 0.5
+        nextButton.enabled = false
         
     }
 
@@ -63,13 +67,20 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
                 self.frontImage.image = pickedImage
                 self.frontImage.contentMode = .ScaleAspectFill
             }
+            if backImage.image == UIImage(named: "CameraIcon") {
+                self.nextButton.alpha = 1
+                nextButton.enabled = true
+            }
         }
         else {
-            print("wait what")
             if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
                 UserController.sharedInstance.currentUser?.backInsuranceCard = pickedImage
                 self.backImage.image = pickedImage
                 self.backImage.contentMode = .ScaleAspectFill
+            }
+            if frontImage.image == UIImage(named: "CameraIcon") {
+                self.nextButton.alpha = 1
+                nextButton.enabled = true
             }
         }
         
