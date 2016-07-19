@@ -12,8 +12,7 @@ class MyRecordsTabTableVC: UITableViewController {
     
     
     //fake info for shit
-    var medicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!)
-    ]
+    var medicalRecords:[MedicalRecord] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ class MyRecordsTabTableVC: UITableViewController {
         
         
         //disregard because there is currently no user data
-        //medicalRecords = UserController.sharedInstance.currentUser!.medicalRecords
+        medicalRecords = UserController.sharedInstance.fakeMedicalRecords
 
         
     }

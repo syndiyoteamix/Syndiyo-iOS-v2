@@ -62,6 +62,7 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
         //create a catch if there is no image or no record
         let newRecord = MedicalRecord(name:titleTextBox.text!, description: "", date: dateTextBox.date, image: documentImage.image!)
         UserController.sharedInstance.addMedicalRecord(newRecord)
+        self.navigationController?.popViewControllerAnimated(true)
         
     }
     
