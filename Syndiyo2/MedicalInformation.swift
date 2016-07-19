@@ -26,7 +26,7 @@ class MedicalInformation {
         self.medications = [String]()
     }
     
-    init(dob: NSDate, height: Int, weight: Int, allergies: [String], previousMedicalConditions: [String], medications: [String]) {
+    init(dob: NSDate?, height: Int?, weight: Int?, allergies: [String]?, previousMedicalConditions: [String]?, medications: [String]?) {
         self.dob = dob
         self.height = height
         self.weight = weight
