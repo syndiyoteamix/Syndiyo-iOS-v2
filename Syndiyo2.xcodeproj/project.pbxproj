@@ -34,6 +34,9 @@
 		F3AC31F01D3E1B050005DD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AC31EE1D3E1B050005DD5A /* Main.storyboard */; };
 		F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */; };
 		F3AC31F61D3E4BF80005DD5A /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */; };
+		F3AC31FA1D3E58030005DD5A /* UIAutoValidateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */; };
+		F3AC31FD1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */; };
+		F3AC32011D3E75B40005DD5A /* UIValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		F3AC31EF1D3E1B050005DD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
 		F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAutoValidateTextField.swift; sourceTree = "<group>"; };
+		F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasswordValidatingTextField.swift; sourceTree = "<group>"; };
+		F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIValidationTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			children = (
 				4E518E711D3D7D49007C2CCF /* AppDelegate.swift */,
 				4E518EAD1D3D8921007C2CCF /* Xibs */,
+				F3AC31FB1D3E6DC30005DD5A /* Subclasses */,
 				4E518EA11D3D80CE007C2CCF /* Model */,
 				4E518EA51D3D8126007C2CCF /* Model Controllers */,
 				4E518EA31D3D810A007C2CCF /* View Controllers */,
@@ -194,6 +201,16 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		F3AC31FB1D3E6DC30005DD5A /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */,
+				F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */,
+				F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,15 +285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3AC32011D3E75B40005DD5A /* UIValidationTextField.swift in Sources */,
 				4E518E901D3D7E08007C2CCF /* MedicalInformation.swift in Sources */,
 				4E518E9D1D3D7E30007C2CCF /* TabBarController.swift in Sources */,
 				F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */,
+				F3AC31FD1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift in Sources */,
 				F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */,
 				4E518EA01D3D7E30007C2CCF /* UserController.swift in Sources */,
 				4E518E8A1D3D7DF6007C2CCF /* ImportDocVC.swift in Sources */,
 				4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */,
 				F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */,
 				4E1966061D3E84B000DE2982 /* DisplayRecordVC.swift in Sources */,
+				F3AC31FA1D3E58030005DD5A /* UIAutoValidateTextField.swift in Sources */,
 				4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */,
 				4E518E891D3D7DF6007C2CCF /* HomePageVC.swift in Sources */,
 				4E518E9E1D3D7E30007C2CCF /* UIDateField.swift in Sources */,

@@ -16,8 +16,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var verifyPasswordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UIPasswordValidatingTextField!
+    @IBOutlet weak var verifyPasswordTextField: UIValidationTextField!
     @IBOutlet weak var ssnTextField: UITextField!
     
     override func viewDidLoad() {
@@ -37,15 +37,6 @@ class SignUpViewController: UIViewController {
         
         // Set firstNameTextField to first responder
         
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func nextButtonPressed(sender: AnyObject) {
@@ -88,6 +79,14 @@ class SignUpViewController: UIViewController {
         else {
             nextButton.enabled = false
             nextButton.alpha = 0.5
+        }
+        if let field = sender as? UIValidationTextField {
+            print("hi")
+            if field == passwordTextField {
+                print("rah")
+                if field.text == nil { return }
+                if field.text == passwordTextField.text && field.text?.characters.count > 6 { field.isValid = true }
+            }
         }
     }
     
