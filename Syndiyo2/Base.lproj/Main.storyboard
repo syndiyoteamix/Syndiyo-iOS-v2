@@ -66,6 +66,9 @@
                                     <constraint firstAttribute="width" constant="200" id="GvU-Oa-91B"/>
                                 </constraints>
                                 <state key="normal" title="Send Documents"/>
+                                <connections>
+                                    <segue destination="aqK-bt-3ii" kind="show" id="521-bN-UMn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,6 +88,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-Aa-C9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="963.5" y="-648.5"/>
+        </scene>
+        <!--RecordsToAdd-->
+        <scene sceneID="esg-H4-PBJ">
+            <objects>
+                <tableViewController id="aqK-bt-3ii" userLabel="RecordsToAdd" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="leK-Pf-r1E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="aqK-bt-3ii" id="ukU-ic-McH"/>
+                            <outlet property="delegate" destination="aqK-bt-3ii" id="xIQ-iK-nk2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Lf-4G-GEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="-225"/>
         </scene>
         <!--My Records-->
         <scene sceneID="1jZ-gg-2wR">
@@ -107,25 +128,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7E7-m8-Pcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1332" y="623"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="WHj-Ta-mY9">
-            <objects>
-                <viewController id="DY4-Xb-17R" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0YO-hQ-bvt"/>
-                        <viewControllerLayoutGuide type="bottom" id="qbJ-nJ-etM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JBd-Al-Lxp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhw-oh-gbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1829.5" y="-333.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="XUp-k9-0qW">

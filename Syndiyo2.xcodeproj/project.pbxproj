@@ -28,6 +28,7 @@
 		4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */; };
 		4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */; };
 		4E518EAC1D3D8914007C2CCF /* RecordTabCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */; };
+		4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */; };
 		F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */; };
 		F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */; };
 		F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */; };
@@ -63,6 +64,7 @@
 		4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecordsTabTableVC.swift; sourceTree = "<group>"; };
 		4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTabCustomCell.swift; sourceTree = "<group>"; };
 		4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTabCustomCell.xib; sourceTree = "<group>"; };
+		4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsToAddVC.swift; sourceTree = "<group>"; };
 		F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestVC.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */,
 				4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */,
 				4E1966051D3E84B000DE2982 /* DisplayRecordVC.swift */,
+				4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				4E518E871D3D7DF6007C2CCF /* Doctor.swift in Sources */,
 				4E518E921D3D7E08007C2CCF /* MedicalRecord.swift in Sources */,
 				4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */,
+				4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */,
 				4E518E881D3D7DF6007C2CCF /* DocumentImageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
