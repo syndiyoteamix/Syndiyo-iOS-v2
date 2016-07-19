@@ -9,6 +9,11 @@
 import UIKit
 
 class MyRecordsTabTableVC: UITableViewController {
+    
+    
+    //fake info for shit
+    var medicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!)
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +23,21 @@ class MyRecordsTabTableVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        
+        let nibCell = UINib(nibName: "RecordTabCustomCell", bundle: nil)
+        self.tableView.registerNib(nibCell, forCellReuseIdentifier: "cell1")
+        self.tableView.dataSource = self
+        
+        
+        
+        
+        
+        //disregard because there is currently no user data
+        //medicalRecords = UserController.sharedInstance.currentUser!.medicalRecords
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,34 +48,40 @@ class MyRecordsTabTableVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return medicalRecords.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        //check more about this code
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell1") as? RecordTabCustomCell
 
         // Configure the cell...
+        cell?.titleLabel.text = medicalRecords[indexPath.row].name
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMMM d, YYYY"
+        
+        
+        cell?.dateLabel.text = formatter.stringFromDate(medicalRecords[indexPath.row].date)
+        
 
-        return cell
+        return cell!
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+ 
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -65,7 +91,12 @@ class MyRecordsTabTableVC: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 
     /*
     // Override to support rearranging the table view.
