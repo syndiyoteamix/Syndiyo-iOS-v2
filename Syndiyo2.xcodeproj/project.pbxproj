@@ -31,6 +31,7 @@
 		F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */; };
 		F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */; };
 		F3AC31F01D3E1B050005DD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AC31EE1D3E1B050005DD5A /* Main.storyboard */; };
+		F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestVC.swift; sourceTree = "<group>"; };
 		F3AC31EF1D3E1B050005DD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,16 +121,8 @@
 		4E518EA31D3D810A007C2CCF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */,
-				4E518E971D3D7E30007C2CCF /* TabBarController.swift */,
-				4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */,
-				4E518E8B1D3D7E08007C2CCF /* LandingViewController.swift */,
-				4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */,
-				4E518E841D3D7DF6007C2CCF /* DocumentImageVC.swift */,
-				4E518E851D3D7DF6007C2CCF /* HomePageVC.swift */,
-				4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */,
-				4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */,
-				F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */,
+				F3AC31F21D3E20390005DD5A /* Main */,
+				F3AC31F11D3E20280005DD5A /* Onboarding */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -167,6 +161,31 @@
 				4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */,
 			);
 			name = Xibs;
+			sourceTree = "<group>";
+		};
+		F3AC31F11D3E20280005DD5A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */,
+				4E518E8B1D3D7E08007C2CCF /* LandingViewController.swift */,
+				4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */,
+				F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */,
+				F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		F3AC31F21D3E20390005DD5A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */,
+				4E518E971D3D7E30007C2CCF /* TabBarController.swift */,
+				4E518E841D3D7DF6007C2CCF /* DocumentImageVC.swift */,
+				4E518E851D3D7DF6007C2CCF /* HomePageVC.swift */,
+				4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */,
+				4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +269,7 @@
 				4E518EA01D3D7E30007C2CCF /* UserController.swift in Sources */,
 				4E518E8A1D3D7DF6007C2CCF /* ImportDocVC.swift in Sources */,
 				4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */,
+				F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */,
 				4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */,
 				4E518E891D3D7DF6007C2CCF /* HomePageVC.swift in Sources */,
 				4E518E9E1D3D7E30007C2CCF /* UIDateField.swift in Sources */,
