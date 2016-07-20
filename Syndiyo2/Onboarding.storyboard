@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jB2-ue-pBh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jB2-ue-pBh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,6 +14,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EbM-PT-kcr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14983727499999999" green="0.38349293130000001" blue="0.65684309549999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vP4-on-ReH">
                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
@@ -101,7 +102,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account yet?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ql6-Qn-qgZ">
-                                <rect key="frame" x="20" y="530.5" width="560" height="14.5"/>
+                                <rect key="frame" x="20" y="530" width="560" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -307,12 +308,8 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="yI4-N7-7k7"/>
-                                        <exclude reference="nb3-yV-mE2"/>
-<<<<<<< HEAD
-=======
                                         <exclude reference="zk8-6r-s2M"/>
-                                        <exclude reference="Hl6-BO-8vH"/>
->>>>>>> f681ca2c9e660ddcae76c331df354e3b62ad1a7f
+                                        <exclude reference="nb3-yV-mE2"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -379,7 +376,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tm7-bf-QMl" userLabel="Re-Type Password">
-                                        <rect key="frame" x="182.5" y="50" width="152.5" height="30"/>
+                                        <rect key="frame" x="182" y="50" width="152.5" height="30"/>
                                         <color key="backgroundColor" red="0.94047229489999995" green="0.94047229489999995" blue="0.94047229489999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="E31-x2-ru9"/>
@@ -608,7 +605,7 @@
                                 <rect key="frame" x="40" y="104" width="295" height="170"/>
                                 <subviews>
                                     <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-xa-WUP">
-                                        <rect key="frame" x="27.5" y="42" width="240" height="128"/>
+                                        <rect key="frame" x="27" y="42" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="VBx-jx-zES"/>
                                             <constraint firstAttribute="height" constant="128" id="fuJ-kn-GUg"/>
@@ -648,7 +645,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q8D-37-5pa">
-                                        <rect key="frame" x="27.5" y="42" width="240" height="128"/>
+                                        <rect key="frame" x="27" y="42" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="5SZ-XA-nkK"/>
                                             <constraint firstAttribute="width" constant="240" id="6pk-PW-bhu"/>
@@ -719,7 +716,7 @@
                                 <rect key="frame" x="30" y="104" width="315" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're All Set!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ay-9C-S8g">
-                                        <rect key="frame" x="104.5" y="245" width="106" height="21"/>
+                                        <rect key="frame" x="104" y="245" width="106" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="106" id="8Mw-2i-TY9"/>
                                             <constraint firstAttribute="height" constant="21" id="HED-Bd-xrC"/>
@@ -785,5 +782,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="y4M-Lq-Xv3"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.14983727499999999" green="0.38349293130000001" blue="0.65684309549999997" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
