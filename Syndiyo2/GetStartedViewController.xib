@@ -34,9 +34,9 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K82-FQ-tgW">
-                    <rect key="frame" x="30" y="90" width="354" height="325"/>
+                    <rect key="frame" x="30" y="90" width="354" height="325.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voilá - that was easy!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5P-sa-eJo">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voilá - your account has been created!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5P-sa-eJo">
                             <rect key="frame" x="0.0" y="264" width="354" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="mPy-VP-vms"/>
@@ -51,7 +51,7 @@
                                 <constraint firstAttribute="width" secondItem="fMQ-1B-htf" secondAttribute="height" multiplier="1:1" id="7HN-mn-OxL"/>
                             </constraints>
                         </imageView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Now that you've created an account, you can add a profile picture above" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dTt-SH-9d3">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a profile picture above, and let's continue setting up the rest of your account." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dTt-SH-9d3">
                             <rect key="frame" x="0.0" y="285" width="354" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
