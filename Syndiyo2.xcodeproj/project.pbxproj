@@ -29,7 +29,6 @@
 		4E518EAC1D3D8914007C2CCF /* RecordTabCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */; };
 		4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */; };
 		4EACFD741D3F9E4000155698 /* SendDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACFD731D3F9E4000155698 /* SendDocVC.swift */; };
-		4EACFD761D3F9F2D00155698 /* UISelectionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACFD751D3F9F2D00155698 /* UISelectionField.swift */; };
 		F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */; };
 		F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */; };
 		F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */; };
@@ -46,9 +45,9 @@
 		F3AC321D1D3FAC3B0005DD5A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC321C1D3FAC3B0005DD5A /* UIColor.swift */; };
 		F3AC32201D3FB4CE0005DD5A /* MedicalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC321E1D3FB4CE0005DD5A /* MedicalInformationViewController.swift */; };
 		F3AC32211D3FB4CE0005DD5A /* MedicalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3AC321F1D3FB4CE0005DD5A /* MedicalInformationViewController.xib */; };
-		F3AC32491D3FCCFF0005DD5A /* MyDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32471D3FCCFF0005DD5A /* MyDoctorsViewController.swift */; };
 		F3AC324A1D3FCCFF0005DD5A /* MyDoctorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3AC32481D3FCCFF0005DD5A /* MyDoctorsViewController.xib */; };
 		F3AC324C1D3FDBB70005DD5A /* UIRoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */; };
+		F3AC324E1D3FE0ED0005DD5A /* UISelectionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +75,6 @@
 		4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTabCustomCell.xib; sourceTree = "<group>"; };
 		4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsToAddVC.swift; sourceTree = "<group>"; };
 		4EACFD731D3F9E4000155698 /* SendDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDocVC.swift; sourceTree = "<group>"; };
-		4EACFD751D3F9F2D00155698 /* UISelectionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UISelectionField.swift; path = ../../../../../Downloads/UISelectionField.swift; sourceTree = "<group>"; };
 		F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestVC.swift; sourceTree = "<group>"; };
@@ -96,6 +94,7 @@
 		F3AC32471D3FCCFF0005DD5A /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
 		F3AC32481D3FCCFF0005DD5A /* MyDoctorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDoctorsViewController.xib; sourceTree = "<group>"; };
 		F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundTextField.swift; sourceTree = "<group>"; };
+		F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISelectionField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,15 +235,15 @@
 		F3AC31FB1D3E6DC30005DD5A /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */,
 				F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */,
 				F3AC31F91D3E58030005DD5A /* UIValidationTextField.swift */,
-				4EACFD751D3F9F2D00155698 /* UISelectionField.swift */,
 				F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */,
 				F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */,
 				F3AC320E1D3FA7740005DD5A /* UIVerifyPasswordTextField.swift */,
 				F3AC32101D3FA78C0005DD5A /* UISSNTextField.swift */,
 			);
-			name = Subclassesi;
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,20 +332,17 @@
 				4E518E9D1D3D7E30007C2CCF /* TabBarController.swift in Sources */,
 				F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */,
 				F3AC31FD1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift in Sources */,
+				F3AC324E1D3FE0ED0005DD5A /* UISelectionField.swift in Sources */,
 				F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */,
 				4E518EA01D3D7E30007C2CCF /* UserController.swift in Sources */,
 				F3AC321A1D3FA9E90005DD5A /* GetStartedViewController.swift in Sources */,
 				4E518E8A1D3D7DF6007C2CCF /* ImportDocVC.swift in Sources */,
 				4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */,
-				4E1966061D3E84B000DE2982 /* DisplayRecordVC.swift in Sources */,
 				F3AC31FA1D3E58030005DD5A /* UIValidationTextField.swift in Sources */,
-				F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */,
 				4E1966061D3E84B000DE2982 /* EditRecordVC.swift in Sources */,
 				4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */,
 				4E518E891D3D7DF6007C2CCF /* HomePageVC.swift in Sources */,
 				4E518E9E1D3D7E30007C2CCF /* UIDateField.swift in Sources */,
-				4EACFD761D3F9F2D00155698 /* UISelectionField.swift in Sources */,
-				4E518E911D3D7E08007C2CCF /* MedicalInformationViewController.swift in Sources */,
 				4E518E9F1D3D7E30007C2CCF /* User.swift in Sources */,
 				4E518E9C1D3D7E30007C2CCF /* BasicInfoViewController.swift in Sources */,
 				F3AC321D1D3FAC3B0005DD5A /* UIColor.swift in Sources */,
@@ -479,6 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Alan-Yu.Syndiyo2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};
@@ -493,6 +490,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Alan-Yu.Syndiyo2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
