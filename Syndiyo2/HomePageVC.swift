@@ -12,6 +12,8 @@ class HomePageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserController.sharedInstance.saveUsersArray()
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +22,9 @@ class HomePageVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
     
 
     /*
