@@ -29,8 +29,13 @@ class UserController {
     var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!)
     ]
     
-    func registerUser(user: User) {
-        users.append(user)
+    func registerUser(onCompletion: (String?) -> Void) {
+        if currentUser != nil {
+            users.append(currentUser!)
+            onCompletion(nil)
+        }
+        // if CurrentUser is nil
+        else { onCompletion("Could not register user") }
     }
     
     // function - check if username has been used

@@ -30,7 +30,9 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
         self.backImage.addGestureRecognizer(backRecognizer)
         
         frontImage.image = UIImage(named: "CameraIcon")
+        frontImage.contentMode = .Center
         backImage.image = UIImage(named: "CameraIcon")
+        backImage.contentMode = .Center
         
         frontImagePicker.delegate = self
         frontImagePicker.sourceType = .PhotoLibrary
@@ -66,7 +68,7 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
             if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
                 UserController.sharedInstance.currentUser?.frontInsuranceCard = pickedImage
                 self.frontImage.image = pickedImage
-                self.frontImage.contentMode = .ScaleAspectFill
+                self.frontImage.contentMode = .ScaleAspectFit
             }
             if backImage.image != UIImage(named: "CameraIcon") {
                 self.nextButton.alpha = 1
@@ -77,7 +79,7 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
             if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
                 UserController.sharedInstance.currentUser?.backInsuranceCard = pickedImage
                 self.backImage.image = pickedImage
-                self.backImage.contentMode = .ScaleAspectFill
+                self.backImage.contentMode = .ScaleAspectFit
             }
             if frontImage.image != UIImage(named: "CameraIcon") {
                 self.nextButton.alpha = 1
