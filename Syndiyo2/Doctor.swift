@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Doctor: NSObject, NSCoding {
     
@@ -16,19 +17,22 @@ class Doctor: NSObject, NSCoding {
     var email: String
     var fax: String?
     var phone: String?
+    var profilePic: UIImage?
+    var UUID:NSUUID = NSUUID()
     
 //    init() {
 //        self.name = ""
 //        self.email = ""
 //    }
     
-    init(name: String, speciality: String, address: String, email: String, fax: String, phone: String) {
-        self.name = name
-        self.speciality = speciality
-        self.address = address
-        self.email = email
-        self.fax = fax
-        self.phone = phone
+    init(name: String?, speciality: String?, address: String?, email: String?, fax: String?, phone: String?, profilePic:UIImage?) {
+        self.name = name ?? "no name"
+        self.speciality = speciality ?? "no speciality"
+        self.address = address ?? "has no house"
+        self.email = email ?? "can't connect to wifi "
+        self.fax = fax ?? "no one uses fax anymore"
+        self.phone = phone ?? "dropped iphone to many times " 
+        self.profilePic = profilePic ?? UIImage(named: "smallDoctor")
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +42,8 @@ class Doctor: NSObject, NSCoding {
         self.email = (coder.decodeObjectForKey("email") as? String) ?? ""
         self.fax = (coder.decodeObjectForKey("fax") as? String) ?? ""
         self.phone = (coder.decodeObjectForKey("phone") as? String) ?? ""
+        self.profilePic = (coder.decodeObjectForKey("profilePic") as? UIImage) ?? UIImage(named:"smallDoctor")
+        self.UUID = (coder.decodeObjectForKey("UUID") as? NSUUID) ?? NSUUID()
     }
     
     func encodeWithCoder(coder: NSCoder) {
@@ -47,6 +53,8 @@ class Doctor: NSObject, NSCoding {
         coder.encodeObject(email, forKey: "email")
         coder.encodeObject(fax, forKey: "fax")
         coder.encodeObject(phone, forKey: "phone")
+        coder.encodeObject(profilePic, forKey: "profilePic")
+        coder.encodeObject(UUID, forKey: "UUID")
     }
     
 }

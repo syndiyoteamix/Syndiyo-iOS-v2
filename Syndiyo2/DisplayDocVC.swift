@@ -68,7 +68,7 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         dateTF.date = currentRecord.date
         dateTF.enabled = false
         
-        descriptionTV.text = currentRecord.description
+        descriptionTV.text = currentRecord.notes
         descriptionTV.editable = false
         
         
