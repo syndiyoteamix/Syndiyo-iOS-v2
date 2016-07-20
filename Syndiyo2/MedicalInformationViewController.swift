@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MedicalInformationViewController: UIViewController {
+class MedicalInformationViewController: UIViewController,UIGestureRecognizerDelegate {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nextButton: UIButton!
@@ -24,15 +24,15 @@ class MedicalInformationViewController: UIViewController {
         super.viewDidLoad()
         
         // Configuration of SkipButton
-        skipButton.layer.cornerRadius = 5
+        //skipButton.layer.cornerRadius = 15
         
         // Configuration of nextButton
-        nextButton.layer.cornerRadius = 5
+        //nextButton.layer.cornerRadius = 15
         
         // Tap to dismiss keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        containerView.addGestureRecognizer(tap)
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        self.view.addGestureRecognizer(tap)
+//        containerView.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +41,7 @@ class MedicalInformationViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(sender: AnyObject) {
-        UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: Int(heightTextField.text!) ?? 0, weight: Int(weightTextField.text!) ?? 0, allergies: [allergiesTextField.text!], previousMedicalConditions: [previousMedicalConditionsTextfield.text!], medications: [medicationsTextField.text!])
+        UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: String(heightTextField.text!) ?? "", weight: String(weightTextField.text!) ?? "", allergies: allergiesTextField.text!, previousMedicalConditions: previousMedicalConditionsTextfield.text!, medications: medicationsTextField.text!)
     }
     
     //Calls this function when the tap is recognized.
