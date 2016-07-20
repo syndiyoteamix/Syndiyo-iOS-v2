@@ -17,10 +17,9 @@
 		4E518E8A1D3D7DF6007C2CCF /* ImportDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */; };
 		4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E8B1D3D7E08007C2CCF /* LandingViewController.swift */; };
 		4E518E901D3D7E08007C2CCF /* MedicalInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E8C1D3D7E08007C2CCF /* MedicalInformation.swift */; };
-		4E518E911D3D7E08007C2CCF /* MedicalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */; };
 		4E518E921D3D7E08007C2CCF /* MedicalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E8E1D3D7E08007C2CCF /* MedicalRecord.swift */; };
 		4E518E941D3D7E1B007C2CCF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E518E931D3D7E1B007C2CCF /* Onboarding.storyboard */; };
-		4E518E9C1D3D7E30007C2CCF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */; };
+		4E518E9C1D3D7E30007C2CCF /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E961D3D7E30007C2CCF /* BasicInfoViewController.swift */; };
 		4E518E9D1D3D7E30007C2CCF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E971D3D7E30007C2CCF /* TabBarController.swift */; };
 		4E518E9E1D3D7E30007C2CCF /* UIDateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E981D3D7E30007C2CCF /* UIDateField.swift */; };
 		4E518E9F1D3D7E30007C2CCF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E991D3D7E30007C2CCF /* User.swift */; };
@@ -30,16 +29,27 @@
 		4E518EAC1D3D8914007C2CCF /* RecordTabCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */; };
 		4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */; };
 		4EACFD741D3F9E4000155698 /* SendDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACFD731D3F9E4000155698 /* SendDocVC.swift */; };
-		4EACFD761D3F9F2D00155698 /* UISelectionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACFD751D3F9F2D00155698 /* UISelectionField.swift */; };
 		F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */; };
 		F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */; };
 		F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */; };
 		F3AC31F01D3E1B050005DD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AC31EE1D3E1B050005DD5A /* Main.storyboard */; };
 		F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */; };
 		F3AC31F61D3E4BF80005DD5A /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */; };
+		F3AC31FA1D3E58030005DD5A /* UIValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F91D3E58030005DD5A /* UIValidationTextField.swift */; };
 		F3AC31FD1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */; };
-		F3AC32011D3E75B40005DD5A /* UIValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */; };
 		F3AC32031D3EE9B30005DD5A /* UIEmailValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */; };
+		F3AC32071D3F85300005DD5A /* SSNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32061D3F85300005DD5A /* SSNViewController.swift */; };
+		F3AC320D1D3FA00B0005DD5A /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC320C1D3FA00B0005DD5A /* PasswordViewController.swift */; };
+		F3AC320F1D3FA7740005DD5A /* UIVerifyPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC320E1D3FA7740005DD5A /* UIVerifyPasswordTextField.swift */; };
+		F3AC32111D3FA78C0005DD5A /* UISSNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32101D3FA78C0005DD5A /* UISSNTextField.swift */; };
+		F3AC321A1D3FA9E90005DD5A /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32181D3FA9E80005DD5A /* GetStartedViewController.swift */; };
+		F3AC321B1D3FA9E90005DD5A /* GetStartedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3AC32191D3FA9E90005DD5A /* GetStartedViewController.xib */; };
+		F3AC321D1D3FAC3B0005DD5A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC321C1D3FAC3B0005DD5A /* UIColor.swift */; };
+		F3AC32201D3FB4CE0005DD5A /* MedicalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC321E1D3FB4CE0005DD5A /* MedicalInformationViewController.swift */; };
+		F3AC32211D3FB4CE0005DD5A /* MedicalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3AC321F1D3FB4CE0005DD5A /* MedicalInformationViewController.xib */; };
+		F3AC324A1D3FCCFF0005DD5A /* MyDoctorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3AC32481D3FCCFF0005DD5A /* MyDoctorsViewController.xib */; };
+		F3AC324C1D3FDBB70005DD5A /* UIRoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */; };
+		F3AC324E1D3FE0ED0005DD5A /* UISelectionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,10 +65,9 @@
 		4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportDocVC.swift; sourceTree = "<group>"; };
 		4E518E8B1D3D7E08007C2CCF /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		4E518E8C1D3D7E08007C2CCF /* MedicalInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalInformation.swift; sourceTree = "<group>"; };
-		4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalInformationViewController.swift; sourceTree = "<group>"; };
 		4E518E8E1D3D7E08007C2CCF /* MedicalRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalRecord.swift; sourceTree = "<group>"; };
 		4E518E931D3D7E1B007C2CCF /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
-		4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4E518E961D3D7E30007C2CCF /* BasicInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
 		4E518E971D3D7E30007C2CCF /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4E518E981D3D7E30007C2CCF /* UIDateField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDateField.swift; sourceTree = "<group>"; };
 		4E518E991D3D7E30007C2CCF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -68,16 +77,31 @@
 		4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTabCustomCell.xib; sourceTree = "<group>"; };
 		4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsToAddVC.swift; sourceTree = "<group>"; };
 		4EACFD731D3F9E4000155698 /* SendDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDocVC.swift; sourceTree = "<group>"; };
-		4EACFD751D3F9F2D00155698 /* UISelectionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UISelectionField.swift; path = ../../../../../Downloads/UISelectionField.swift; sourceTree = "<group>"; };
 		F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestVC.swift; sourceTree = "<group>"; };
 		F3AC31EF1D3E1B050005DD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
 		F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+=======
+		F3AC31F91D3E58030005DD5A /* UIValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIValidationTextField.swift; sourceTree = "<group>"; };
+>>>>>>> 67a138ff07a95e22d92535a1216066abfe376351
 		F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasswordValidatingTextField.swift; sourceTree = "<group>"; };
-		F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIValidationTextField.swift; sourceTree = "<group>"; };
 		F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEmailValidationTextField.swift; sourceTree = "<group>"; };
+		F3AC32061D3F85300005DD5A /* SSNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSNViewController.swift; sourceTree = "<group>"; };
+		F3AC320C1D3FA00B0005DD5A /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		F3AC320E1D3FA7740005DD5A /* UIVerifyPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVerifyPasswordTextField.swift; sourceTree = "<group>"; };
+		F3AC32101D3FA78C0005DD5A /* UISSNTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISSNTextField.swift; sourceTree = "<group>"; };
+		F3AC32181D3FA9E80005DD5A /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		F3AC32191D3FA9E90005DD5A /* GetStartedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetStartedViewController.xib; sourceTree = "<group>"; };
+		F3AC321C1D3FAC3B0005DD5A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F3AC321E1D3FB4CE0005DD5A /* MedicalInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalInformationViewController.swift; sourceTree = "<group>"; };
+		F3AC321F1D3FB4CE0005DD5A /* MedicalInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicalInformationViewController.xib; sourceTree = "<group>"; };
+		F3AC32471D3FCCFF0005DD5A /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
+		F3AC32481D3FCCFF0005DD5A /* MyDoctorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDoctorsViewController.xib; sourceTree = "<group>"; };
+		F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundTextField.swift; sourceTree = "<group>"; };
+		F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISelectionField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +135,11 @@
 			isa = PBXGroup;
 			children = (
 				4E518E711D3D7D49007C2CCF /* AppDelegate.swift */,
-				4E518EAD1D3D8921007C2CCF /* Xibs */,
 				F3AC31FB1D3E6DC30005DD5A /* Subclasses */,
 				4E518EA11D3D80CE007C2CCF /* Model */,
 				4E518EA51D3D8126007C2CCF /* Model Controllers */,
 				4E518EA31D3D810A007C2CCF /* View Controllers */,
+				4E518EAD1D3D8921007C2CCF /* Xibs */,
 				4E518EA61D3D814A007C2CCF /* Storyboards */,
 				4E518EA41D3D811B007C2CCF /* Extensions */,
 				4E518E781D3D7D49007C2CCF /* Assets.xcassets */,
@@ -149,6 +173,7 @@
 			children = (
 				4E518E981D3D7E30007C2CCF /* UIDateField.swift */,
 				F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */,
+				F3AC321C1D3FAC3B0005DD5A /* UIColor.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -174,6 +199,9 @@
 		4E518EAD1D3D8921007C2CCF /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				F3AC32191D3FA9E90005DD5A /* GetStartedViewController.xib */,
+				F3AC321F1D3FB4CE0005DD5A /* MedicalInformationViewController.xib */,
+				F3AC32481D3FCCFF0005DD5A /* MyDoctorsViewController.xib */,
 				4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */,
 				4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */,
 			);
@@ -184,11 +212,13 @@
 			isa = PBXGroup;
 			children = (
 				4E518E8B1D3D7E08007C2CCF /* LandingViewController.swift */,
-				4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */,
-				4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */,
+				4E518E961D3D7E30007C2CCF /* BasicInfoViewController.swift */,
+				F3AC320C1D3FA00B0005DD5A /* PasswordViewController.swift */,
+				F3AC32061D3F85300005DD5A /* SSNViewController.swift */,
+				F3AC32181D3FA9E80005DD5A /* GetStartedViewController.swift */,
 				F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */,
-				F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */,
-				F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */,
+				F3AC321E1D3FB4CE0005DD5A /* MedicalInformationViewController.swift */,
+				F3AC32471D3FCCFF0005DD5A /* MyDoctorsViewController.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -212,10 +242,13 @@
 		F3AC31FB1D3E6DC30005DD5A /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
-				4EACFD751D3F9F2D00155698 /* UISelectionField.swift */,
+				F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */,
+				F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */,
+				F3AC31F91D3E58030005DD5A /* UIValidationTextField.swift */,
 				F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */,
 				F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */,
-				F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */,
+				F3AC320E1D3FA7740005DD5A /* UIVerifyPasswordTextField.swift */,
+				F3AC32101D3FA78C0005DD5A /* UISSNTextField.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -282,8 +315,11 @@
 				4E518EAC1D3D8914007C2CCF /* RecordTabCustomCell.xib in Resources */,
 				F3AC31F01D3E1B050005DD5A /* Main.storyboard in Resources */,
 				4E518E7C1D3D7D49007C2CCF /* LaunchScreen.storyboard in Resources */,
+				F3AC32211D3FB4CE0005DD5A /* MedicalInformationViewController.xib in Resources */,
 				4E518E791D3D7D49007C2CCF /* Assets.xcassets in Resources */,
 				4E518E941D3D7E1B007C2CCF /* Onboarding.storyboard in Resources */,
+				F3AC321B1D3FA9E90005DD5A /* GetStartedViewController.xib in Resources */,
+				F3AC324A1D3FCCFF0005DD5A /* MyDoctorsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,32 +330,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3AC32011D3E75B40005DD5A /* UIValidationTextField.swift in Sources */,
+				F3AC324C1D3FDBB70005DD5A /* UIRoundTextField.swift in Sources */,
 				4E518E901D3D7E08007C2CCF /* MedicalInformation.swift in Sources */,
+				F3AC320D1D3FA00B0005DD5A /* PasswordViewController.swift in Sources */,
+				F3AC32201D3FB4CE0005DD5A /* MedicalInformationViewController.swift in Sources */,
 				F3AC32031D3EE9B30005DD5A /* UIEmailValidationTextField.swift in Sources */,
+				F3AC320F1D3FA7740005DD5A /* UIVerifyPasswordTextField.swift in Sources */,
 				4E518E9D1D3D7E30007C2CCF /* TabBarController.swift in Sources */,
 				F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */,
 				F3AC31FD1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift in Sources */,
+				F3AC324E1D3FE0ED0005DD5A /* UISelectionField.swift in Sources */,
 				F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */,
 				4E518EA01D3D7E30007C2CCF /* UserController.swift in Sources */,
+				F3AC321A1D3FA9E90005DD5A /* GetStartedViewController.swift in Sources */,
 				4E518E8A1D3D7DF6007C2CCF /* ImportDocVC.swift in Sources */,
 				4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */,
-				F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */,
+				F3AC31FA1D3E58030005DD5A /* UIValidationTextField.swift in Sources */,
 				4E1966061D3E84B000DE2982 /* EditRecordVC.swift in Sources */,
 				4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */,
 				4E518E891D3D7DF6007C2CCF /* HomePageVC.swift in Sources */,
 				4E518E9E1D3D7E30007C2CCF /* UIDateField.swift in Sources */,
-				4EACFD761D3F9F2D00155698 /* UISelectionField.swift in Sources */,
-				4E518E911D3D7E08007C2CCF /* MedicalInformationViewController.swift in Sources */,
-				F3AC31F61D3E4BF80005DD5A /* GetStartedViewController.swift in Sources */,
 				4E518E9F1D3D7E30007C2CCF /* User.swift in Sources */,
-				4E518E9C1D3D7E30007C2CCF /* SignUpViewController.swift in Sources */,
+				4E518E9C1D3D7E30007C2CCF /* BasicInfoViewController.swift in Sources */,
+				F3AC321D1D3FAC3B0005DD5A /* UIColor.swift in Sources */,
 				4E518E721D3D7D49007C2CCF /* AppDelegate.swift in Sources */,
 				F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */,
 				4E518E871D3D7DF6007C2CCF /* Doctor.swift in Sources */,
+				F3AC32111D3FA78C0005DD5A /* UISSNTextField.swift in Sources */,
 				4EACFD741D3F9E4000155698 /* SendDocVC.swift in Sources */,
 				4E518E921D3D7E08007C2CCF /* MedicalRecord.swift in Sources */,
 				4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */,
+				F3AC32071D3F85300005DD5A /* SSNViewController.swift in Sources */,
 				4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */,
 				4E518E881D3D7DF6007C2CCF /* DocumentImageVC.swift in Sources */,
 			);
@@ -441,6 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Alan-Yu.Syndiyo2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};
@@ -455,6 +497,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Alan-Yu.Syndiyo2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
