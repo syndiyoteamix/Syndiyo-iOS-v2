@@ -40,6 +40,7 @@ class MedicalInformationViewController: UIViewController,UIGestureRecognizerDele
         // Dispose of any resources that can be recreated.
     }
     
+    //fix later!!!
     @IBAction func nextButtonPressed(sender: AnyObject) {
         UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: String(heightTextField.text!) ?? "", weight: String(weightTextField.text!) ?? "", allergies: allergiesTextField.text!, previousMedicalConditions: previousMedicalConditionsTextfield.text!, medications: medicationsTextField.text!)
     }

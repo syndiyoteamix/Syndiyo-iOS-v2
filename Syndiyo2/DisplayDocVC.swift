@@ -37,7 +37,7 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
                 
                 currentRecord.name = titleTF.text!
                 currentRecord.date = dateTF.date
-                currentRecord.description = descriptionTV.text
+                currentRecord.notes = descriptionTV.text
                 currentRecord.image = documentImage.image!
                 
                 self.navigationItem.title = titleTF.text!

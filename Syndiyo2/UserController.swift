@@ -21,9 +21,8 @@ class UserController {
     
     
     
-    
-    
-    var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!,category:"Medical"),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!,category:"Medical"),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!,category:"Medical")]
+    var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", notes: "", date: NSDate(), image: UIImage(named: "CameraIcon")!,category:"Medical"),MedicalRecord(name: "Apple", notes: "", date: NSDate(), image: UIImage(named:"apple")!,category:"Medical"),MedicalRecord(name: "Bird", notes: "", date: NSDate(), image: UIImage(named: "angryBird")!,category:"Medical")]
+   
     var users: [User] = [User]()
     
     
@@ -68,14 +67,16 @@ class UserController {
     }
    
     func addMedicalRecord(record:MedicalRecord){
-        //currentUser?.medicalRecords?.append(record)
-        fakeMedicalRecords.append(record)
+        currentUser?.medicalRecords?.append(record)
+     //   fakeMedicalRecords.append(record)
     }
+    
+    
     
     
     func userMedicalRecords() -> [MedicalRecord]{
         
-        return fakeMedicalRecords
+        return currentUser!.medicalRecords!
     }
     
     func updateUserInfo() {

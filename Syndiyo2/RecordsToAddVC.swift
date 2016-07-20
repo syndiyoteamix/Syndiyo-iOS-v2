@@ -36,7 +36,7 @@ class RecordsToAddVC: UITableViewController, MFMailComposeViewControllerDelegate
         
         
         //disregard because there is currently no user data
-        medicalRecords = UserController.sharedInstance.fakeMedicalRecords
+        medicalRecords = UserController.sharedInstance.userMedicalRecords()
         
         
     }

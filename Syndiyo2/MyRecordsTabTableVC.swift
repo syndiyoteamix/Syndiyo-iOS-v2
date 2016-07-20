@@ -30,14 +30,14 @@ class MyRecordsTabTableVC: UITableViewController{
         
         
         //disregard because there is currently no user data
-        medicalRecords = UserController.sharedInstance.fakeMedicalRecords
+        medicalRecords = UserController.sharedInstance.userMedicalRecords()
 
         
     }
     
     
     override func viewWillAppear(animated: Bool) {
-        medicalRecords = UserController.sharedInstance.fakeMedicalRecords
+        medicalRecords = UserController.sharedInstance.userMedicalRecords()
         self.tableView.reloadData()
     }
 
@@ -127,7 +127,7 @@ class MyRecordsTabTableVC: UITableViewController{
     
     
     override func viewWillDisappear(animated: Bool) {
-        UserController.sharedInstance.fakeMedicalRecords = self.medicalRecords
+        //UserController.sharedInstance.fakeMedicalRecords = self.medicalRecords
         UserController.sharedInstance.currentUser?.medicalRecords = self.medicalRecords
     }
   
