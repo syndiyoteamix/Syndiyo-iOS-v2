@@ -2,7 +2,7 @@
 //  MyDoctorsViewController.swift
 //  Syndiyo2
 //
-//  Created by Ilham Nurjadin on 7/19/16.
+//  Created by Ilham Nurjadin on 7/20/16.
 //  Copyright © 2016 Alan-Yu. All rights reserved.
 //
 

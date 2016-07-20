@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIPasswordValidatingTextField: UIAutoValidateTextField {
+class UIPasswordValidatingTextField: UIValidationTextField {
 
     override var isValid: Bool {
         if text == nil { return false }
