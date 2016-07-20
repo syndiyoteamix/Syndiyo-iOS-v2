@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1966061D3E84B000DE2982 /* DisplayRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1966051D3E84B000DE2982 /* DisplayRecordVC.swift */; };
 		4E518E721D3D7D49007C2CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518E711D3D7D49007C2CCF /* AppDelegate.swift */; };
 		4E518E791D3D7D49007C2CCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E518E781D3D7D49007C2CCF /* Assets.xcassets */; };
 		4E518E7C1D3D7D49007C2CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E518E7A1D3D7D49007C2CCF /* LaunchScreen.storyboard */; };
@@ -27,6 +28,7 @@
 		4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */; };
 		4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */; };
 		4E518EAC1D3D8914007C2CCF /* RecordTabCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */; };
+		4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */; };
 		F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */; };
 		F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */; };
 		F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */; };
@@ -40,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E1966051D3E84B000DE2982 /* DisplayRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRecordVC.swift; sourceTree = "<group>"; };
 		4E518E6E1D3D7D48007C2CCF /* Syndiyo2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Syndiyo2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E518E711D3D7D49007C2CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E518E781D3D7D49007C2CCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecordsTabTableVC.swift; sourceTree = "<group>"; };
 		4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTabCustomCell.swift; sourceTree = "<group>"; };
 		4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTabCustomCell.xib; sourceTree = "<group>"; };
+		4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsToAddVC.swift; sourceTree = "<group>"; };
 		F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestVC.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				4E518E851D3D7DF6007C2CCF /* HomePageVC.swift */,
 				4E518E861D3D7DF6007C2CCF /* ImportDocVC.swift */,
 				4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */,
+				4E1966051D3E84B000DE2982 /* DisplayRecordVC.swift */,
+				4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				4E518E8A1D3D7DF6007C2CCF /* ImportDocVC.swift in Sources */,
 				4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */,
 				F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */,
+				4E1966061D3E84B000DE2982 /* DisplayRecordVC.swift in Sources */,
 				F3AC31FA1D3E58030005DD5A /* UIAutoValidateTextField.swift in Sources */,
 				4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */,
 				4E518E891D3D7DF6007C2CCF /* HomePageVC.swift in Sources */,
@@ -309,6 +316,7 @@
 				4E518E871D3D7DF6007C2CCF /* Doctor.swift in Sources */,
 				4E518E921D3D7E08007C2CCF /* MedicalRecord.swift in Sources */,
 				4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */,
+				4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */,
 				4E518E881D3D7DF6007C2CCF /* DocumentImageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
