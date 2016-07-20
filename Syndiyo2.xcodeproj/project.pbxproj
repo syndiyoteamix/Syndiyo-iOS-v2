@@ -36,6 +36,7 @@
 		F3AC31FA1D3E58030005DD5A /* UIAutoValidateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */; };
 		F3AC31FD1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */; };
 		F3AC32011D3E75B40005DD5A /* UIValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */; };
+		F3AC32031D3EE9B30005DD5A /* UIEmailValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAutoValidateTextField.swift; sourceTree = "<group>"; };
 		F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasswordValidatingTextField.swift; sourceTree = "<group>"; };
 		F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIValidationTextField.swift; sourceTree = "<group>"; };
+		F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEmailValidationTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,8 +177,8 @@
 		F3AC31F11D3E20280005DD5A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */,
 				4E518E8B1D3D7E08007C2CCF /* LandingViewController.swift */,
+				4E518E961D3D7E30007C2CCF /* SignUpViewController.swift */,
 				4E518E8D1D3D7E08007C2CCF /* MedicalInformationViewController.swift */,
 				F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */,
 				F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */,
@@ -203,6 +205,7 @@
 			children = (
 				F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */,
 				F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */,
+				F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */,
 				F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */,
 			);
 			name = Subclasses;
@@ -284,6 +287,7 @@
 			files = (
 				F3AC32011D3E75B40005DD5A /* UIValidationTextField.swift in Sources */,
 				4E518E901D3D7E08007C2CCF /* MedicalInformation.swift in Sources */,
+				F3AC32031D3EE9B30005DD5A /* UIEmailValidationTextField.swift in Sources */,
 				4E518E9D1D3D7E30007C2CCF /* TabBarController.swift in Sources */,
 				F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */,
 				F3AC31FD1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift in Sources */,

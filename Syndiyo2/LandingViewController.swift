@@ -10,8 +10,19 @@ import UIKit
 
 class LandingViewController: UIViewController {
     
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.alpha = 0.5
+        loginButton.layer.cornerRadius = 15
+        usernameTextField.layer.cornerRadius = 10
+        passwordTextField.layer.cornerRadius = 10
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,9 +44,41 @@ class LandingViewController: UIViewController {
         let application = UIApplication.sharedApplication()
         let window = application.keyWindow
         window?.rootViewController = viewController
-
         
+    }
+    
+    @IBAction func textFieldChanged(sender: UITextField) {
+        if verified() {
+            loginButton.enabled = true
+            loginButton.alpha = 1
+        }
+        else {
+            loginButton.enabled = false
+            loginButton.alpha = 0.5
+        }
+    }
+    
+    func verified() -> Bool {
         
+        for subview in containerView.subviews as [UIView] {
+            if let textField = subview as? UITextField {
+                if textField.text == nil { return false }
+                if textField.text == "" { return false }
+            }
+        }
+        
+        return true
+    }
+    
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+        UserController.sharedInstance.loginUser(usernameTextField.text!, password: passwordTextField.text!) { user, error in
+            if user != nil {
+                UserController.sharedInstance.currentUser = user
+            }
+            self.createAlert(error!, submessage: "Please try again") { action in }
+            self.usernameTextField.text = ""
+            self.passwordTextField.text = ""
+        }
     }
     
 

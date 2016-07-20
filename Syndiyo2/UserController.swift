@@ -11,17 +11,47 @@ import UIKit
 
 class UserController {
     
-    
-    
-    
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let manager = NSFileManager.defaultManager()
     
     static let sharedInstance = UserController()
     var currentUser: User?
+    var users: [User] = {
+        let manager = NSFileManager.defaultManager()
+        let documents = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let fileURL = documents.URLByAppendingPathComponent("users.txt")
+        
+        if let storedUsers = NSKeyedUnarchiver.unarchiveObjectWithFile("users.txt") as? [User] {
+            return storedUsers
+        }
+        else { return [] }
+    }()
     
     var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!)
     ]
     
+    func registerUser(user: User) {
+        users.append(user)
+    }
+    
+    // function - check if username has been used
+    
+    func checkUsernameAvailability(email: String) -> Bool {
+        for person in users {
+            if person.email == email { return false }
+        }
+        return true
+    }
+    
+    func loginUser(email: String, password: String, onCompletion: (User?, String?) -> Void) {
+        for person in users {
+            if person.email == email && person.password == password {
+                onCompletion(person, nil)
+            }
+            else {
+                onCompletion(nil, "Email or password is incorrect")
+            }
+        }
+    }
    
     func addMedicalRecord(record:MedicalRecord){
         //currentUser?.medicalRecords?.append(record)
@@ -43,7 +73,7 @@ class UserController {
     }
     
     func addDoctors(doctors: [Doctor]) {
-        currentUser?.doctorsArray.appendContentsOf(doctors)
+        currentUser?.doctorsArray!.appendContentsOf(doctors)
     }
     
     func deleteDoctor() {

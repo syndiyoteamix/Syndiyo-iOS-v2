@@ -14,10 +14,9 @@ class User {
     var firstName: String
     var lastName: String
     var email: String
-    var username: String
     var password: String
     var ssn: Int
-    var doctorsArray: [Doctor]
+    var doctorsArray: [Doctor]?
     var medicalInfo: MedicalInformation?
     var medicalRecords: [MedicalRecord]?
     var frontInsuranceCard: UIImage?
@@ -34,15 +33,40 @@ class User {
 //        self.medicalInfo = MedicalInformation()
 //    }
     
-    init(firstName: String?, lastName: String?, email: String?, username: String?, password: String?, ssn: Int?, doctorsArray: [Doctor]?, medicalInfo: MedicalInformation?) {
+    init(firstName: String?, lastName: String?, email: String?, password: String?, ssn: Int?, doctorsArray: [Doctor]?, medicalInfo: MedicalInformation?) {
         self.firstName = firstName ?? "No name"
         self.lastName = lastName ?? "no last name"
         self.email = email ?? ""
-        self.username = username ?? ""
         self.password = password ?? ""
         self.ssn = ssn ?? 0
         self.doctorsArray = doctorsArray ?? []
         self.medicalInfo = medicalInfo ?? MedicalInformation()
+    }
+    
+    required init?(coder: NSCoder) {
+        self.firstName = (coder.decodeObjectForKey("firstName") as? String) ?? ""
+        self.lastName = (coder.decodeObjectForKey("lastName") as? String) ?? ""
+        self.email = (coder.decodeObjectForKey("email") as? String) ?? ""
+        self.password = (coder.decodeObjectForKey("password") as? String) ?? ""
+        self.ssn = (coder.decodeObjectForKey("ssn") as? Int) ?? 0
+        self.doctorsArray = (coder.decodeObjectForKey("doctorsArray") as? [Doctor]) ?? []
+        self.medicalInfo = (coder.decodeObjectForKey("medicalInfo") as? MedicalInformation) ?? MedicalInformation()
+        self.medicalRecords = (coder.decodeObjectForKey("medicalRecords") as? [MedicalRecord]) ?? []
+        self.frontInsuranceCard = (coder.decodeObjectForKey("frontInsuranceCard") as? UIImage) ?? UIImage()
+        self.backInsuranceCard = (coder.decodeObjectForKey("backInsuranceCard") as? UIImage) ?? UIImage()
+    }
+    
+    func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(firstName, forKey: "firstName")
+        coder.encodeObject(lastName, forKey: "lastName")
+        coder.encodeObject(email, forKey: "email")
+        coder.encodeObject(password, forKey: "password")
+        coder.encodeObject(ssn, forKey: "ssn")
+        coder.encodeObject(doctorsArray, forKey: "doctorsArray")
+        coder.encodeObject(medicalInfo, forKey: "medicalInfo")
+        coder.encodeObject(medicalRecords, forKey: "medicalRecords")
+        coder.encodeObject(frontInsuranceCard, forKey: "frontInsuranceCard")
+        coder.encodeObject(backInsuranceCard, forKey: "backInsuranceCard")
     }
     
 }
