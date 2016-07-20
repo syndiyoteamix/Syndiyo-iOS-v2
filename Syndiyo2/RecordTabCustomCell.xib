@@ -3,47 +3,73 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="KGk-i7-Jjw" customClass="RecordTabCustomCell" customModule="Syndiyo2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="337" height="87"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="RecordTabCustomCell" customModule="Syndiyo2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="337" height="86.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="435" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title/Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptv-C3-Rma">
-                        <rect key="frame" x="0.0" y="0.0" width="337" height="43.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-wo-ZuK">
-                        <rect key="frame" x="0.0" y="43.5" width="337" height="43"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxN-hl-HAs">
+                        <rect key="frame" x="18" y="13" width="399" height="63.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8jW-TE-Hht">
+                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="63.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8jW-TE-Hht" secondAttribute="height" multiplier="1:1" id="x1q-Fu-a2f"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7M-08-pTK">
+                                <rect key="frame" x="63.5" y="0.0" width="335.5" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8f-O4-LkR">
+                                <rect key="frame" x="63.5" y="39.5" width="335.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8jW-TE-Hht" firstAttribute="top" secondItem="lxN-hl-HAs" secondAttribute="top" id="2Sb-fA-ARc"/>
+                            <constraint firstItem="t8f-O4-LkR" firstAttribute="top" secondItem="S7M-08-pTK" secondAttribute="bottom" id="4uT-nd-RLt"/>
+                            <constraint firstItem="8jW-TE-Hht" firstAttribute="leading" secondItem="lxN-hl-HAs" secondAttribute="leading" id="6zI-pL-Gwu"/>
+                            <constraint firstAttribute="trailing" secondItem="S7M-08-pTK" secondAttribute="trailing" id="AQI-54-VbO"/>
+                            <constraint firstItem="t8f-O4-LkR" firstAttribute="leading" secondItem="8jW-TE-Hht" secondAttribute="trailing" id="Cgt-aY-wKr"/>
+                            <constraint firstItem="S7M-08-pTK" firstAttribute="top" secondItem="lxN-hl-HAs" secondAttribute="top" id="HVV-y1-iA3"/>
+                            <constraint firstItem="S7M-08-pTK" firstAttribute="bottom" secondItem="lxN-hl-HAs" secondAttribute="centerY" multiplier="1.25" id="SM2-XF-I5v"/>
+                            <constraint firstItem="S7M-08-pTK" firstAttribute="leading" secondItem="8jW-TE-Hht" secondAttribute="trailing" id="dFO-Wx-5zA"/>
+                            <constraint firstAttribute="bottom" secondItem="t8f-O4-LkR" secondAttribute="bottom" id="lsZ-zt-jL4"/>
+                            <constraint firstAttribute="trailing" secondItem="t8f-O4-LkR" secondAttribute="trailing" id="m2C-Ls-85K"/>
+                            <constraint firstAttribute="bottom" secondItem="8jW-TE-Hht" secondAttribute="bottom" id="nex-5m-SSX"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" red="0.16595259409999999" green="0.43240347420000003" blue="0.74926374350000002" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Ptv-C3-Rma" secondAttribute="trailing" id="8sS-uw-e5a"/>
-                    <constraint firstItem="Ptv-C3-Rma" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DP9-nF-daH"/>
-                    <constraint firstItem="Jsd-wo-ZuK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Lt2-nR-sRT"/>
-                    <constraint firstItem="Ptv-C3-Rma" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XBB-KP-XI1"/>
-                    <constraint firstAttribute="bottom" secondItem="Jsd-wo-ZuK" secondAttribute="bottom" id="Yxy-1M-4Hv"/>
-                    <constraint firstItem="Jsd-wo-ZuK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dJ9-XU-XPX"/>
-                    <constraint firstAttribute="trailing" secondItem="Jsd-wo-ZuK" secondAttribute="trailing" id="gq6-lo-I8L"/>
-                    <constraint firstItem="Ptv-C3-Rma" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zdV-e6-BZL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="lxN-hl-HAs" secondAttribute="trailing" constant="10" id="fbA-F4-Ztb"/>
+                    <constraint firstItem="lxN-hl-HAs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="gaZ-Yb-JJL"/>
+                    <constraint firstItem="lxN-hl-HAs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="i0Q-3V-OHG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="lxN-hl-HAs" secondAttribute="bottom" constant="5" id="ww5-YE-GN1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="dateLabel" destination="Jsd-wo-ZuK" id="H5e-fC-bur"/>
-                <outlet property="titleLabel" destination="Ptv-C3-Rma" id="nJx-Ll-xWR"/>
+                <outlet property="containerView" destination="lxN-hl-HAs" id="h8v-Te-8uZ"/>
+                <outlet property="dateLabel" destination="t8f-O4-LkR" id="1nQ-XY-FVm"/>
+                <outlet property="documentImage" destination="8jW-TE-Hht" id="hUe-bT-WRd"/>
+                <outlet property="titleLabel" destination="S7M-08-pTK" id="RAf-nh-sjP"/>
             </connections>
-            <point key="canvasLocation" x="236.5" y="331.5"/>
+            <point key="canvasLocation" x="187.5" y="333"/>
         </tableViewCell>
     </objects>
 </document>
