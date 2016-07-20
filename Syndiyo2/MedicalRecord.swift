@@ -15,6 +15,8 @@ class MedicalRecord {
     var description: String
     var date: NSDate
     var image: UIImage
+    //should make enum eventually
+    var category: String
     
 //    init() {
 //        self.name = ""
@@ -24,12 +26,13 @@ class MedicalRecord {
 //    }
     
     
-    init(name: String, description: String?, date:NSDate, image: UIImage) {
+    init(name: String, description: String?, date:NSDate, image: UIImage, category:String) {
         
         self.name = name
         self.description = description ?? ""
         self.image = image
         self.date = date
+        self.category = category
         
 //        // Getting date
 //        let myDate = NSDate()

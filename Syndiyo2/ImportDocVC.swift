@@ -21,6 +21,8 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
     
     @IBOutlet weak var dateTextBox: UIDateField!
     
+    @IBOutlet weak var categoryType: UISelectionField!
+    
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -35,6 +37,10 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
         recognizer.delegate = self
         self.documentImage.addGestureRecognizer(recognizer)
         
+        //set categories 
+        categoryType.options = ["Medical"," Immunization", "Prescription", "Dental Vision Laboratory Radiology", "Genetic Data", "Biometric Data", "Blood Pressure", "Blood Sugar", "eRecords", "BlueButton+", "Billing"]
+        categoryType.text = ""
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +51,38 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
     
     
     @IBAction func selectPhotoButtonTapped(sender: UIButton) {
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        
+        
+        //stolen tobin code
+        let alert = UIAlertController(title: nil,
+                                      message: "Would you like to take a photo with the camera, or select an existing photo from your photo library?",
+                                      preferredStyle: .ActionSheet)
+        
+        // If we have a photo in the photo view, offer an option to remove it.
+        if documentImage.image != UIImage(named:"CameraIcon") {
+            alert.addAction(UIAlertAction(title: "Remove Photo", style: .Destructive) { action in
+                self.documentImage.image = UIImage(named:"CameraIcon")
+                })
+        }
+        
+        // Always create an alert action option to choose the camera.
+        // However, selectively disable it if a camera is not actually available on the device.
+        let camera = UIAlertAction(title: "Camera", style: .Default) { action in
+            self.imagePicker.sourceType = .Camera
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        }
+        camera.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
+        alert.addAction(camera)
+        
+        // The photo library will always exist, so we can safely add an option for it.
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .Default) { action in
+            self.imagePicker.sourceType = .PhotoLibrary
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -60,7 +97,7 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
     
     @IBAction func saveButtonTapped(sender: UIButton) {
         //create a catch if there is no image or no record
-        let newRecord = MedicalRecord(name:titleTextBox.text!, description: "", date: dateTextBox.date, image: documentImage.image!)
+        let newRecord = MedicalRecord(name:titleTextBox.text!, description: "", date: dateTextBox.date, image: documentImage.image!,category: categoryType.text!)
         UserController.sharedInstance.addMedicalRecord(newRecord)
         self.navigationController?.popViewControllerAnimated(true)
         
@@ -68,9 +105,8 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
     
     
     func documentTapped() {
-  
         if documentImage.image != UIImage(named:"CameraIcon"){
-            print("presenting document")
+//            print("presenting document")
             self.performSegueWithIdentifier("presentDocumentImage", sender: documentImage)
         }
     }

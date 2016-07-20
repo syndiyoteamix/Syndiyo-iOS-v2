@@ -13,6 +13,9 @@ class MyRecordsTabTableVC: UITableViewController {
     
     //fake info for shit
     var medicalRecords:[MedicalRecord] = []
+    
+    var selectedCellIndex:Int?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +25,9 @@ class MyRecordsTabTableVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
-        
         let nibCell = UINib(nibName: "RecordTabCustomCell", bundle: nil)
         self.tableView.registerNib(nibCell, forCellReuseIdentifier: "cell1")
         self.tableView.dataSource = self
-        
-        
-        
         
         
         //disregard because there is currently no user data
@@ -45,6 +42,18 @@ class MyRecordsTabTableVC: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    
+    @IBAction func doneButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func addButtonPressed(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("addDoc", sender: self)
+    }
+    
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -63,6 +72,7 @@ class MyRecordsTabTableVC: UITableViewController {
         cell?.titleLabel.text = medicalRecords[indexPath.row].name
         let formatter = NSDateFormatter()
         formatter.dateFormat = "MMMM d, YYYY"
+        cell?.documentImage.image = medicalRecords[indexPath.row].image
         
         
         cell?.dateLabel.text = formatter.stringFromDate(medicalRecords[indexPath.row].date)
@@ -93,10 +103,16 @@ class MyRecordsTabTableVC: UITableViewController {
     
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//        selectedCellIndex = indexPath.row
+//        performSegueWithIdentifier("presentDocumnet", sender: tableView.cellForRowAtIndexPath(indexPath))
+//        
+//        
+//    }
 
+  
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
