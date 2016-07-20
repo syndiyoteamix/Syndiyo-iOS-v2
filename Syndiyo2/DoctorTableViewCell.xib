@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DoctorTableViewCell" customModule="Syndiyo2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dj9-Pm-rv3" userLabel="Doctor Picture">
+                        <rect key="frame" x="20" y="8" width="63.5" height="63.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Dj9-Pm-rv3" secondAttribute="height" multiplier="1:1" id="kTV-2J-OZr"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Octopus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yu3-Qm-AB4">
+                        <rect key="frame" x="103" y="15" width="196.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="E5w-GP-O4S"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="octopus@doctors.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Um1-nD-tXG">
+                        <rect key="frame" x="103" y="40" width="197" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Prf-4t-27a"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Dj9-Pm-rv3" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.8" id="3Nm-T0-fW9"/>
+                    <constraint firstAttribute="trailing" secondItem="yu3-Qm-AB4" secondAttribute="trailing" constant="20" id="6Sh-ho-14I"/>
+                    <constraint firstItem="Dj9-Pm-rv3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="6do-5I-Do3"/>
+                    <constraint firstItem="Um1-nD-tXG" firstAttribute="top" secondItem="yu3-Qm-AB4" secondAttribute="bottom" id="NHU-u1-r1k"/>
+                    <constraint firstItem="Um1-nD-tXG" firstAttribute="leading" secondItem="yu3-Qm-AB4" secondAttribute="leading" id="Un2-qa-Mvz"/>
+                    <constraint firstItem="Um1-nD-tXG" firstAttribute="trailing" secondItem="yu3-Qm-AB4" secondAttribute="trailing" id="a13-aj-sU4"/>
+                    <constraint firstItem="yu3-Qm-AB4" firstAttribute="leading" secondItem="Dj9-Pm-rv3" secondAttribute="trailing" constant="20" id="bXA-aj-vPZ"/>
+                    <constraint firstItem="Dj9-Pm-rv3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dlX-pJ-yfO"/>
+                    <constraint firstItem="yu3-Qm-AB4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="oJW-7p-apX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="emailTextField" destination="Um1-nD-tXG" id="eI0-YL-1Kg"/>
+                <outlet property="nameTextField" destination="yu3-Qm-AB4" id="zvV-xI-6jM"/>
+                <outlet property="profilePictureImageView" destination="Dj9-Pm-rv3" id="M4P-2c-wIr"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
