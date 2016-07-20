@@ -21,6 +21,7 @@ class User : NSObject, NSCoding {
     var medicalRecords: [MedicalRecord]?
     var frontInsuranceCard: UIImage?
     var backInsuranceCard: UIImage?
+    var ID: NSUUID = NSUUID()
     
 //    init() {
 //        self.firstName = ""
@@ -54,6 +55,7 @@ class User : NSObject, NSCoding {
         self.medicalRecords = (coder.decodeObjectForKey("medicalRecords") as? [MedicalRecord]) ?? []
         self.frontInsuranceCard = (coder.decodeObjectForKey("frontInsuranceCard") as? UIImage) ?? UIImage()
         self.backInsuranceCard = (coder.decodeObjectForKey("backInsuranceCard") as? UIImage) ?? UIImage()
+        self.ID = (coder.decodeObjectForKey("ID") as? NSUUID) ?? NSUUID()
     }
     
     func encodeWithCoder(coder: NSCoder) {
@@ -67,6 +69,7 @@ class User : NSObject, NSCoding {
         coder.encodeObject(medicalRecords, forKey: "medicalRecords")
         coder.encodeObject(frontInsuranceCard, forKey: "frontInsuranceCard")
         coder.encodeObject(backInsuranceCard, forKey: "backInsuranceCard")
+        coder.encodeObject(ID, forKey: "ID")
     }
     
 }
