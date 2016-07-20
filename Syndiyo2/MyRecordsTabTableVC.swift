@@ -8,13 +8,12 @@
 
 import UIKit
 
-class MyRecordsTabTableVC: UITableViewController {
+class MyRecordsTabTableVC: UITableViewController{
     
     
     //fake info for shit
     var medicalRecords:[MedicalRecord] = []
     
-    var selectedCellIndex:Int?
     
 
     override func viewDidLoad() {
@@ -35,6 +34,12 @@ class MyRecordsTabTableVC: UITableViewController {
 
         
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        medicalRecords = UserController.sharedInstance.fakeMedicalRecords
+        self.tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -46,7 +51,6 @@ class MyRecordsTabTableVC: UITableViewController {
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
     
@@ -95,6 +99,7 @@ class MyRecordsTabTableVC: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            medicalRecords.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -103,14 +108,28 @@ class MyRecordsTabTableVC: UITableViewController {
     
     
     
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        selectedCellIndex = indexPath.row
-//        performSegueWithIdentifier("presentDocumnet", sender: tableView.cellForRowAtIndexPath(indexPath))
-//        
-//        
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        UserController.sharedInstance.currentRecord = medicalRecords[indexPath.row]
+        performSegueWithIdentifier("presentDocument", sender: tableView.cellForRowAtIndexPath(indexPath))
+        
+        
+    }
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "presentDocument" {
+            let destination = segue.destinationViewController as? DisplayDocVC
+            destination?.currentRecord = UserController.sharedInstance.currentRecord
+            
+        }
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        UserController.sharedInstance.fakeMedicalRecords = self.medicalRecords
+        UserController.sharedInstance.currentUser?.medicalRecords = self.medicalRecords
+    }
   
     
     /*

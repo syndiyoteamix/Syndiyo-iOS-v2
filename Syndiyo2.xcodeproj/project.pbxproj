@@ -26,6 +26,7 @@
 		4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */; };
 		4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */; };
 		4E518EAC1D3D8914007C2CCF /* RecordTabCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */; };
+		4E662D361D3FF7F4009B3A88 /* DisplayDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E662D351D3FF7F4009B3A88 /* DisplayDocVC.swift */; };
 		4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */; };
 		4EACFD741D3F9E4000155698 /* SendDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACFD731D3F9E4000155698 /* SendDocVC.swift */; };
 		F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */; };
@@ -76,6 +77,7 @@
 		4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecordsTabTableVC.swift; sourceTree = "<group>"; };
 		4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTabCustomCell.swift; sourceTree = "<group>"; };
 		4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTabCustomCell.xib; sourceTree = "<group>"; };
+		4E662D351D3FF7F4009B3A88 /* DisplayDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayDocVC.swift; sourceTree = "<group>"; };
 		4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsToAddVC.swift; sourceTree = "<group>"; };
 		4EACFD731D3F9E4000155698 /* SendDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDocVC.swift; sourceTree = "<group>"; };
 		F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +174,6 @@
 		4E518EA41D3D811B007C2CCF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4E518E981D3D7E30007C2CCF /* UIDateField.swift */,
 				F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */,
 				F3AC321C1D3FAC3B0005DD5A /* UIColor.swift */,
 			);
@@ -240,6 +241,7 @@
 				4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */,
 				4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */,
 				4EACFD731D3F9E4000155698 /* SendDocVC.swift */,
+				4E662D351D3FF7F4009B3A88 /* DisplayDocVC.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -254,6 +256,7 @@
 				F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */,
 				F3AC320E1D3FA7740005DD5A /* UIVerifyPasswordTextField.swift */,
 				F3AC32101D3FA78C0005DD5A /* UISSNTextField.swift */,
+				4E518E981D3D7E30007C2CCF /* UIDateField.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				F3AC324C1D3FDBB70005DD5A /* UIRoundTextField.swift in Sources */,
 				4E518E901D3D7E08007C2CCF /* MedicalInformation.swift in Sources */,
+				4E662D361D3FF7F4009B3A88 /* DisplayDocVC.swift in Sources */,
 				F3AC320D1D3FA00B0005DD5A /* PasswordViewController.swift in Sources */,
 				F3C8C5271D3FEE5A00E3E54C /* AddDoctorViewController.swift in Sources */,
 				F3AC32501D3FE91B0005DD5A /* UserController.swift in Sources */,

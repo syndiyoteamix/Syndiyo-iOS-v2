@@ -14,7 +14,12 @@ class UserController {
     let manager = NSFileManager.defaultManager()
     
     static let sharedInstance = UserController()
+    
+    
     var currentUser: User?
+    var currentRecord:MedicalRecord? 
+    
+    
     var users: [User] = {
         let manager = NSFileManager.defaultManager()
         let documents = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
@@ -26,7 +31,12 @@ class UserController {
         else { return [] }
     }()
     
+    
+    
+    
     var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!,category:"Medical"),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!,category:"Medical"),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!,category:"Medical")]
+    
+    
     
     func registerUser(onCompletion: (String?) -> Void) {
         if currentUser != nil {
@@ -37,14 +47,17 @@ class UserController {
         else { onCompletion("Could not register user") }
     }
     
-    // function - check if username has been used
     
+    // function - check if username has been used
     func checkUsernameAvailability(email: String) -> Bool {
         for person in users {
             if person.email == email { return false }
         }
         return true
     }
+    
+    
+    
     
     func loginUser(email: String, password: String, onCompletion: (User?, String?) -> Void) {
         for person in users {
