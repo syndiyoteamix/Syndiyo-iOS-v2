@@ -37,7 +37,6 @@
 		F3AC31F01D3E1B050005DD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AC31EE1D3E1B050005DD5A /* Main.storyboard */; };
 		F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */; };
 		F3AC31F61D3E4BF80005DD5A /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */; };
-		F3AC31FA1D3E58030005DD5A /* UIAutoValidateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */; };
 		F3AC31FD1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */; };
 		F3AC32011D3E75B40005DD5A /* UIValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */; };
 		F3AC32031D3EE9B30005DD5A /* UIEmailValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */; };
@@ -76,7 +75,6 @@
 		F3AC31EF1D3E1B050005DD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
 		F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
-		F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAutoValidateTextField.swift; sourceTree = "<group>"; };
 		F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasswordValidatingTextField.swift; sourceTree = "<group>"; };
 		F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIValidationTextField.swift; sourceTree = "<group>"; };
 		F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEmailValidationTextField.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				4EACFD751D3F9F2D00155698 /* UISelectionField.swift */,
-				F3AC31F91D3E58030005DD5A /* UIAutoValidateTextField.swift */,
 				F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */,
 				F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */,
 				F3AC32001D3E75B30005DD5A /* UIValidationTextField.swift */,
@@ -309,7 +306,6 @@
 				4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */,
 				F3AC31F41D3E20520005DD5A /* MyDoctorsViewController.swift in Sources */,
 				4E1966061D3E84B000DE2982 /* EditRecordVC.swift in Sources */,
-				F3AC31FA1D3E58030005DD5A /* UIAutoValidateTextField.swift in Sources */,
 				4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */,
 				4E518E891D3D7DF6007C2CCF /* HomePageVC.swift in Sources */,
 				4E518E9E1D3D7E30007C2CCF /* UIDateField.swift in Sources */,
