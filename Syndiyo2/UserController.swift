@@ -26,11 +26,17 @@ class UserController {
     var users: [User] = [User]()
     
     
-    func checkUsernameAvailability(email: String) -> Bool {
-        for person in users {
-            if person.email == email { return false }
+
+    
+    func updateUsersArray() {
+        for user in users{
+            if user.ID == currentUser!.ID {
+                let index:Int = users.indexOf(user)!
+                users.removeAtIndex(index)
+                users.insert(currentUser!, atIndex: index)
+                saveUsersArray()
+            }
         }
-        return true
     }
     
     
@@ -39,16 +45,12 @@ class UserController {
         if currentUser != nil {
             users.append(currentUser!)
             onCompletion(nil)
-            let documents = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-            let fileURL = documents.URLByAppendingPathComponent("users.txt")
-            
-            NSKeyedArchiver.archiveRootObject(users, toFile: fileURL.path!)
+            saveUsersArray()
             print("yo")
         }
         // if CurrentUser is nil
         else { onCompletion("Could not register user") }
     }
-    
     
     
     func loginUser(email: String, password: String, onCompletion: (User?, String?) -> Void) {
@@ -65,19 +67,33 @@ class UserController {
             }
         }
     }
+    
+    
+    func checkUsernameAvailability(email: String) -> Bool {
+        for person in users {
+            if person.email == email { return false }
+        }
+        return true
+    }
    
+    
+    func saveUsersArray(){
+        let documents = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let fileURL = documents.URLByAppendingPathComponent("users.txt")
+        
+        NSKeyedArchiver.archiveRootObject(users, toFile: fileURL.path!)
+    }
+    
+    
     func addMedicalRecord(record:MedicalRecord){
         currentUser?.medicalRecords?.append(record)
      //   fakeMedicalRecords.append(record)
     }
     
-    
-    
-    
     func userMedicalRecords() -> [MedicalRecord]{
-        
         return currentUser!.medicalRecords!
     }
+    
     
     func updateUserInfo() {
         

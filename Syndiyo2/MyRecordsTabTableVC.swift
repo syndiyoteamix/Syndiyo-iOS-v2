@@ -129,6 +129,7 @@ class MyRecordsTabTableVC: UITableViewController{
     override func viewWillDisappear(animated: Bool) {
         //UserController.sharedInstance.fakeMedicalRecords = self.medicalRecords
         UserController.sharedInstance.currentUser?.medicalRecords = self.medicalRecords
+    
     }
   
     
