@@ -10,6 +10,7 @@ import UIKit
 
 class MyDoctorsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    
     @IBOutlet weak var tableView: UITableView!
     
     var myDoctors:[Doctor] = []
@@ -29,8 +30,14 @@ class MyDoctorsViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         
         let doctorCell = UINib(nibName: "DoctorTableViewCell", bundle: nil)
+        
+        print(doctorCell)
+        
+        
         self.tableView.registerNib(doctorCell, forCellReuseIdentifier: "doctorCell")
         
+        
+     
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
         self.navigationItem.title = "iXplore"
@@ -71,20 +78,21 @@ class MyDoctorsViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myDoctors.count
+        return 5
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("doctorCell", forIndexPath: indexPath) as? DoctorTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+//        let cell = tableView.dequeueReusableCellWithIdentifier("doctorCell", forIndexPath: indexPath) as? DoctorTableViewCell
         
         // Configure the cell...
-        
-        cell?.profilePictureImageView.image = myDoctors[indexPath.row].profilePic
-        cell?.nameTextField.text = myDoctors[indexPath.row].name
-        cell?.emailTextField.text = myDoctors[indexPath.row].email
-        
-        return cell!
+//        
+//        cell?.profilePictureImageView.image = myDoctors[indexPath.row].profilePic
+//        cell?.nameTextField.text = myDoctors[indexPath.row].name
+//        cell?.emailTextField.text = myDoctors[indexPath.row].email
+//        
+        return cell
     }
     
     
