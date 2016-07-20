@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -31,73 +31,84 @@
                         <viewControllerLayoutGuide type="bottom" id="Tj6-t1-3i3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="H4F-nU-8Q8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srx-Lf-ROD">
-                                <rect key="frame" x="197.5" y="108.5" width="150" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9DS-1h-BbF" userLabel="Container View">
+                                <rect key="frame" x="40" y="114" width="334" height="500"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srx-Lf-ROD">
+                                        <rect key="frame" x="117" y="140" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="NQh-tG-SBb"/>
+                                            <constraint firstAttribute="width" constant="100" id="QEh-kh-6cv"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Record" backgroundImage="AddRecord"/>
+                                        <connections>
+                                            <segue destination="LzF-Fc-Dbq" kind="show" id="nFg-6M-fQH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-jv-med">
+                                        <rect key="frame" x="117" y="260" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="cAZ-K0-uEV"/>
+                                            <constraint firstAttribute="width" constant="100" id="lfN-tD-0fD"/>
+                                        </constraints>
+                                        <state key="normal" title="Request Documents" backgroundImage="RequestRecord"/>
+                                        <connections>
+                                            <segue destination="UvL-d6-C1o" kind="show" id="DyR-7g-uPU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-Au-Tnz">
+                                        <rect key="frame" x="117" y="380" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="1gH-Ps-Nfc"/>
+                                            <constraint firstAttribute="width" constant="100" id="GvU-Oa-91B"/>
+                                        </constraints>
+                                        <state key="normal" title="Send Documents" backgroundImage="SendRecord"/>
+                                        <connections>
+                                            <segue destination="sMc-fo-GxQ" kind="show" id="08n-hR-T5c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-OC-BKp" userLabel="My Records">
+                                        <rect key="frame" x="25" y="20" width="285" height="105"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="271" id="8T3-Ue-KYO"/>
+                                            <constraint firstAttribute="height" constant="100" id="moP-Os-ugZ"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="MyRecords"/>
+                                        <connections>
+                                            <segue destination="D2D-mJ-slz" kind="presentation" id="weU-tN-Wte"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="NQh-tG-SBb"/>
-                                    <constraint firstAttribute="width" constant="150" id="QEh-kh-6cv"/>
+                                    <constraint firstAttribute="bottom" secondItem="wa2-Au-Tnz" secondAttribute="bottom" constant="20" id="BBm-1F-BwU"/>
+                                    <constraint firstItem="cYZ-OC-BKp" firstAttribute="centerX" secondItem="9DS-1h-BbF" secondAttribute="centerX" id="C72-YC-O8Y"/>
+                                    <constraint firstItem="Srx-Lf-ROD" firstAttribute="centerX" secondItem="9DS-1h-BbF" secondAttribute="centerX" id="JR4-B0-dmM"/>
+                                    <constraint firstItem="2Wq-jv-med" firstAttribute="centerX" secondItem="9DS-1h-BbF" secondAttribute="centerX" id="SLH-0L-cIc"/>
+                                    <constraint firstItem="Srx-Lf-ROD" firstAttribute="top" secondItem="cYZ-OC-BKp" secondAttribute="bottom" constant="20" id="Xep-G6-y5E"/>
+                                    <constraint firstItem="cYZ-OC-BKp" firstAttribute="top" secondItem="9DS-1h-BbF" secondAttribute="top" constant="20" id="azf-dE-tWi"/>
+                                    <constraint firstItem="wa2-Au-Tnz" firstAttribute="top" secondItem="2Wq-jv-med" secondAttribute="bottom" constant="20" id="iub-lb-anD"/>
+                                    <constraint firstItem="wa2-Au-Tnz" firstAttribute="centerX" secondItem="9DS-1h-BbF" secondAttribute="centerX" id="sbQ-Vz-pp3"/>
+                                    <constraint firstItem="2Wq-jv-med" firstAttribute="top" secondItem="Srx-Lf-ROD" secondAttribute="bottom" constant="20" id="vIC-RO-CQk"/>
                                 </constraints>
-                                <state key="normal" title="Add Record" backgroundImage="AddRecord"/>
-                                <connections>
-                                    <segue destination="LzF-Fc-Dbq" kind="show" id="nFg-6M-fQH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-jv-med">
-                                <rect key="frame" x="197.5" y="308.5" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="cAZ-K0-uEV"/>
-                                    <constraint firstAttribute="width" constant="150" id="lfN-tD-0fD"/>
-                                </constraints>
-                                <state key="normal" title="Request Documents" backgroundImage="RequestRecord"/>
-                                <connections>
-                                    <segue destination="UvL-d6-C1o" kind="show" id="DyR-7g-uPU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-Au-Tnz">
-                                <rect key="frame" x="27.5" y="308.5" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="1gH-Ps-Nfc"/>
-                                    <constraint firstAttribute="width" constant="150" id="GvU-Oa-91B"/>
-                                </constraints>
-                                <state key="normal" title="Send Documents" backgroundImage="SendRecord"/>
-                                <connections>
-                                    <segue destination="sMc-fo-GxQ" kind="show" id="08n-hR-T5c"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-OC-BKp">
-                                <rect key="frame" x="27.5" y="108.5" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="8T3-Ue-KYO"/>
-                                    <constraint firstAttribute="height" constant="150" id="moP-Os-ugZ"/>
-                                </constraints>
-                                <state key="normal" title="My Records" backgroundImage="MyRecords"/>
-                                <connections>
-                                    <segue destination="D2D-mJ-slz" kind="presentation" id="weU-tN-Wte"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cYZ-OC-BKp" firstAttribute="centerY" secondItem="H4F-nU-8Q8" secondAttribute="centerY" constant="-150" id="9fL-RO-lvK"/>
-                            <constraint firstItem="Srx-Lf-ROD" firstAttribute="centerY" secondItem="H4F-nU-8Q8" secondAttribute="centerY" constant="-150" id="JkJ-y1-0tJ"/>
-                            <constraint firstItem="wa2-Au-Tnz" firstAttribute="centerX" secondItem="H4F-nU-8Q8" secondAttribute="centerX" constant="-85" id="a0W-qA-g7g"/>
-                            <constraint firstItem="2Wq-jv-med" firstAttribute="centerX" secondItem="H4F-nU-8Q8" secondAttribute="centerX" constant="85" id="bG3-rE-bS6"/>
-                            <constraint firstItem="wa2-Au-Tnz" firstAttribute="centerY" secondItem="H4F-nU-8Q8" secondAttribute="centerY" constant="50" id="hYi-cp-H5S"/>
-                            <constraint firstItem="2Wq-jv-med" firstAttribute="centerY" secondItem="H4F-nU-8Q8" secondAttribute="centerY" constant="50" id="j24-5n-Kwy"/>
-                            <constraint firstItem="Srx-Lf-ROD" firstAttribute="centerX" secondItem="H4F-nU-8Q8" secondAttribute="centerX" constant="85" id="pTh-lj-dM5"/>
-                            <constraint firstItem="cYZ-OC-BKp" firstAttribute="centerX" secondItem="H4F-nU-8Q8" secondAttribute="centerX" constant="-85" id="rYm-0K-uAw"/>
+                            <constraint firstAttribute="trailing" secondItem="9DS-1h-BbF" secondAttribute="trailing" constant="40" id="CfI-e0-SKA"/>
+                            <constraint firstItem="9DS-1h-BbF" firstAttribute="top" secondItem="M6r-tE-saM" secondAttribute="bottom" constant="50" id="VJH-Vb-DQv"/>
+                            <constraint firstItem="9DS-1h-BbF" firstAttribute="leading" secondItem="H4F-nU-8Q8" secondAttribute="leading" constant="40" id="s5k-Jf-vnA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="HsI-aq-Gno"/>
                     <navigationItem key="navigationItem" title="Home" id="DZR-Ht-Zi7"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-Aa-C9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963.5" y="-648.5"/>
+            <point key="canvasLocation" x="963" y="-649"/>
         </scene>
         <!--RecordsToAdd-->
         <scene sceneID="esg-H4-PBJ">
@@ -129,7 +140,7 @@
             <objects>
                 <tableViewController id="0lT-g3-dRf" customClass="MyRecordsTabTableVC" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="WHO-qD-kCC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.16595259409999999" green="0.43240347420000003" blue="0.74926374350000002" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
@@ -604,7 +615,7 @@
                                     <constraint firstAttribute="height" constant="20" id="PiP-bn-bp0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="none" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oIM-TD-9gm" userLabel="Records">
@@ -643,7 +654,7 @@
     </scenes>
     <resources>
         <image name="AddRecord" width="351" height="351"/>
-        <image name="MyRecords" width="362" height="362"/>
+        <image name="MyRecords" width="256" height="99"/>
         <image name="RequestRecord" width="391" height="388"/>
         <image name="SendRecord" width="447" height="452"/>
     </resources>
@@ -651,4 +662,5 @@
         <segue reference="nFg-6M-fQH"/>
         <segue reference="da9-gg-mhC"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
