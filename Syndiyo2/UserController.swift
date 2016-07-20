@@ -26,7 +26,7 @@ class UserController {
         else { return [] }
     }()
     
-    var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!)
+    var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", description: "", date: NSDate(), image: UIImage(named: "CameraIcon")!,category:"Medical"),MedicalRecord(name: "Apple", description: "", date: NSDate(), image: UIImage(named:"apple")!,category:"Medical"),MedicalRecord(name: "Bird", description: "", date: NSDate(), image: UIImage(named: "angryBird")!,category:"Medical")
     ]
     
     func registerUser(onCompletion: (String?) -> Void) {
