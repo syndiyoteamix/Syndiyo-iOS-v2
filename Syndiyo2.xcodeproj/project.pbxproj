@@ -81,12 +81,9 @@
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestVC.swift; sourceTree = "<group>"; };
 		F3AC31EF1D3E1B050005DD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		F3AC31F31D3E20520005DD5A /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
 		F3AC31F51D3E4BF80005DD5A /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
-=======
 		F3AC31F91D3E58030005DD5A /* UIValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIValidationTextField.swift; sourceTree = "<group>"; };
->>>>>>> 67a138ff07a95e22d92535a1216066abfe376351
 		F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasswordValidatingTextField.swift; sourceTree = "<group>"; };
 		F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEmailValidationTextField.swift; sourceTree = "<group>"; };
 		F3AC32061D3F85300005DD5A /* SSNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSNViewController.swift; sourceTree = "<group>"; };
