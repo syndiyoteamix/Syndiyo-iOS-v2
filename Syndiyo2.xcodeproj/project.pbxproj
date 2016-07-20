@@ -221,9 +221,9 @@
 				F3AC320C1D3FA00B0005DD5A /* PasswordViewController.swift */,
 				F3AC32061D3F85300005DD5A /* SSNViewController.swift */,
 				F3AC32181D3FA9E80005DD5A /* GetStartedViewController.swift */,
-				F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */,
 				F3AC321E1D3FB4CE0005DD5A /* MedicalInformationViewController.swift */,
 				F3AC32471D3FCCFF0005DD5A /* MyDoctorsViewController.swift */,
+				F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";

@@ -10,18 +10,18 @@ import UIKit
 
 class LandingViewController: UIViewController {
     
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var emailTextField: UIRoundTextField!
+    @IBOutlet weak var passwordTextField: UIRoundTextField!
+    @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.alpha = 0.5
-        loginButton.layer.cornerRadius = 15
-        usernameTextField.layer.cornerRadius = 10
-        passwordTextField.layer.cornerRadius = 10
+        signInButton.alpha = 0.5
+        signInButton.layer.cornerRadius = 15
+        emailTextField.layer.cornerRadius = 15
+        passwordTextField.layer.cornerRadius = 15
         
     }
     
@@ -47,20 +47,21 @@ class LandingViewController: UIViewController {
         
     }
     
-    @IBAction func textFieldChanged(sender: UITextField) {
+    @IBAction func textFieldChanged(sender: AnyObject) {
         if verified() {
-            loginButton.enabled = true
-            loginButton.alpha = 1
+            signInButton.enabled = true
+            signInButton.alpha = 1
         }
         else {
-            loginButton.enabled = false
-            loginButton.alpha = 0.5
+            signInButton.enabled = false
+            signInButton.alpha = 0.5
         }
     }
     
+    
     func verified() -> Bool {
         
-        for subview in containerView.subviews as [UIView] {
+        for subview in containerView.subviews {
             if let textField = subview as? UITextField {
                 if textField.text == nil { return false }
                 if textField.text == "" { return false }
@@ -70,26 +71,36 @@ class LandingViewController: UIViewController {
         return true
     }
     
-    @IBAction func loginButtonPressed(sender: AnyObject) {
-        UserController.sharedInstance.loginUser(usernameTextField.text!, password: passwordTextField.text!) { user, error in
+    @IBAction func signInButtonPressed(sender: AnyObject) {
+        
+        UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!) { user, error in
             if user != nil {
                 UserController.sharedInstance.currentUser = user
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateInitialViewController()
+                let application = UIApplication.sharedApplication()
+                let window = application.keyWindow
+                window?.rootViewController = viewController
+
+            } else {
+                self.createAlert(error!, submessage: "Please try again") { action in }
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
             }
-            self.createAlert(error!, submessage: "Please try again") { action in }
-            self.usernameTextField.text = ""
-            self.passwordTextField.text = ""
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    @IBAction func signInButtonPressed(sender: AnyObject) {
+//        
+//        UserController.sharedInstance.loginUser(<#T##email: String##String#>, password: <#T##String#>, onCompletion: <#T##(User?, String?) -> Void#>)
+//        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyboard.instantiateInitialViewController()
+//        let application = UIApplication.sharedApplication()
+//        let window = application.keyWindow
+//        window?.rootViewController = viewController
+//        
+//    }
+    
 
 }

@@ -97,7 +97,7 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
     
     @IBAction func saveButtonTapped(sender: UIButton) {
         //create a catch if there is no image or no record
-        let newRecord = MedicalRecord(name:titleTextBox.text!, description: "", date: dateTextBox.date, image: documentImage.image!,category: categoryType.text!)
+        let newRecord = MedicalRecord(name:titleTextBox.text!, notes: "", date: dateTextBox.date, image: documentImage.image!,category: categoryType.text!)
         UserController.sharedInstance.addMedicalRecord(newRecord)
         self.navigationController?.popViewControllerAnimated(true)
         

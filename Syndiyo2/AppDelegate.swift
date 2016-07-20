@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let manager = NSFileManager.defaultManager()
+        let documents = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let fileURL = documents.URLByAppendingPathComponent("users.txt")
+        
+        if let storedUsers = NSKeyedUnarchiver.unarchiveObjectWithFile(fileURL.path!) as? [User] {
+            print(storedUsers[0].firstName)
+            UserController.sharedInstance.users = storedUsers
+        }
+        
         return true
     }
 

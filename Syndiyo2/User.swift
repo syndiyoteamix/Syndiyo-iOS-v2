@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class User {
+class User : NSObject, NSCoding {
     
     var firstName: String
     var lastName: String
@@ -40,7 +40,7 @@ class User {
         self.password = password ?? ""
         self.ssn = ssn ?? 0
         self.doctorsArray = doctorsArray ?? []
-        self.medicalInfo = medicalInfo ?? MedicalInformation()
+        self.medicalInfo = medicalInfo ?? nil
     }
     
     required init?(coder: NSCoder) {
@@ -50,7 +50,7 @@ class User {
         self.password = (coder.decodeObjectForKey("password") as? String) ?? ""
         self.ssn = (coder.decodeObjectForKey("ssn") as? Int) ?? 0
         self.doctorsArray = (coder.decodeObjectForKey("doctorsArray") as? [Doctor]) ?? []
-        self.medicalInfo = (coder.decodeObjectForKey("medicalInfo") as? MedicalInformation) ?? MedicalInformation()
+        self.medicalInfo = (coder.decodeObjectForKey("medicalInfo") as? MedicalInformation) ?? nil
         self.medicalRecords = (coder.decodeObjectForKey("medicalRecords") as? [MedicalRecord]) ?? []
         self.frontInsuranceCard = (coder.decodeObjectForKey("frontInsuranceCard") as? UIImage) ?? UIImage()
         self.backInsuranceCard = (coder.decodeObjectForKey("backInsuranceCard") as? UIImage) ?? UIImage()

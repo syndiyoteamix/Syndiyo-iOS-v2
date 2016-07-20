@@ -11,11 +11,18 @@ import UIKit
 class AddDoctorViewController: UIViewController {
 
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var doctorNameTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var emailTextField: UIEmailValidationTextField!
+    @IBOutlet weak var faxTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        addButton.layer.cornerRadius = 15
+        
 //        cardView.layer.shadowColor = UIColor.blueColor().CGColor
 //        cardView.layer.shadowOpacity = 1
 //        cardView.layer.shadowOffset = CGSizeZero

@@ -46,7 +46,6 @@ class SSNViewController: UIViewController {
                 self.createAlert(error!, submessage: "Please try again") { action in }
             }
             else {
-                
                 let viewController = GetStartedViewController(nibName: "GetStartedViewController", bundle: nil)
                 self.navigationController?.pushViewController(viewController, animated: true)
                 

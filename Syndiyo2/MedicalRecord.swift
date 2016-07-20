@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class MedicalRecord {
+class MedicalRecord : NSObject, NSCoding {
     
     var name: String
-    var description: String
+    var notes: String
     var date: NSDate
     var image: UIImage
     //should make enum eventually
@@ -26,10 +26,10 @@ class MedicalRecord {
 //    }
     
     
-    init(name: String, description: String?, date:NSDate, image: UIImage, category:String) {
+    init(name: String, notes: String?, date:NSDate, image: UIImage, category: String) {
         
         self.name = name
-        self.description = description ?? ""
+        self.notes = notes ?? ""
         self.image = image
         self.date = date
         self.category = category
@@ -49,6 +49,22 @@ class MedicalRecord {
         dateFormatter.timeStyle = .ShortStyle
         
         return dateFormatter.stringFromDate(date)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.name = (coder.decodeObjectForKey("name") as? String) ?? ""
+        self.notes = (coder.decodeObjectForKey("notes") as? String) ?? ""
+        self.date = (coder.decodeObjectForKey("date") as? NSDate) ?? NSDate()
+        self.image = (coder.decodeObjectForKey("image") as? UIImage) ?? UIImage()
+        self.category = (coder.decodeObjectForKey("category") as? String) ?? ""
+    }
+    
+    func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(name, forKey: "name")
+        coder.encodeObject(notes, forKey: "notes")
+        coder.encodeObject(date, forKey: "date")
+        coder.encodeObject(image, forKey: "image")
+        coder.encodeObject(category, forKey: "category")
     }
     
 }
