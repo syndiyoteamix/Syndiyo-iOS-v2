@@ -20,7 +20,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     var requestingInfo: Bool = false
     var requestEmail:String?
-    var requestText:String = "I, \(UserController.sharedInstance.currentUser!.firstName) \(UserController.sharedInstance.currentUser!.lastName) , (Patient) hereby request my Health Records." + "\n\n" + "This request is for any and all medical records related to services provided, and may include but not limited to Clinic Notes, Laboratory Reports, Radiology Reports, X-Ray Film/Images, EKG, History & Physical Exam, Discharge Summary, Progress Notes, Consultation Report, Specialist Notes, Department Record, Billing Record or any other documents belonging to Patient's medical records." + "\n\n" + "I understand that I have a right to receive a copy of my health information under the Health Insurance Portability and Accountability Act of 1996. Please consider this notification my official request in writing for my health information. The purpose for the release of health information is for archiving and personal use only."
+    var requestText:String = "I, \(UserController.sharedInstance.currentUser!.firstName) \(UserController.sharedInstance.currentUser!.lastName) , hereby request my Health Records." + "\n\n" + "This request is for any and all medical records related to services provided, and may include but not limited to Clinic Notes, Laboratory Reports, Radiology Reports, X-Ray Film/Images, EKG, History & Physical Exam, Discharge Summary, Progress Notes, Consultation Report, Specialist Notes, Department Record, Billing Record or any other documents belonging to Patient's medical records." + "\n\n" + "I understand that I have a right to receive a copy of my health information under the Health Insurance Portability and Accountability Act of 1996. Please consider this notification my official request in writing for my health information. The purpose for the release of health information is for archiving and personal use only."
     
     
     var sendingInfo:Bool = false
@@ -29,7 +29,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     var sendingText:String = "I, \(UserController.sharedInstance.currentUser!.firstName) \(UserController.sharedInstance.currentUser!.lastName) am hereby sending the attached medical record(s) for my next appointment."
     
-    var recordsToSend:[MedicalRecord]?
+    var recordsToSend:[MedicalRecord] = []
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -66,9 +66,47 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
    
         
         
-        
+        switch UserController.sharedInstance.state {
+        case .view:
+            let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
+            
+            self.navigationItem.title = "My Doctors"
+            self.navigationItem.rightBarButtonItem = addButton
+            
+        case .requestingDoc:
+            
+            let sendButton = UIBarButtonItem(title: "Send", style: .Plain, target: self, action: #selector(sendButtonPressed))
+            
+            
+            let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelButtonClicked))
+            
+            self.navigationItem.title = "Select Doctor"
+            self.navigationItem.rightBarButtonItem = sendButton
+            self.navigationItem.leftBarButtonItem = cancelButton
+
+        case .sendingDoc:
+            
+            let sendDocButton = UIBarButtonItem(title: "Send", style: .Plain, target: self, action: #selector(sendEmail))
+            
+            let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(backButtonPressed))
+            
+            self.navigationItem.title = "Select Doctor"
+            self.navigationItem.rightBarButtonItem = sendDocButton
+            self.navigationItem.leftBarButtonItem = backButton
+            
+        }
         
     }
+    
+    func cancelButtonClicked(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func backButtonPressed() {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,13 +114,29 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     }
     
     
-    
-   
-    
-    func sendEmail (){
+    //send request
+    func sendButtonPressed() {
         let mailComposerVC = MFMailComposeViewController()
         
-        print(sendingEmail!)
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients([sendingEmail!])
+        mailComposerVC.setSubject("Medical Record Request")
+        mailComposerVC.setMessageBody(requestText, isHTML: false)
+        
+    
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposerVC, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+
+        
+    }
+    
+    //send Records
+    func sendEmail (){
+        let mailComposerVC = MFMailComposeViewController()
+    
         
         mailComposerVC.mailComposeDelegate = self
         mailComposerVC.setToRecipients([sendingEmail!])
@@ -90,17 +144,19 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         mailComposerVC.setMessageBody(sendingText, isHTML: false)
         
      
-        for record in recordsToSend!{
+        for record in recordsToSend{
             let imageData: NSData = UIImagePNGRepresentation(record.image)!
             mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
         }
-        let mailComposeViewController = configuredMailComposeViewController()
+        
         if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+            self.presentViewController(mailComposerVC, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
@@ -110,53 +166,56 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     
     override func viewDidAppear(animated: Bool) {
-         UserController.sharedInstance.saveUsersArray()
-        recordsToSend = UserController.sharedInstance.recordsToSend
+        UserController.sharedInstance.saveUsersArray()
+        
     }
     
+    
+    //add doctor view controller pops up
     func addButtonClicked(){
-        if sendingInfo{
-            sendEmail()
-        } else {
         let addDoctorsVC = AddDoctorViewController(nibName: "AddDoctorViewController", bundle: nil)
+        
+        addDoctorsVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+    
+        
+        self.definesPresentationContext = true
         addDoctorsVC.addingDoctor = true
         addDoctorsVC.editingDoctor = false
         self.presentViewController(addDoctorsVC, animated: true, completion: nil)
-        }
-        
     }
     
     
-    func configuredMailComposeViewController() -> MFMailComposeViewController {
-        let mailComposerVC = MFMailComposeViewController()
-        
-        if requestingInfo {
-        
-//        mailComposerVC.mailComposeDelegate = self
-//        mailComposerVC.setToRecipients([requestEmail!])
-//        mailComposerVC.setSubject("Medical Record Request")
-//        mailComposerVC.setMessageBody(requestText, isHTML: false)
-        }
-        
-        if sendingInfo {
-            mailComposerVC.mailComposeDelegate = self
-            mailComposerVC.setToRecipients([sendingEmail!])
-            mailComposerVC.setSubject("Medical Record for Next Appointment")
-            mailComposerVC.setMessageBody(sendingText, isHTML: false)
-            
-            
-            
-            for record in recordsToSend!{
-                let imageData: NSData = UIImagePNGRepresentation(record.image)!
-                mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
-            }
-     
-            
-        }
-        
-        
-        return mailComposerVC
-    }
+//    func configuredMailComposeViewController() -> MFMailComposeViewController {
+//        let mailComposerVC = MFMailComposeViewController()
+//        
+//        if requestingInfo {
+//        
+////        mailComposerVC.mailComposeDelegate = self
+////        mailComposerVC.setToRecipients([requestEmail!])
+////        mailComposerVC.setSubject("Medical Record Request")
+////        mailComposerVC.setMessageBody(requestText, isHTML: false)
+//        }
+//        
+//        if sendingInfo {
+//            mailComposerVC.mailComposeDelegate = self
+//            mailComposerVC.setToRecipients([sendingEmail!])
+//            mailComposerVC.setSubject("Medical Record for Next Appointment")
+//            mailComposerVC.setMessageBody(sendingText, isHTML: false)
+//            
+//            
+//            
+//            for record in recordsToSend{
+//                let imageData: NSData = UIImagePNGRepresentation(record.image)!
+//                mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
+//            }
+//     
+//            
+//        }
+//        
+//        
+//        return mailComposerVC
+//    }
     
     
     func showSendMailErrorAlert() {

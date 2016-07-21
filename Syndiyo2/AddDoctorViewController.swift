@@ -52,6 +52,18 @@ class AddDoctorViewController: UIViewController {
             topLabel.text = "Edit Doctor"
         }
         
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelButtonClicked))
+        
+        self.navigationItem.title = "Add Doctor"
+        self.navigationItem.leftBarButtonItem = cancelButton
+
+        
+    }
+    
+    
+    
+    func cancelButtonClicked() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

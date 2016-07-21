@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -46,7 +46,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="MyRecords"/>
                                         <connections>
-                                            <segue destination="D2D-mJ-slz" kind="presentation" id="weU-tN-Wte"/>
+                                            <segue destination="D2D-mJ-slz" kind="presentation" identifier="sendEmail" id="weU-tN-Wte"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srx-Lf-ROD" userLabel="Add Records">
@@ -67,6 +67,7 @@
                                         <state key="normal" backgroundImage="RequestRecord"/>
                                         <connections>
                                             <action selector="RequestButtonPressed:" destination="f7L-q8-AHa" eventType="touchUpInside" id="6sf-Dq-frR"/>
+                                            <segue destination="KLh-D0-f7N" kind="presentation" identifier="requestEmail" id="VFk-jT-Txz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-Au-Tnz" userLabel="Send Records">
@@ -108,13 +109,12 @@
                     <navigationItem key="navigationItem" title="Home" id="DZR-Ht-Zi7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <segue destination="Smi-rj-cbE" kind="show" identifier="requestEmail" id="XSh-nQ-0aW"/>
-                        <segue destination="KLh-D0-f7N" kind="presentation" identifier="sendEmail" id="vpX-NX-vO0"/>
+                        <segue destination="D2D-mJ-slz" kind="presentation" identifier="sendEmail" id="Ezj-sg-KJI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-Aa-C9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963" y="-649"/>
+            <point key="canvasLocation" x="855" y="-1233"/>
         </scene>
         <!--My Records-->
         <scene sceneID="1jZ-gg-2wR">
@@ -130,26 +130,16 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="My Records" id="Ukg-oj-nEe">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="diS-1B-dpa">
-                            <connections>
-                                <action selector="doneButtonPressed:" destination="0lT-g3-dRf" id="pPb-og-cyI"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="25v-e2-fUO">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="0lT-g3-dRf" id="jgz-rb-wpu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="My Records" id="Ukg-oj-nEe"/>
                     <connections>
                         <segue destination="dZv-va-BXN" kind="show" identifier="presentDocument" id="1y3-ja-roa"/>
                         <segue destination="LzF-Fc-Dbq" kind="show" identifier="addDoc" id="3a3-MS-8A5"/>
+                        <segue destination="Smi-rj-cbE" kind="show" identifier="selectDoctor" id="XzD-iu-KfT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7E7-m8-Pcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006.5" y="-2331.5"/>
+            <point key="canvasLocation" x="2510" y="-2332"/>
         </scene>
         <!--Record-->
         <scene sceneID="XUp-k9-0qW">
@@ -257,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jg-Zj-MAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471.5" y="-2331.5"/>
+            <point key="canvasLocation" x="2991.5" y="-2332.5"/>
         </scene>
         <!--Records-->
         <scene sceneID="YNi-t8-1Mh">
@@ -274,7 +264,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buE-84-P9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479.5" y="-2337.5"/>
+            <point key="canvasLocation" x="2007" y="-2283"/>
         </scene>
         <!--ImportDocumentsVC-->
         <scene sceneID="m1h-Et-MsG">
@@ -365,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qwz-1a-26c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006.5" y="-1486.5"/>
+            <point key="canvasLocation" x="2510.5" y="-1198.5"/>
         </scene>
         <!--Document ImageVC-->
         <scene sceneID="fGV-0F-FnZ">
@@ -410,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPB-Qd-VD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471.5" y="-1486.5"/>
+            <point key="canvasLocation" x="3247.5" y="-1478.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bc0-2o-CpW">
@@ -499,7 +489,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvp-GI-b40">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvp-GI-b40">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -512,16 +502,9 @@
                             <constraint firstItem="qvp-GI-b40" firstAttribute="top" secondItem="ePG-FV-kLr" secondAttribute="bottom" id="z42-aj-6Z7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ale-2t-yQL">
-                            <connections>
-                                <action selector="doneButtonPressed:" destination="Smi-rj-cbE" id="MVr-ua-VbO"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr"/>
                     <connections>
                         <outlet property="tableView" destination="qvp-GI-b40" id="OF6-Qo-79C"/>
-                        <segue destination="0lT-g3-dRf" kind="show" identifier="selectRecords" id="wUo-K4-BhY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGP-zs-CWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -536,11 +519,11 @@
         <image name="SendRecords" width="1125" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tMO-Xy-pap"/>
-        <segue reference="XSh-nQ-0aW"/>
-        <segue reference="wUo-K4-BhY"/>
-        <segue reference="3a3-MS-8A5"/>
-        <segue reference="pYR-1M-APP"/>
+        <segue reference="VFk-jT-Txz"/>
+        <segue reference="weU-tN-Wte"/>
+        <segue reference="nFg-6M-fQH"/>
+        <segue reference="XzD-iu-KfT"/>
+        <segue reference="da9-gg-mhC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

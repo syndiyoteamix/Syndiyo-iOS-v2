@@ -49,6 +49,40 @@ class MyRecordsTabTableVC: UITableViewController{
             self.navigationItem.rightBarButtonItem = addButton
 
         }
+        
+        
+        switch UserController.sharedInstance.state {
+            
+        case .view:
+            let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
+            
+            self.navigationItem.title = "My Records"
+            self.navigationItem.rightBarButtonItem = addButton
+            
+            
+            
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(doneButtonClicked))
+            self.navigationItem.leftBarButtonItem = doneButton
+
+
+            
+        case .sendingDoc:
+          
+            let nextButton = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(nextButtonClicked))
+            
+            self.navigationItem.rightBarButtonItem = nextButton
+            
+            
+            
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(doneButtonClicked))
+            
+            self.navigationItem.title = "Select Records to Send"
+            self.navigationItem.leftBarButtonItem = doneButton
+   
+        case .requestingDoc:
+            
+            break
+        }
       
         
     }
@@ -57,10 +91,14 @@ class MyRecordsTabTableVC: UITableViewController{
     //this is an add button for when the record view is reached normally
     func addButtonClicked() {
         performSegueWithIdentifier("addDoc", sender: self)
-       
     }
     
-    
+    func nextButtonClicked() {
+        
+        
+        
+        performSegueWithIdentifier("selectDoctor", sender: self)
+    }
     
     
     override func viewWillAppear(animated: Bool) {
@@ -93,6 +131,12 @@ class MyRecordsTabTableVC: UITableViewController{
         } else {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+    }
+    
+    
+    func doneButtonClicked (){
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     
@@ -164,7 +208,7 @@ class MyRecordsTabTableVC: UITableViewController{
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if sendingInfo{
+        if UserController.sharedInstance.state == .sendingDoc{
             let cell = tableView.cellForRowAtIndexPath(indexPath) as? RecordTabCustomCell
             if cell!.checkMarkImage.hidden{
                 // select
@@ -192,8 +236,17 @@ class MyRecordsTabTableVC: UITableViewController{
         if segue.identifier == "presentDocument" {
             let destination = segue.destinationViewController as? DisplayDocVC
             destination?.currentRecord = UserController.sharedInstance.currentRecord
+        } else if segue.identifier == "selectDoctor" {
+            let destination = segue.destinationViewController as? MyDoctorsVC
+            var recordISend:[MedicalRecord] = []
             
+            for index in recordsToSend{
+                recordISend.append(medicalRecords[index])
+            }
+            
+            destination?.recordsToSend = recordISend
         }
+        
     }
     
     
