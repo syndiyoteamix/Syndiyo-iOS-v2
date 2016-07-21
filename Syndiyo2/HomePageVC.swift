@@ -9,23 +9,28 @@
 import UIKit
 
 class HomePageVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UserController.sharedInstance.saveUsersArray()
-
+        
         // Do any additional setup after loading the view.
         
-        UserController.sharedInstance.state = .view
+        
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        UserController.sharedInstance.state = .view
+    }
     
     @IBAction func RequestButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("requestEmail", sender: self)
@@ -41,17 +46,6 @@ class HomePageVC: UIViewController {
             
             UserController.sharedInstance.state = .requestingDoc
         }
-        if segue.identifier == "sendEmail" {
-            if let destination = segue.destinationViewController as? UINavigationController{
-                if let root = destination.viewControllers[0] as? MyDoctorsVC{
-                    root.canEditDoctor = false
-                    root.requestingInfo = false
-                    root.sendingInfo = true
-                    
-                    UserController.sharedInstance.state = .sendingDoc
-                }
-            }
-        }
     }
     
     
@@ -59,18 +53,19 @@ class HomePageVC: UIViewController {
     
     @IBAction func sendEmail(sender: AnyObject) {
         performSegueWithIdentifier("sendEmail", sender: self)
-
+        UserController.sharedInstance.state = .requestingDoc
+        
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
