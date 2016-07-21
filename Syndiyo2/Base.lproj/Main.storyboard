@@ -377,18 +377,6 @@
                                     <constraint firstAttribute="width" constant="225" id="fYx-iC-wlB"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t51-h0-RHF">
-                                <rect key="frame" x="87" y="438.5" width="200" height="50"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="VtJ-kK-MGx"/>
-                                    <constraint firstAttribute="height" constant="50" id="hwQ-SI-0WU"/>
-                                </constraints>
-                                <state key="normal" title="Select Photo"/>
-                                <connections>
-                                    <action selector="selectPhotoButtonTapped:" destination="LzF-Fc-Dbq" eventType="touchUpInside" id="oh6-av-hJp"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojX-U5-chL">
                                 <rect key="frame" x="87" y="498.5" width="200" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -435,14 +423,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="40V-nK-OA9" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="-150" id="02j-l2-dYz"/>
-                            <constraint firstItem="t51-h0-RHF" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="4Cl-IP-eId"/>
                             <constraint firstItem="Aqa-HN-1Ir" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="Fa7-cu-gaW"/>
                             <constraint firstItem="ojX-U5-chL" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="HhA-XE-1PE"/>
                             <constraint firstItem="927-2V-C5v" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="30" id="Kbs-81-co1"/>
                             <constraint firstItem="ojX-U5-chL" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="190" id="VrX-kL-kbg"/>
                             <constraint firstItem="40V-nK-OA9" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="Wbi-MM-96d"/>
                             <constraint firstItem="Aqa-HN-1Ir" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="-10" id="Y75-AI-E6f"/>
-                            <constraint firstItem="t51-h0-RHF" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="130" id="cdu-Vm-Gj2"/>
                             <constraint firstItem="fnh-6D-eZn" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="h19-3L-FDY"/>
                             <constraint firstItem="fnh-6D-eZn" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="70" id="jdv-th-7Xe"/>
                             <constraint firstItem="927-2V-C5v" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="lSC-KZ-31L"/>
@@ -455,7 +441,6 @@
                         <outlet property="dateTextBox" destination="927-2V-C5v" id="Slp-T1-cY7"/>
                         <outlet property="documentImage" destination="40V-nK-OA9" id="q8C-Oc-ajO"/>
                         <outlet property="saveButton" destination="ojX-U5-chL" id="rCX-Ui-a1A"/>
-                        <outlet property="selectPhotoButton" destination="t51-h0-RHF" id="KSe-5c-a3t"/>
                         <outlet property="titleTextBox" destination="Aqa-HN-1Ir" id="eEY-O0-fXz"/>
                         <segue destination="9kr-A8-I7G" kind="presentation" identifier="presentDocumentImage" id="da9-gg-mhC"/>
                     </connections>
@@ -704,11 +689,11 @@
         <image name="SendRecords" width="1125" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XSh-nQ-0aW"/>
         <segue reference="vpX-NX-vO0"/>
+        <segue reference="XSh-nQ-0aW"/>
         <segue reference="wUo-K4-BhY"/>
         <segue reference="3a3-MS-8A5"/>
-        <segue reference="pYR-1M-APP"/>
+        <segue reference="da9-gg-mhC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
