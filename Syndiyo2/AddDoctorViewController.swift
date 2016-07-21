@@ -9,6 +9,9 @@
 import UIKit
 
 class AddDoctorViewController: UIViewController {
+    
+    
+    
 
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var doctorNameTextField: UITextField!
@@ -75,6 +78,16 @@ class AddDoctorViewController: UIViewController {
             UserController.sharedInstance.updateDoctorsArray()
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+        
+    }
+    
+    
+    @IBAction func donePresed(sender: AnyObject) {
+        
+        sender.resignFirstResponder()
+        
+        
+        
         
     }
     

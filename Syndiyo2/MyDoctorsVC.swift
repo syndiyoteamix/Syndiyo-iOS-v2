@@ -25,6 +25,8 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     var sendingInfo:Bool = false
     var sendingEmail:String?
+    
+    
     var sendingText:String = "I, \(UserController.sharedInstance.currentUser!.firstName) \(UserController.sharedInstance.currentUser!.lastName) am hereby sending the attached medical record(s) for my next appointment."
     
     var recordsToSend:[MedicalRecord]?
@@ -34,6 +36,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     
     override func viewDidLoad() {
+      
         super.viewDidLoad()
         
         self.tableView.dataSource = self
@@ -62,6 +65,9 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
    
         
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +76,42 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     }
     
     
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        print("boolean")
+        print(canEditDoctor)
+        print(requestingInfo)
+        print(sendingInfo)
+        
+        
+        print("updating records")
+        recordsToSend = UserController.sharedInstance.recordsToSend
+        
+    }
+    
     func sendEmail (){
+        
+        
+        
+        let mailComposerVC = MFMailComposeViewController()
+        
+        print(sendingEmail!)
+        
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients([sendingEmail!])
+        mailComposerVC.setSubject("Medical Record for Next Appointment")
+        mailComposerVC.setMessageBody(sendingText, isHTML: false)
+        
+        
+        
+        for record in recordsToSend!{
+            let imageData: NSData = UIImagePNGRepresentation(record.image)!
+            mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
+        }
+        
+        
+        
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.presentViewController(mailComposeViewController, animated: true, completion: nil)
@@ -89,10 +130,14 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     
     func addButtonClicked(){
+        if sendingInfo{
+            sendEmail()
+        } else {
         let addDoctorsVC = AddDoctorViewController(nibName: "AddDoctorViewController", bundle: nil)
         addDoctorsVC.addingDoctor = true
         addDoctorsVC.editingDoctor = false
         self.presentViewController(addDoctorsVC, animated: true, completion: nil)
+        }
         
     }
     
@@ -107,10 +152,10 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         
         if requestingInfo {
         
-        mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients([requestEmail!])
-        mailComposerVC.setSubject("Medical Record Request")
-        mailComposerVC.setMessageBody(requestText, isHTML: false)
+//        mailComposerVC.mailComposeDelegate = self
+//        mailComposerVC.setToRecipients([requestEmail!])
+//        mailComposerVC.setSubject("Medical Record Request")
+//        mailComposerVC.setMessageBody(requestText, isHTML: false)
         }
         
         if sendingInfo {
@@ -196,7 +241,9 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
             addDoctorsVC.editingDoctor = true
             addDoctorsVC.currentDoctor = myDoctors[indexPath.row]
             UserController.sharedInstance.currentDoctor = myDoctors[indexPath.row]
-            self.presentViewController(addDoctorsVC, animated: true, completion: nil)
+            
+            
+            self.navigationController!.popViewControllerAnimated(true)
             
         } else if requestingInfo{
             let email:String = myDoctors[indexPath.row].email
@@ -223,7 +270,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
             sendingEmail = myDoctors[indexPath.row].email
             
             
-            performSegueWithIdentifier("selectRecord", sender: self)
+            performSegueWithIdentifier("selectRecords", sender: self)
             
         }
     }
@@ -233,6 +280,13 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         let destination = segue.destinationViewController as? MyRecordsTabTableVC
         destination?.sendingInfo = true
     }
+    
+    
+    
+    @IBAction func doneButtonPressed(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     
 }

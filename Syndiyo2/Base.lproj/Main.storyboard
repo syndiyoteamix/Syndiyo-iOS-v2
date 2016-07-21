@@ -107,7 +107,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <segue destination="Smi-rj-cbE" kind="show" identifier="requestEmail" id="XSh-nQ-0aW"/>
-                        <segue destination="Smi-rj-cbE" kind="show" identifier="sendEmail" id="dQS-fI-6sX"/>
+                        <segue destination="KLh-D0-f7N" kind="presentation" identifier="sendEmail" id="vpX-NX-vO0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-Aa-C9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,7 +191,7 @@
                                     <constraint firstAttribute="height" constant="240" id="i5T-7m-8xR"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dXJ-zs-0UW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dXJ-zs-0UW">
                                 <rect key="frame" x="0.0" y="364" width="375" height="273"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -213,7 +213,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuY-gk-vrd">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuY-gk-vrd">
                                 <rect key="frame" x="0.0" y="637" width="375" height="30"/>
                                 <state key="normal" title="Edit Record"/>
                                 <connections>
@@ -354,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srm-oa-GJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676.5" y="54.5"/>
+            <point key="canvasLocation" x="2328.5" y="282.5"/>
         </scene>
         <!--ImportDocumentsVC-->
         <scene sceneID="m1h-Et-MsG">
@@ -543,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7r-c7-Lk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520" y="400"/>
+            <point key="canvasLocation" x="456" y="249"/>
         </scene>
         <!--My Doctors-->
         <scene sceneID="h1T-xw-eEe">
@@ -560,7 +560,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKJ-Al-Fj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656" y="1417"/>
+            <point key="canvasLocation" x="576" y="1553"/>
         </scene>
         <!--Title-->
         <scene sceneID="2DH-d5-UtR">
@@ -587,7 +587,13 @@
                             <constraint firstItem="qvp-GI-b40" firstAttribute="top" secondItem="ePG-FV-kLr" secondAttribute="bottom" id="z42-aj-6Z7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr"/>
+                    <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ale-2t-yQL">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="Smi-rj-cbE" id="MVr-ua-VbO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qvp-GI-b40" id="OF6-Qo-79C"/>
                         <segue destination="0lT-g3-dRf" kind="show" identifier="selectRecords" id="wUo-K4-BhY"/>
@@ -595,7 +601,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGP-zs-CWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696" y="1469"/>
+            <point key="canvasLocation" x="1768" y="1573"/>
         </scene>
         <!--Send DocVC-->
         <scene sceneID="7Sp-X3-wiU">
@@ -691,15 +697,16 @@
     </scenes>
     <resources>
         <image name="AddRecord" width="351" height="351"/>
-        <image name="MyRecords" width="256" height="99"/>
+        <image name="MyRecords" width="768" height="297"/>
         <image name="RequestRecord" width="391" height="388"/>
         <image name="SendRecord" width="447" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dQS-fI-6sX"/>
+        <segue reference="XSh-nQ-0aW"/>
+        <segue reference="vpX-NX-vO0"/>
         <segue reference="nFg-6M-fQH"/>
-        <segue reference="wUo-K4-BhY"/>
         <segue reference="da9-gg-mhC"/>
+        <segue reference="wUo-K4-BhY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
