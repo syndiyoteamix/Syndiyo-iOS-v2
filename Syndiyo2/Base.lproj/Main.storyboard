@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -35,63 +36,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9DS-1h-BbF" userLabel="Container View">
-                                <rect key="frame" x="40" y="114" width="334" height="500"/>
+                                <rect key="frame" x="40" y="114" width="334" height="494"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srx-Lf-ROD">
-                                        <rect key="frame" x="117" y="140" width="100" height="100"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-OC-BKp" userLabel="My Records">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="116"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="NQh-tG-SBb"/>
-                                            <constraint firstAttribute="width" constant="100" id="QEh-kh-6cv"/>
-                                        </constraints>
-                                        <state key="normal" title="Add Record" backgroundImage="AddRecord"/>
-                                        <connections>
-                                            <segue destination="LzF-Fc-Dbq" kind="show" id="nFg-6M-fQH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-jv-med">
-                                        <rect key="frame" x="117" y="260" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="cAZ-K0-uEV"/>
-                                            <constraint firstAttribute="width" constant="100" id="lfN-tD-0fD"/>
-                                        </constraints>
-                                        <state key="normal" title="Request Documents" backgroundImage="RequestRecord"/>
-                                        <connections>
-                                            <action selector="RequestButtonPressed:" destination="f7L-q8-AHa" eventType="touchUpInside" id="6sf-Dq-frR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-Au-Tnz">
-                                        <rect key="frame" x="117" y="380" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="1gH-Ps-Nfc"/>
-                                            <constraint firstAttribute="width" constant="100" id="GvU-Oa-91B"/>
-                                        </constraints>
-                                        <state key="normal" title="Send Documents" backgroundImage="SendRecord"/>
-                                        <connections>
-                                            <action selector="sendEmail:" destination="f7L-q8-AHa" eventType="touchUpInside" id="74H-MY-nBb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-OC-BKp" userLabel="My Records">
-                                        <rect key="frame" x="25" y="20" width="285" height="105"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="271" id="8T3-Ue-KYO"/>
-                                            <constraint firstAttribute="height" constant="100" id="moP-Os-ugZ"/>
+                                            <constraint firstAttribute="width" secondItem="cYZ-OC-BKp" secondAttribute="height" multiplier="75:26" id="nyE-fW-F9i"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="MyRecords"/>
                                         <connections>
                                             <segue destination="D2D-mJ-slz" kind="presentation" id="weU-tN-Wte"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srx-Lf-ROD" userLabel="Add Records">
+                                        <rect key="frame" x="0.0" y="126" width="334" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Srx-Lf-ROD" secondAttribute="height" multiplier="75:26" id="Gmg-Wa-ncL"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="AddRecord"/>
+                                        <connections>
+                                            <segue destination="LzF-Fc-Dbq" kind="show" id="nFg-6M-fQH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-jv-med" userLabel="Request Records">
+                                        <rect key="frame" x="0.0" y="252" width="334" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2Wq-jv-med" secondAttribute="height" multiplier="75:26" id="n29-cV-ASS"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="RequestRecord"/>
+                                        <connections>
+                                            <action selector="RequestButtonPressed:" destination="f7L-q8-AHa" eventType="touchUpInside" id="6sf-Dq-frR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-Au-Tnz" userLabel="Send Records">
+                                        <rect key="frame" x="0.0" y="378" width="334" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wa2-Au-Tnz" secondAttribute="height" multiplier="75:26" id="O7u-d7-A2s"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="SendRecords"/>
+                                        <connections>
+                                            <action selector="sendEmail:" destination="f7L-q8-AHa" eventType="touchUpInside" id="74H-MY-nBb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="wa2-Au-Tnz" secondAttribute="bottom" constant="20" id="BBm-1F-BwU"/>
-                                    <constraint firstItem="cYZ-OC-BKp" firstAttribute="centerX" secondItem="9DS-1h-BbF" secondAttribute="centerX" id="C72-YC-O8Y"/>
-                                    <constraint firstItem="Srx-Lf-ROD" firstAttribute="centerX" secondItem="9DS-1h-BbF" secondAttribute="centerX" id="JR4-B0-dmM"/>
-                                    <constraint firstItem="2Wq-jv-med" firstAttribute="centerX" secondItem="9DS-1h-BbF" secondAttribute="centerX" id="SLH-0L-cIc"/>
-                                    <constraint firstItem="Srx-Lf-ROD" firstAttribute="top" secondItem="cYZ-OC-BKp" secondAttribute="bottom" constant="20" id="Xep-G6-y5E"/>
-                                    <constraint firstItem="cYZ-OC-BKp" firstAttribute="top" secondItem="9DS-1h-BbF" secondAttribute="top" constant="20" id="azf-dE-tWi"/>
-                                    <constraint firstItem="wa2-Au-Tnz" firstAttribute="top" secondItem="2Wq-jv-med" secondAttribute="bottom" constant="20" id="iub-lb-anD"/>
-                                    <constraint firstItem="wa2-Au-Tnz" firstAttribute="centerX" secondItem="9DS-1h-BbF" secondAttribute="centerX" id="sbQ-Vz-pp3"/>
-                                    <constraint firstItem="2Wq-jv-med" firstAttribute="top" secondItem="Srx-Lf-ROD" secondAttribute="bottom" constant="20" id="vIC-RO-CQk"/>
+                                    <constraint firstAttribute="trailing" secondItem="cYZ-OC-BKp" secondAttribute="trailing" id="AcQ-Ho-KJU"/>
+                                    <constraint firstAttribute="bottom" secondItem="wa2-Au-Tnz" secondAttribute="bottom" id="BBm-1F-BwU"/>
+                                    <constraint firstItem="wa2-Au-Tnz" firstAttribute="leading" secondItem="9DS-1h-BbF" secondAttribute="leading" id="KIW-Nj-nNc"/>
+                                    <constraint firstItem="cYZ-OC-BKp" firstAttribute="leading" secondItem="9DS-1h-BbF" secondAttribute="leading" id="OA7-me-bj2"/>
+                                    <constraint firstItem="Srx-Lf-ROD" firstAttribute="leading" secondItem="9DS-1h-BbF" secondAttribute="leading" id="Qbu-bA-Rdv"/>
+                                    <constraint firstItem="2Wq-jv-med" firstAttribute="leading" secondItem="9DS-1h-BbF" secondAttribute="leading" id="XLX-oc-eFM"/>
+                                    <constraint firstItem="wa2-Au-Tnz" firstAttribute="top" secondItem="2Wq-jv-med" secondAttribute="bottom" constant="10" id="iub-lb-anD"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Wq-jv-med" secondAttribute="trailing" id="o4z-EL-B0r"/>
+                                    <constraint firstAttribute="trailing" secondItem="Srx-Lf-ROD" secondAttribute="trailing" id="rOm-gN-LGc"/>
+                                    <constraint firstAttribute="trailing" secondItem="wa2-Au-Tnz" secondAttribute="trailing" id="stq-4m-yTf"/>
+                                    <constraint firstItem="Srx-Lf-ROD" firstAttribute="top" secondItem="cYZ-OC-BKp" secondAttribute="bottom" constant="10" id="uJS-m5-bPV"/>
+                                    <constraint firstItem="2Wq-jv-med" firstAttribute="top" secondItem="Srx-Lf-ROD" secondAttribute="bottom" constant="10" id="vIC-RO-CQk"/>
+                                    <constraint firstItem="cYZ-OC-BKp" firstAttribute="top" secondItem="9DS-1h-BbF" secondAttribute="top" id="zk9-HS-Xxg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -399,7 +400,7 @@
                                     <action selector="saveButtonTapped:" destination="LzF-Fc-Dbq" eventType="touchUpInside" id="pMb-n7-3KS"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Aqa-HN-1Ir">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Aqa-HN-1Ir">
                                 <rect key="frame" x="87.5" y="308.5" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="IQV-Pt-4uZ"/>
@@ -411,7 +412,7 @@
                                     <action selector="titleFieldPrimaryActionTriggered:" destination="LzF-Fc-Dbq" eventType="primaryActionTriggered" id="ZSm-HX-G1q"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="927-2V-C5v" userLabel="date" customClass="UIDateField" customModule="Syndiyo2" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="927-2V-C5v" userLabel="date" customClass="UIDateField" customModule="Syndiyo2" customModuleProvider="target">
                                 <rect key="frame" x="87.5" y="348.5" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Ufe-gD-TXk"/>
@@ -420,7 +421,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnh-6D-eZn" userLabel="documentType" customClass="UISelectionField" customModule="Syndiyo2" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnh-6D-eZn" userLabel="documentType" customClass="UISelectionField" customModule="Syndiyo2" customModuleProvider="target">
                                 <rect key="frame" x="87.5" y="388.5" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2Eb-6X-0Z3"/>
@@ -430,7 +431,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="40V-nK-OA9" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="-150" id="02j-l2-dYz"/>
                             <constraint firstItem="t51-h0-RHF" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="4Cl-IP-eId"/>
@@ -696,10 +697,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddRecord" width="351" height="351"/>
-        <image name="MyRecords" width="768" height="297"/>
-        <image name="RequestRecord" width="391" height="388"/>
-        <image name="SendRecord" width="447" height="452"/>
+        <image name="AddRecord" width="1125" height="390"/>
+        <image name="MyRecords" width="1125" height="390"/>
+        <image name="RequestRecord" width="1125" height="390"/>
+        <image name="SendRecords" width="1125" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XSh-nQ-0aW"/>
