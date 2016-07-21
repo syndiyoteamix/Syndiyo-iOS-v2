@@ -23,6 +23,7 @@ class AddDoctorViewController: UIViewController {
     
     @IBOutlet weak var topLabel: UILabel!
     
+    var delegate:AddDoctorDelegate?
     
     
     var addingDoctor:Bool = true
@@ -98,12 +99,12 @@ class AddDoctorViewController: UIViewController {
         
         sender.resignFirstResponder()
         
-        
-        
-        
     }
     
     
+    override func viewWillDisappear(animated: Bool) {
+        delegate?.didDisappear()
+    }
     
 
     /*

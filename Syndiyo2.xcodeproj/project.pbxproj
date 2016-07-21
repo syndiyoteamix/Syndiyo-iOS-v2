@@ -31,6 +31,7 @@
 		4E662D431D40437D009B3A88 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E662D411D40437D009B3A88 /* DoctorTableViewCell.swift */; };
 		4E662D441D40437D009B3A88 /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E662D421D40437D009B3A88 /* DoctorTableViewCell.xib */; };
 		4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */; };
+		4EAAF6C51D417725004A8723 /* AddDoctorsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAAF6C41D417725004A8723 /* AddDoctorsDelegate.swift */; };
 		4EACFD741D3F9E4000155698 /* SendDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACFD731D3F9E4000155698 /* SendDocVC.swift */; };
 		F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */; };
 		F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */; };
@@ -82,6 +83,7 @@
 		4E662D411D40437D009B3A88 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
 		4E662D421D40437D009B3A88 /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
 		4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsToAddVC.swift; sourceTree = "<group>"; };
+		4EAAF6C41D417725004A8723 /* AddDoctorsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDoctorsDelegate.swift; sourceTree = "<group>"; };
 		4EACFD731D3F9E4000155698 /* SendDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDocVC.swift; sourceTree = "<group>"; };
 		F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				4EACFD731D3F9E4000155698 /* SendDocVC.swift */,
 				4E662D351D3FF7F4009B3A88 /* DisplayDocVC.swift */,
 				4E60D5821D4053DC00A99FB0 /* MyDoctorsVC.swift */,
+				4EAAF6C41D417725004A8723 /* AddDoctorsDelegate.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				4E518E921D3D7E08007C2CCF /* MedicalRecord.swift in Sources */,
 				4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */,
 				F3AC32071D3F85300005DD5A /* SSNViewController.swift in Sources */,
+				4EAAF6C51D417725004A8723 /* AddDoctorsDelegate.swift in Sources */,
 				4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */,
 				4E518E881D3D7DF6007C2CCF /* DocumentImageVC.swift in Sources */,
 			);

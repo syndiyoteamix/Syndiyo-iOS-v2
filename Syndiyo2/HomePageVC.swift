@@ -53,7 +53,7 @@ class HomePageVC: UIViewController {
     
     @IBAction func sendEmail(sender: AnyObject) {
         performSegueWithIdentifier("sendEmail", sender: self)
-        UserController.sharedInstance.state = .requestingDoc
+        UserController.sharedInstance.state = .sendingDoc
         
     }
     
