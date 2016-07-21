@@ -25,10 +25,6 @@ class RecordTabCustomCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        containerView.layer.cornerRadius = 5
-        containerView.layer.masksToBounds = true
-        
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
