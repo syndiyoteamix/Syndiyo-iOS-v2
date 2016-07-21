@@ -16,8 +16,14 @@ class UserController {
     static let sharedInstance = UserController()
     
     
+    
+    
     var currentUser: User?
-    var currentRecord:MedicalRecord? 
+    var currentRecord: MedicalRecord?
+    var currentDoctor: Doctor?
+    
+    var fakeDoctors:[Doctor] = [Doctor(name: "BS1", speciality: "", address: "", email: "BS1@gmail.com", fax: "", phone: "", profilePic: nil), Doctor(name: "BS2", speciality: "", address: "", email: "", fax: "", phone: "", profilePic: nil)]
+    
     
     
     
@@ -105,6 +111,16 @@ class UserController {
     
     func addDoctors(doctors: [Doctor]) {
         currentUser?.doctorsArray!.appendContentsOf(doctors)
+    }
+    
+    func updateDoctorsArray() {
+        for doct in currentUser!.doctorsArray! {
+            if doct.UUID == currentDoctor!.UUID {
+                let index = currentUser!.doctorsArray!.indexOf(doct)!
+                currentUser?.doctorsArray!.removeAtIndex(index)
+                currentUser?.doctorsArray!.insert(doct, atIndex: index)
+            }
+        }
     }
     
     func deleteDoctor() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -515,7 +515,7 @@
                     <connections>
                         <segue destination="E5A-xk-fyr" kind="relationship" relationship="viewControllers" id="UHK-uP-h5a"/>
                         <segue destination="ltI-11-wqL" kind="relationship" relationship="viewControllers" id="vlJ-38-DTM"/>
-                        <segue destination="1Wg-S6-B8s" kind="relationship" relationship="viewControllers" id="WML-HY-6Kt"/>
+                        <segue destination="KLh-D0-f7N" kind="relationship" relationship="viewControllers" id="tMO-Xy-pap"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgO-2b-bud" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -542,23 +542,55 @@
             <point key="canvasLocation" x="520" y="400"/>
         </scene>
         <!--My Doctors-->
-        <scene sceneID="duq-A8-r0D">
+        <scene sceneID="h1T-xw-eEe">
             <objects>
-                <viewController id="1Wg-S6-B8s" sceneMemberID="viewController">
+                <navigationController id="KLh-D0-f7N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Doctors" id="QXm-9s-tjc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mVG-LO-p7g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Smi-rj-cbE" kind="relationship" relationship="rootViewController" id="7hG-El-c8R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKJ-Al-Fj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="1417"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="2DH-d5-UtR">
+            <objects>
+                <viewController id="Smi-rj-cbE" customClass="MyDoctorsVC" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TbU-Rs-SKB"/>
-                        <viewControllerLayoutGuide type="bottom" id="7aL-KG-NZY"/>
+                        <viewControllerLayoutGuide type="top" id="ePG-FV-kLr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Te4-Rm-ZdM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9Nn-as-HKs">
+                    <view key="view" contentMode="scaleToFill" id="YRL-Wq-5BJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvp-GI-b40">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Te4-Rm-ZdM" firstAttribute="top" secondItem="qvp-GI-b40" secondAttribute="bottom" id="czL-7U-iX9"/>
+                            <constraint firstItem="qvp-GI-b40" firstAttribute="leading" secondItem="YRL-Wq-5BJ" secondAttribute="leading" id="hEH-xW-q91"/>
+                            <constraint firstAttribute="trailing" secondItem="qvp-GI-b40" secondAttribute="trailing" id="iRj-sQ-UhL"/>
+                            <constraint firstItem="qvp-GI-b40" firstAttribute="top" secondItem="ePG-FV-kLr" secondAttribute="bottom" id="z42-aj-6Z7"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Doctors" id="mpO-2M-YOi"/>
+                    <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr"/>
+                    <connections>
+                        <outlet property="tableView" destination="qvp-GI-b40" id="OF6-Qo-79C"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R6e-iU-K92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGP-zs-CWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="1532"/>
+            <point key="canvasLocation" x="1696" y="1469"/>
         </scene>
         <!--Send DocVC-->
         <scene sceneID="7Sp-X3-wiU">
