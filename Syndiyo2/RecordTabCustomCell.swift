@@ -18,6 +18,9 @@ class RecordTabCustomCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var checkMarkImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

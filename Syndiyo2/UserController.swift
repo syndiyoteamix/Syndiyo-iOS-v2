@@ -31,7 +31,7 @@ class UserController {
    
     var users: [User] = [User]()
     
-    
+    var recordsToSend:[MedicalRecord]?
 
     
     func updateUsersArray() {
