@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-//change image
+
 
 enum State {
     case sendingDoc
@@ -74,7 +74,6 @@ class UserController {
     
     func loginUser(email: String, password: String, onCompletion: (User?, String?) -> Void) {
         if users.isEmpty {
-            print("hey")
             onCompletion(nil, "Email or password is incorrect")
         }
         for person in users {

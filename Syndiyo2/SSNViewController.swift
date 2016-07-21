@@ -43,6 +43,8 @@ class SSNViewController: UIViewController {
         
         UserController.sharedInstance.registerUser { error in
             if error != nil {
+                
+                print("shit")
                 self.createAlert(error!, submessage: "Please try again") { action in }
             }
             else {

@@ -73,33 +73,29 @@ class LandingViewController: UIViewController {
     
     @IBAction func signInButtonPressed(sender: AnyObject) {
         
-        UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!) { user, error in
+        UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            
+            
             if user != nil {
+                print("hello")
                 UserController.sharedInstance.currentUser = user
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateInitialViewController()
                 let application = UIApplication.sharedApplication()
                 let window = application.keyWindow
                 window?.rootViewController = viewController
+               
             } else {
+                
+                
+                
+                print("shit")
                 self.createAlert(error!, submessage: "Please try again") { action in }
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
+              
             }
         }
     }
-    
-//    @IBAction func signInButtonPressed(sender: AnyObject) {
-//        
-//        UserController.sharedInstance.loginUser(<#T##email: String##String#>, password: <#T##String#>, onCompletion: <#T##(User?, String?) -> Void#>)
-//        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateInitialViewController()
-//        let application = UIApplication.sharedApplication()
-//        let window = application.keyWindow
-//        window?.rootViewController = viewController
-//        
-//    }
-    
 
 }

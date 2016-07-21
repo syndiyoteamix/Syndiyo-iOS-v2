@@ -42,7 +42,7 @@ class MyRecordsTabTableVC: UITableViewController{
         
         self.navigationItem.title = "My Records"
         self.navigationItem.rightBarButtonItem = addButton
-        } else if UserController.sharedInstance.state == .sendingInfo {
+        } else if UserController.sharedInstance.state == .sendingDoc {
             let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
             
             self.navigationItem.title = "My Records"
