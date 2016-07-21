@@ -199,11 +199,22 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
             self.presentViewController(addDoctorsVC, animated: true, completion: nil)
             
         } else if requestingInfo{
-            requestEmail = myDoctors[indexPath.row].email
+            let email:String = myDoctors[indexPath.row].email
+            print(email)
             
-            let mailComposeViewController = configuredMailComposeViewController()
+            let mailComposerVC = MFMailComposeViewController()
+            mailComposerVC.mailComposeDelegate = self
+            mailComposerVC.setToRecipients([email])
+            mailComposerVC.setSubject("Medical Record Request")
+            mailComposerVC.setMessageBody(requestText, isHTML: false)
+            
+            
+            
+            
+            
+           // let mailComposeViewController = configuredMailComposeViewController()
             if MFMailComposeViewController.canSendMail() {
-                self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+                self.presentViewController(mailComposerVC, animated: true, completion: nil)
             } else {
                 self.showSendMailErrorAlert()
             }
