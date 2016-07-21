@@ -106,6 +106,13 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     func didDisappear() {
         myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
         tableView.reloadData()
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
+        
+        self.navigationItem.title = "My Doctors"
+        self.navigationItem.rightBarButtonItem = addButton
+        self.navigationItem.leftBarButtonItem = nil
+        
     }
     
     func cancelButtonClicked(){

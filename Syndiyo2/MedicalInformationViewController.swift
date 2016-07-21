@@ -40,15 +40,42 @@ class MedicalInformationViewController: UIViewController,UIGestureRecognizerDele
         // Dispose of any resources that can be recreated.
     }
     
-    //fix later!!!
-    @IBAction func nextButtonPressed(sender: AnyObject) {
-        UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: String(heightTextField.text!) ?? "", weight: String(weightTextField.text!) ?? "", allergies: allergiesTextField.text!, previousMedicalConditions: previousMedicalConditionsTextfield.text!, medications: medicationsTextField.text!)
-    }
+//    //fix later!!!
+//    @IBAction func nextButtonPressed(sender: AnyObject) {
+//        UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: String(heightTextField.text!) ?? "", weight: String(weightTextField.text!) ?? "", allergies: allergiesTextField.text!, previousMedicalConditions: previousMedicalConditionsTextfield.text!, medications: medicationsTextField.text!)
+//    }
     
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    @IBAction func nextButtonPressed(sender: AnyObject) {
+        UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: String(heightTextField.text!) ?? "", weight: String(weightTextField.text!) ?? "", allergies: allergiesTextField.text!, previousMedicalConditions: previousMedicalConditionsTextfield.text!, medications: medicationsTextField.text!)
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        let application = UIApplication.sharedApplication()
+        let window = application.keyWindow
+        window?.rootViewController = viewController
+        
+        
+    }
+    
+    @IBAction func skipButtonPressed(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        let application = UIApplication.sharedApplication()
+        let window = application.keyWindow
+        window?.rootViewController = viewController
+    }
+    
+    func viewWillDisappear(animated: Bool) {
+        <#code#>
+    }
+    
+    
 
 }

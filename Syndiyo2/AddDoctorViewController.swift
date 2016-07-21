@@ -33,6 +33,10 @@ class AddDoctorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.clearColor()
+        view.opaque = false
+        
+        
         addButton.layer.cornerRadius = 15
         
 //        cardView.layer.shadowColor = UIColor.blueColor().CGColor

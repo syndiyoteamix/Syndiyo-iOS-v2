@@ -116,6 +116,9 @@
                             <state key="normal" title="Next">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="Sf9-J7-Vn2"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlt-m4-uTq" userLabel="Skip Button">
                             <rect key="frame" x="0.0" y="300" width="354" height="30"/>
@@ -128,6 +131,9 @@
                             <state key="normal" title="Skip">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="skipButtonPressed:" destination="-1" eventType="touchUpInside" id="G7a-Jx-A7j"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
