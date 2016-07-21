@@ -51,7 +51,7 @@
                                 <constraint firstAttribute="width" secondItem="fMQ-1B-htf" secondAttribute="height" multiplier="1:1" id="7HN-mn-OxL"/>
                             </constraints>
                         </imageView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a profile picture above, and let's continue setting up the rest of your account." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dTt-SH-9d3">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Let's continue setting up your account" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dTt-SH-9d3">
                             <rect key="frame" x="0.0" y="285" width="354" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
