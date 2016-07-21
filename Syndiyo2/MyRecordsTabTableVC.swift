@@ -28,22 +28,46 @@ class MyRecordsTabTableVC: UITableViewController{
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        //set the nib cell
         let nibCell = UINib(nibName: "RecordTabCustomCell", bundle: nil)
         self.tableView.registerNib(nibCell, forCellReuseIdentifier: "cell1")
         self.tableView.dataSource = self
         
         
-        //disregard because there is currently no user data
-        medicalRecords = UserController.sharedInstance.userMedicalRecords()
+        //create the buttons he needs in view
+        if UserController.sharedInstance.state == .view{
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
         
+        self.navigationItem.title = "My Records"
+        self.navigationItem.rightBarButtonItem = addButton
+        } else if UserController.sharedInstance.state == .sendingInfo {
+            let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
+            
+            self.navigationItem.title = "My Records"
+            self.navigationItem.rightBarButtonItem = addButton
+
+        }
+      
         
     }
+    
+    
+    //this is an add button for when the record view is reached normally
+    func addButtonClicked() {
+        performSegueWithIdentifier("addDoc", sender: self)
+       
+    }
+    
+    
     
     
     override func viewWillAppear(animated: Bool) {
         medicalRecords = UserController.sharedInstance.userMedicalRecords()
         self.tableView.reloadData()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

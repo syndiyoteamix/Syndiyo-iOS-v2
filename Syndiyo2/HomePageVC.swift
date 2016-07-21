@@ -38,9 +38,7 @@ class HomePageVC: UIViewController {
         }
         if segue.identifier == "sendEmail" {
             if let destination = segue.destinationViewController as? UINavigationController{
-                print("hello2")
                 if let root = destination.viewControllers[0] as? MyDoctorsVC{
-                    print("hello1")
                     root.canEditDoctor = false
                     root.requestingInfo = false
                     root.sendingInfo = true
