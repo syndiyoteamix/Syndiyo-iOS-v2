@@ -18,6 +18,9 @@ class AddDoctorViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet weak var topLabel: UILabel!
+    
+    
     
     var addingDoctor:Bool = true
     var editingDoctor:Bool = true
@@ -43,6 +46,7 @@ class AddDoctorViewController: UIViewController {
             phoneTextField.text = currentDoctor?.phone
             
             addButton.setTitle("Done", forState: .Normal)
+            topLabel.text = "Edit Doctor"
         }
         
     }
@@ -53,11 +57,15 @@ class AddDoctorViewController: UIViewController {
     }
     
     @IBAction func addButtonClicked(sender: AnyObject) {
+        print(addingDoctor)
+        print(editingDoctor)
         if addingDoctor {
+            print("I'm here 1")
             let newDoctor = Doctor(name: doctorNameTextField.text!, speciality: nil, address: locationTextField.text!, email: emailTextField.text!, fax: faxTextField.text!, phone: phoneTextField.text!, profilePic: nil)
             UserController.sharedInstance.addDoctors([newDoctor])
             self.dismissViewControllerAnimated(true, completion: nil)
         } else if editingDoctor {
+            print("i'm here 2")
             currentDoctor?.name = doctorNameTextField.text!
             currentDoctor?.address = locationTextField.text!
             currentDoctor?.email = emailTextField.text!
@@ -65,7 +73,7 @@ class AddDoctorViewController: UIViewController {
             currentDoctor?.phone = phoneTextField.text!
             
             UserController.sharedInstance.updateDoctorsArray()
-            self.dismissViewControllerAnimated(true, completion: nil) 
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
         
     }

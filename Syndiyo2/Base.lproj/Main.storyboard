@@ -515,7 +515,7 @@
                     <connections>
                         <segue destination="E5A-xk-fyr" kind="relationship" relationship="viewControllers" id="UHK-uP-h5a"/>
                         <segue destination="ltI-11-wqL" kind="relationship" relationship="viewControllers" id="vlJ-38-DTM"/>
-                        <segue destination="xbh-Po-7gO" kind="relationship" relationship="viewControllers" id="Okb-yZ-TEW"/>
+                        <segue destination="KLh-D0-f7N" kind="relationship" relationship="viewControllers" id="tMO-Xy-pap"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgO-2b-bud" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -542,18 +542,55 @@
             <point key="canvasLocation" x="520" y="400"/>
         </scene>
         <!--My Doctors-->
-        <scene sceneID="Xfp-Wf-njt">
+        <scene sceneID="h1T-xw-eEe">
             <objects>
-                <navigationController id="xbh-Po-7gO" customClass="MyDoctorsNC" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Doctors" id="J19-J6-au9"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="39p-za-IIF">
+                <navigationController id="KLh-D0-f7N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Doctors" id="QXm-9s-tjc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mVG-LO-p7g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="Smi-rj-cbE" kind="relationship" relationship="rootViewController" id="7hG-El-c8R"/>
+                    </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6P8-Oz-j0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKJ-Al-Fj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101" y="1186"/>
+            <point key="canvasLocation" x="656" y="1417"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="2DH-d5-UtR">
+            <objects>
+                <viewController id="Smi-rj-cbE" customClass="MyDoctorsVC" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ePG-FV-kLr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Te4-Rm-ZdM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YRL-Wq-5BJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvp-GI-b40">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Te4-Rm-ZdM" firstAttribute="top" secondItem="qvp-GI-b40" secondAttribute="bottom" id="czL-7U-iX9"/>
+                            <constraint firstItem="qvp-GI-b40" firstAttribute="leading" secondItem="YRL-Wq-5BJ" secondAttribute="leading" id="hEH-xW-q91"/>
+                            <constraint firstAttribute="trailing" secondItem="qvp-GI-b40" secondAttribute="trailing" id="iRj-sQ-UhL"/>
+                            <constraint firstItem="qvp-GI-b40" firstAttribute="top" secondItem="ePG-FV-kLr" secondAttribute="bottom" id="z42-aj-6Z7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr"/>
+                    <connections>
+                        <outlet property="tableView" destination="qvp-GI-b40" id="OF6-Qo-79C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGP-zs-CWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1696" y="1469"/>
         </scene>
         <!--Send DocVC-->
         <scene sceneID="7Sp-X3-wiU">

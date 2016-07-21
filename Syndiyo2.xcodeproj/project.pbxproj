@@ -26,10 +26,8 @@
 		4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */; };
 		4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */; };
 		4E518EAC1D3D8914007C2CCF /* RecordTabCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */; };
+		4E60D5831D4053DC00A99FB0 /* MyDoctorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60D5821D4053DC00A99FB0 /* MyDoctorsVC.swift */; };
 		4E662D361D3FF7F4009B3A88 /* DisplayDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E662D351D3FF7F4009B3A88 /* DisplayDocVC.swift */; };
-		4E662D3D1D402FBD009B3A88 /* MyDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E662D3B1D402FBD009B3A88 /* MyDoctorsViewController.swift */; };
-		4E662D3E1D402FBD009B3A88 /* MyDoctorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E662D3C1D402FBD009B3A88 /* MyDoctorsViewController.xib */; };
-		4E662D401D403EE0009B3A88 /* MyDoctorsNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E662D3F1D403EE0009B3A88 /* MyDoctorsNC.swift */; };
 		4E662D431D40437D009B3A88 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E662D411D40437D009B3A88 /* DoctorTableViewCell.swift */; };
 		4E662D441D40437D009B3A88 /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E662D421D40437D009B3A88 /* DoctorTableViewCell.xib */; };
 		4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */; };
@@ -79,10 +77,8 @@
 		4E518EA71D3D8844007C2CCF /* MyRecordsTabTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecordsTabTableVC.swift; sourceTree = "<group>"; };
 		4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTabCustomCell.swift; sourceTree = "<group>"; };
 		4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTabCustomCell.xib; sourceTree = "<group>"; };
+		4E60D5821D4053DC00A99FB0 /* MyDoctorsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsVC.swift; sourceTree = "<group>"; };
 		4E662D351D3FF7F4009B3A88 /* DisplayDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayDocVC.swift; sourceTree = "<group>"; };
-		4E662D3B1D402FBD009B3A88 /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
-		4E662D3C1D402FBD009B3A88 /* MyDoctorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDoctorsViewController.xib; sourceTree = "<group>"; };
-		4E662D3F1D403EE0009B3A88 /* MyDoctorsNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsNC.swift; sourceTree = "<group>"; };
 		4E662D411D40437D009B3A88 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
 		4E662D421D40437D009B3A88 /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
 		4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsToAddVC.swift; sourceTree = "<group>"; };
@@ -212,8 +208,6 @@
 				F3C8C5261D3FEE5A00E3E54C /* AddDoctorViewController.xib */,
 				4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */,
 				4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */,
-				4E662D3B1D402FBD009B3A88 /* MyDoctorsViewController.swift */,
-				4E662D3C1D402FBD009B3A88 /* MyDoctorsViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -245,7 +239,7 @@
 				4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */,
 				4EACFD731D3F9E4000155698 /* SendDocVC.swift */,
 				4E662D351D3FF7F4009B3A88 /* DisplayDocVC.swift */,
-				4E662D3F1D403EE0009B3A88 /* MyDoctorsNC.swift */,
+				4E60D5821D4053DC00A99FB0 /* MyDoctorsVC.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -333,7 +327,6 @@
 				4E518E941D3D7E1B007C2CCF /* Onboarding.storyboard in Resources */,
 				F3AC321B1D3FA9E90005DD5A /* GetStartedViewController.xib in Resources */,
 				4E662D441D40437D009B3A88 /* DoctorTableViewCell.xib in Resources */,
-				4E662D3E1D402FBD009B3A88 /* MyDoctorsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +338,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3AC324C1D3FDBB70005DD5A /* UIRoundTextField.swift in Sources */,
-				4E662D3D1D402FBD009B3A88 /* MyDoctorsViewController.swift in Sources */,
 				4E518E901D3D7E08007C2CCF /* MedicalInformation.swift in Sources */,
 				4E662D361D3FF7F4009B3A88 /* DisplayDocVC.swift in Sources */,
 				4E662D431D40437D009B3A88 /* DoctorTableViewCell.swift in Sources */,
@@ -375,9 +367,9 @@
 				F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */,
 				4E518E871D3D7DF6007C2CCF /* Doctor.swift in Sources */,
 				F3AC32111D3FA78C0005DD5A /* UISSNTextField.swift in Sources */,
+				4E60D5831D4053DC00A99FB0 /* MyDoctorsVC.swift in Sources */,
 				4EACFD741D3F9E4000155698 /* SendDocVC.swift in Sources */,
 				4E518E921D3D7E08007C2CCF /* MedicalRecord.swift in Sources */,
-				4E662D401D403EE0009B3A88 /* MyDoctorsNC.swift in Sources */,
 				4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */,
 				F3AC32071D3F85300005DD5A /* SSNViewController.swift in Sources */,
 				4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */,
