@@ -19,10 +19,9 @@ class BasicInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Tap to dismiss keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        containerView.addGestureRecognizer(tap)
+//        // Tap to dismiss keyboard
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        view.addGestureRecognizer(tap)
         
         // Configuration of nextButton
         nextButton.layer.cornerRadius = 15
@@ -61,7 +60,7 @@ class BasicInformationViewController: UIViewController {
     }
     
     //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
+    @IBAction func dismissKeyboard(sender: AnyObject) {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
