@@ -9,6 +9,18 @@
 import Foundation
 import UIKit
 
+//change image
+
+enum State {
+    case sendingDoc
+    
+    case requestingDoc
+    
+    case view
+    
+}
+
+
 class UserController {
     
     let manager = NSFileManager.defaultManager()
@@ -21,6 +33,7 @@ class UserController {
     var currentUser: User?
     var currentRecord: MedicalRecord?
     var currentDoctor: Doctor?
+    var state:State = .view
     
     var fakeDoctors:[Doctor] = [Doctor(name: "BS1", speciality: "", address: "", email: "BS1@gmail.com", fax: "", phone: "", profilePic: nil), Doctor(name: "BS2", speciality: "", address: "", email: "", fax: "", phone: "", profilePic: nil)]
     

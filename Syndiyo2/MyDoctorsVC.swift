@@ -77,23 +77,9 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     
     
-    override func viewDidAppear(animated: Bool) {
-        
-        print("boolean")
-        print(canEditDoctor)
-        print(requestingInfo)
-        print(sendingInfo)
-        
-        
-        print("updating records")
-        recordsToSend = UserController.sharedInstance.recordsToSend
-        
-    }
+   
     
     func sendEmail (){
-        
-        
-        
         let mailComposerVC = MFMailComposeViewController()
         
         print(sendingEmail!)
@@ -103,31 +89,30 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         mailComposerVC.setSubject("Medical Record for Next Appointment")
         mailComposerVC.setMessageBody(sendingText, isHTML: false)
         
-        
-        
+     
         for record in recordsToSend!{
             let imageData: NSData = UIImagePNGRepresentation(record.image)!
             mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
         }
-        
-        
-        
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.presentViewController(mailComposeViewController, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
-
     }
     
     override func viewWillAppear(animated: Bool) {
         myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
-        UserController.sharedInstance.saveUsersArray()
         tableView.reloadData()
-        
     }
     
+    
+    
+    override func viewDidAppear(animated: Bool) {
+         UserController.sharedInstance.saveUsersArray()
+        recordsToSend = UserController.sharedInstance.recordsToSend
+    }
     
     func addButtonClicked(){
         if sendingInfo{
@@ -140,11 +125,6 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         }
         
     }
-    
-    
-    
-    
-    
     
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {

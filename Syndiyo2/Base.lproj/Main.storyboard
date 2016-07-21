@@ -543,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7r-c7-Lk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456" y="249"/>
+            <point key="canvasLocation" x="392" y="171"/>
         </scene>
         <!--My Doctors-->
         <scene sceneID="h1T-xw-eEe">
@@ -601,7 +601,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGP-zs-CWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1768" y="1573"/>
+            <point key="canvasLocation" x="1268" y="1553"/>
         </scene>
         <!--Send DocVC-->
         <scene sceneID="7Sp-X3-wiU">
