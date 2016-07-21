@@ -35,6 +35,10 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     @IBOutlet weak var tableView: UITableView!
     
     
+    @IBOutlet weak var greyView: UIView!
+    
+    
+    
     override func viewDidLoad() {
       
         super.viewDidLoad()
@@ -104,8 +108,17 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     
     func didDisappear() {
+        
+        greyView.hidden = true
         myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
         tableView.reloadData()
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
+        
+        self.navigationItem.title = "My Doctors"
+        self.navigationItem.rightBarButtonItem = addButton
+        self.navigationItem.leftBarButtonItem = nil
+        
     }
     
     func cancelButtonClicked(){
@@ -175,6 +188,10 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     //add doctor view controller pops up
     func addButtonClicked(){
+        
+        
+        greyView.hidden = false
+        
         
         // change the navi bar 
         
@@ -255,6 +272,10 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
 
         switch UserController.sharedInstance.state {
         case .view:
+            
+            
+            greyView.hidden = true
+            
             
             //change the navi bar
             
