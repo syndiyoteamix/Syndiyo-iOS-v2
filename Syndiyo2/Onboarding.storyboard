@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jB2-ue-pBh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jB2-ue-pBh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -52,7 +52,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGQ-sA-6vC" userLabel="ContainerView">
                                 <rect key="frame" x="50" y="301" width="500" height="130"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHK-eo-7Rj" customClass="UIRoundTextField" customModule="Syndiyo2" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="alan@alan.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHK-eo-7Rj" customClass="UIRoundTextField" customModule="Syndiyo2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.9999412298" blue="0.99995887279999995" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -79,7 +79,7 @@
                                             <action selector="signInButtonPressed:" destination="aVO-qh-ebK" eventType="touchUpInside" id="CnK-tA-b5x"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X94-Xf-Ogf" customClass="UIRoundTextField" customModule="Syndiyo2" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X94-Xf-Ogf" customClass="UIRoundTextField" customModule="Syndiyo2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="500" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.9999412298" blue="0.99995887279999995" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                         <constraints>

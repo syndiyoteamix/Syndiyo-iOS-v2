@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 
 
-class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,MFMailComposeViewControllerDelegate, UITextFieldDelegate {
+class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,MFMailComposeViewControllerDelegate, UITextFieldDelegate,AddDoctorDelegate {
 
     
     
@@ -19,12 +19,12 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     var canEditDoctor:Bool = true
     
     var requestingInfo: Bool = false
-    var requestEmail:String?
+    var requestEmail:String = ""
     var requestText:String = "I, \(UserController.sharedInstance.currentUser!.firstName) \(UserController.sharedInstance.currentUser!.lastName) , hereby request my Health Records." + "\n\n" + "This request is for any and all medical records related to services provided, and may include but not limited to Clinic Notes, Laboratory Reports, Radiology Reports, X-Ray Film/Images, EKG, History & Physical Exam, Discharge Summary, Progress Notes, Consultation Report, Specialist Notes, Department Record, Billing Record or any other documents belonging to Patient's medical records." + "\n\n" + "I understand that I have a right to receive a copy of my health information under the Health Insurance Portability and Accountability Act of 1996. Please consider this notification my official request in writing for my health information. The purpose for the release of health information is for archiving and personal use only."
     
     
     var sendingInfo:Bool = false
-    var sendingEmail:String?
+    var sendingEmail:String = ""
     
     
     var sendingText:String = "I, \(UserController.sharedInstance.currentUser!.firstName) \(UserController.sharedInstance.currentUser!.lastName) am hereby sending the attached medical record(s) for my next appointment."
@@ -55,12 +55,6 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         self.navigationItem.rightBarButtonItem = addButton
         }
         
-        if sendingInfo {
-            let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(sendEmail))
-            
-            self.navigationItem.title = "Doctors"
-            self.navigationItem.rightBarButtonItem = addButton
-        }
         
         myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
    
@@ -93,9 +87,25 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
             self.navigationItem.title = "Select Doctor"
             self.navigationItem.rightBarButtonItem = sendDocButton
             self.navigationItem.leftBarButtonItem = backButton
-            
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        UserController.sharedInstance.saveUsersArray()
         
+    }
+    
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
+        tableView.reloadData()
+    }
+    
+    
+    func didDisappear() {
+        myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
+        tableView.reloadData()
     }
     
     func cancelButtonClicked(){
@@ -119,7 +129,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         let mailComposerVC = MFMailComposeViewController()
         
         mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients([sendingEmail!])
+        mailComposerVC.setToRecipients([requestEmail])
         mailComposerVC.setSubject("Medical Record Request")
         mailComposerVC.setMessageBody(requestText, isHTML: false)
         
@@ -139,7 +149,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
         
         mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients([sendingEmail!])
+        mailComposerVC.setToRecipients([sendingEmail])
         mailComposerVC.setSubject("Medical Record for Next Appointment")
         mailComposerVC.setMessageBody(sendingText, isHTML: false)
         
@@ -158,21 +168,23 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     
     
-    override func viewWillAppear(animated: Bool) {
-        myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
-        tableView.reloadData()
-    }
+   
     
     
-    
-    override func viewDidAppear(animated: Bool) {
-        UserController.sharedInstance.saveUsersArray()
-        
-    }
-    
+   
     
     //add doctor view controller pops up
     func addButtonClicked(){
+        
+        // change the navi bar 
+        
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelButtonClicked))
+        self.navigationItem.title = "Add a New Doctor"
+        self.navigationItem.rightBarButtonItem = nil
+        self.navigationItem.leftBarButtonItem = cancelButton
+        
+        
+        //present the vc
         let addDoctorsVC = AddDoctorViewController(nibName: "AddDoctorViewController", bundle: nil)
         
         addDoctorsVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
@@ -182,40 +194,9 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         self.definesPresentationContext = true
         addDoctorsVC.addingDoctor = true
         addDoctorsVC.editingDoctor = false
+        addDoctorsVC.delegate = self
         self.presentViewController(addDoctorsVC, animated: true, completion: nil)
     }
-    
-    
-//    func configuredMailComposeViewController() -> MFMailComposeViewController {
-//        let mailComposerVC = MFMailComposeViewController()
-//        
-//        if requestingInfo {
-//        
-////        mailComposerVC.mailComposeDelegate = self
-////        mailComposerVC.setToRecipients([requestEmail!])
-////        mailComposerVC.setSubject("Medical Record Request")
-////        mailComposerVC.setMessageBody(requestText, isHTML: false)
-//        }
-//        
-//        if sendingInfo {
-//            mailComposerVC.mailComposeDelegate = self
-//            mailComposerVC.setToRecipients([sendingEmail!])
-//            mailComposerVC.setSubject("Medical Record for Next Appointment")
-//            mailComposerVC.setMessageBody(sendingText, isHTML: false)
-//            
-//            
-//            
-//            for record in recordsToSend{
-//                let imageData: NSData = UIImagePNGRepresentation(record.image)!
-//                mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
-//            }
-//     
-//            
-//        }
-//        
-//        
-//        return mailComposerVC
-//    }
     
     
     func showSendMailErrorAlert() {
@@ -225,13 +206,13 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        
+        UserController.sharedInstance.state = .view
         controller.dismissViewControllerAnimated(true, completion: nil)
+   
     }
 
     
-    
-    
+  
     
     // MARK: - Table view data source
     
@@ -271,47 +252,46 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("hello i'm here")
-        print(canEditDoctor)
-        if canEditDoctor {
-            print("click here yay")
+
+        switch UserController.sharedInstance.state {
+        case .view:
+            
+            //change the navi bar
+            
+            let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelButtonClicked))
+            self.navigationItem.title = "Edit a doctor"
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.leftBarButtonItem = cancelButton
+            
+            
+            
+            //present the view
             let addDoctorsVC = AddDoctorViewController(nibName: "AddDoctorViewController", bundle: nil)
+            
+            addDoctorsVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            
             addDoctorsVC.addingDoctor = false
             addDoctorsVC.editingDoctor = true
+            addDoctorsVC.delegate = self
             addDoctorsVC.currentDoctor = myDoctors[indexPath.row]
             UserController.sharedInstance.currentDoctor = myDoctors[indexPath.row]
+        
             
             
-            self.navigationController!.popViewControllerAnimated(true)
-            
-        } else if requestingInfo{
-            let email:String = myDoctors[indexPath.row].email
-            print(email)
-            
-            let mailComposerVC = MFMailComposeViewController()
-            mailComposerVC.mailComposeDelegate = self
-            mailComposerVC.setToRecipients([email])
-            mailComposerVC.setSubject("Medical Record Request")
-            mailComposerVC.setMessageBody(requestText, isHTML: false)
+            self.definesPresentationContext = true
+            self.presentViewController(addDoctorsVC, animated: true, completion: nil)
+
+        case .requestingDoc:
+            requestEmail = myDoctors[indexPath.row].email
             
             
-            
-            
-            
-           // let mailComposeViewController = configuredMailComposeViewController()
-            if MFMailComposeViewController.canSendMail() {
-                self.presentViewController(mailComposerVC, animated: true, completion: nil)
-            } else {
-                self.showSendMailErrorAlert()
-            }
-    
-        } else if sendingInfo {
+        case .sendingDoc:
             sendingEmail = myDoctors[indexPath.row].email
             
-            
-            performSegueWithIdentifier("selectRecords", sender: self)
-            
+   
         }
+        
     }
 
     
@@ -320,11 +300,6 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         destination?.sendingInfo = true
     }
     
-    
-    
-    @IBAction func doneButtonPressed(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
     
     
     

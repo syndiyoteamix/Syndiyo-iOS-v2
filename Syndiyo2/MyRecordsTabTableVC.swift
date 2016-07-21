@@ -74,10 +74,10 @@ class MyRecordsTabTableVC: UITableViewController{
             
             
             
-            let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(doneButtonClicked))
+            let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(doneButtonClicked))
             
             self.navigationItem.title = "Select Records to Send"
-            self.navigationItem.leftBarButtonItem = doneButton
+            self.navigationItem.leftBarButtonItem = cancelButton
    
         case .requestingDoc:
             
@@ -94,9 +94,7 @@ class MyRecordsTabTableVC: UITableViewController{
     }
     
     func nextButtonClicked() {
-        
-        
-        
+  
         performSegueWithIdentifier("selectDoctor", sender: self)
     }
     
