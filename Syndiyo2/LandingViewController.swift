@@ -10,8 +10,8 @@ import UIKit
 
 class LandingViewController: UIViewController {
     
-    @IBOutlet weak var emailTextField: UIRoundTextField!
-    @IBOutlet weak var passwordTextField: UIRoundTextField!
+    @IBOutlet weak var emailTextField: UIPaddedTextField!
+    @IBOutlet weak var passwordTextField: UIPaddedTextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var yOriginOfInputContainer: NSLayoutConstraint!
@@ -20,9 +20,12 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         
         signInButton.alpha = 0.5
-        signInButton.layer.cornerRadius = 15
-        emailTextField.layer.cornerRadius = 15
-        passwordTextField.layer.cornerRadius = 15
+        signInButton.layer.cornerRadius = 20
+        emailTextField.layer.cornerRadius = 20
+        passwordTextField.layer.cornerRadius = 20
+        
+        emailTextField.padded = true
+        passwordTextField.padded = true
         
         // so we can react to keyboard
         setupKeyboardNotifications()
@@ -127,7 +130,7 @@ class LandingViewController: UIViewController {
     
     
         func updateUIForKeyboard(endFrame:CGRect!, keyboardDirectionUp:Bool)  {
-            if (keyboardDirectionUp) { yOriginOfInputContainer.constant = 30 }
+            if (keyboardDirectionUp) { yOriginOfInputContainer.constant = 50 }
             else { yOriginOfInputContainer.constant = 150 } //the original value from the nib
         }
     

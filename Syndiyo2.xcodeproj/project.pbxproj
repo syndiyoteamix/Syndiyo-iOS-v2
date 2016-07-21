@@ -49,11 +49,13 @@
 		F3AC321D1D3FAC3B0005DD5A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC321C1D3FAC3B0005DD5A /* UIColor.swift */; };
 		F3AC32201D3FB4CE0005DD5A /* MedicalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC321E1D3FB4CE0005DD5A /* MedicalInformationViewController.swift */; };
 		F3AC32211D3FB4CE0005DD5A /* MedicalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3AC321F1D3FB4CE0005DD5A /* MedicalInformationViewController.xib */; };
-		F3AC324C1D3FDBB70005DD5A /* UIRoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */; };
+		F3AC324C1D3FDBB70005DD5A /* UIPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC324B1D3FDBB70005DD5A /* UIPaddedTextField.swift */; };
 		F3AC324E1D3FE0ED0005DD5A /* UISelectionField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */; };
 		F3AC32501D3FE91B0005DD5A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC324F1D3FE91B0005DD5A /* UserController.swift */; };
 		F3C8C5271D3FEE5A00E3E54C /* AddDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8C5251D3FEE5A00E3E54C /* AddDoctorViewController.swift */; };
 		F3C8C5281D3FEE5A00E3E54C /* AddDoctorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3C8C5261D3FEE5A00E3E54C /* AddDoctorViewController.xib */; };
+		F3FEFD751D419153000C81E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEFD731D419153000C81E3 /* ProfileViewController.swift */; };
+		F3FEFD761D419153000C81E3 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FEFD741D419153000C81E3 /* ProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,11 +103,13 @@
 		F3AC321C1D3FAC3B0005DD5A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		F3AC321E1D3FB4CE0005DD5A /* MedicalInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalInformationViewController.swift; sourceTree = "<group>"; };
 		F3AC321F1D3FB4CE0005DD5A /* MedicalInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedicalInformationViewController.xib; sourceTree = "<group>"; };
-		F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundTextField.swift; sourceTree = "<group>"; };
+		F3AC324B1D3FDBB70005DD5A /* UIPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddedTextField.swift; sourceTree = "<group>"; };
 		F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISelectionField.swift; sourceTree = "<group>"; };
 		F3AC324F1D3FE91B0005DD5A /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		F3C8C5251D3FEE5A00E3E54C /* AddDoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDoctorViewController.swift; sourceTree = "<group>"; };
 		F3C8C5261D3FEE5A00E3E54C /* AddDoctorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDoctorViewController.xib; sourceTree = "<group>"; };
+		F3FEFD731D419153000C81E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F3FEFD741D419153000C81E3 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,8 @@
 				F3C8C5261D3FEE5A00E3E54C /* AddDoctorViewController.xib */,
 				4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */,
 				4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */,
+				F3FEFD731D419153000C81E3 /* ProfileViewController.swift */,
+				F3FEFD741D419153000C81E3 /* ProfileViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -251,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				F3AC324D1D3FE0ED0005DD5A /* UISelectionField.swift */,
-				F3AC324B1D3FDBB70005DD5A /* UIRoundTextField.swift */,
+				F3AC324B1D3FDBB70005DD5A /* UIPaddedTextField.swift */,
 				F3AC31F91D3E58030005DD5A /* UIValidationTextField.swift */,
 				F3AC31FC1D3E6DE70005DD5A /* UIPasswordValidatingTextField.swift */,
 				F3AC32021D3EE9B30005DD5A /* UIEmailValidationTextField.swift */,
@@ -329,6 +335,7 @@
 				4E518E791D3D7D49007C2CCF /* Assets.xcassets in Resources */,
 				4E518E941D3D7E1B007C2CCF /* Onboarding.storyboard in Resources */,
 				F3AC321B1D3FA9E90005DD5A /* GetStartedViewController.xib in Resources */,
+				F3FEFD761D419153000C81E3 /* ProfileViewController.xib in Resources */,
 				4E662D441D40437D009B3A88 /* DoctorTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3AC324C1D3FDBB70005DD5A /* UIRoundTextField.swift in Sources */,
+				F3AC324C1D3FDBB70005DD5A /* UIPaddedTextField.swift in Sources */,
 				4E518E901D3D7E08007C2CCF /* MedicalInformation.swift in Sources */,
 				4E662D361D3FF7F4009B3A88 /* DisplayDocVC.swift in Sources */,
 				4E662D431D40437D009B3A88 /* DoctorTableViewCell.swift in Sources */,
@@ -376,6 +383,7 @@
 				4E518EAB1D3D8914007C2CCF /* RecordTabCustomCell.swift in Sources */,
 				F3AC32071D3F85300005DD5A /* SSNViewController.swift in Sources */,
 				4EAAF6C51D417725004A8723 /* AddDoctorsDelegate.swift in Sources */,
+				F3FEFD751D419153000C81E3 /* ProfileViewController.swift in Sources */,
 				4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */,
 				4E518E881D3D7DF6007C2CCF /* DocumentImageVC.swift in Sources */,
 			);

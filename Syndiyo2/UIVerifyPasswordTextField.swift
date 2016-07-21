@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIVerifyPasswordTextField: UIValidationTextField {
+class UIVerifyPasswordTextField: UIEmailValidationTextField {
 
     var validateText: String = ""
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIValidationTextField: UIRoundTextField {
+class UIValidationTextField: UIPaddedTextField {
 // updates text when editing
 
     let correctImage = UIImage(named: "checkmark")
