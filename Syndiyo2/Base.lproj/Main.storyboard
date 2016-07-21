@@ -143,16 +143,17 @@
         <!--My Records-->
         <scene sceneID="1jZ-gg-2wR">
             <objects>
-                <tableViewController id="0lT-g3-dRf" customClass="MyRecordsTabTableVC" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="WHO-qD-kCC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="0lT-g3-dRf" customClass="MyRecordsTabTableVC" customModule="Syndiyo2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="WHO-qD-kCC">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.16595259409999999" green="0.43240347420000003" blue="0.74926374350000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <outlet property="dataSource" destination="0lT-g3-dRf" id="3sw-9w-I26"/>
                             <outlet property="delegate" destination="0lT-g3-dRf" id="oqL-x7-vrN"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="My Records" id="Ukg-oj-nEe">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="diS-1B-dpa">
                             <connections>
@@ -705,9 +706,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="XSh-nQ-0aW"/>
         <segue reference="vpX-NX-vO0"/>
-        <segue reference="nFg-6M-fQH"/>
-        <segue reference="da9-gg-mhC"/>
         <segue reference="wUo-K4-BhY"/>
+        <segue reference="3a3-MS-8A5"/>
+        <segue reference="pYR-1M-APP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
