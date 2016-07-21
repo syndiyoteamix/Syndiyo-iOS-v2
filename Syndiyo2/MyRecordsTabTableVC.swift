@@ -55,6 +55,7 @@ class MyRecordsTabTableVC: UITableViewController{
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         if sendingInfo{
+            print("attempting to send info")
             var recordISend:[MedicalRecord] = []
             
             for index in recordsToSend{
@@ -62,7 +63,9 @@ class MyRecordsTabTableVC: UITableViewController{
             }
             
             UserController.sharedInstance.recordsToSend = recordISend
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController!.popViewControllerAnimated(true)
+            
+            print("what why isn't this running")
         } else {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
