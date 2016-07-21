@@ -26,4 +26,27 @@ extension UIViewController {
         
     }
     
+    func makeViewDropKeyboard()   {
+        print("makeViewDropTapped")
+        self.view.endEditing(true);
+        self.resignFirstResponder()
+    }
+    
+    func setupKeyboardNotifications(addDropKeyboardRecogniser:Bool = true)   {
+        
+        //add this view as an observer to keyboard notifications
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        
+        if (addDropKeyboardRecogniser)   {
+            
+            //and add a gesture recogniser to drop keyboard when the view background is tapped
+            let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(UIViewController.makeViewDropKeyboard))
+            self.view.addGestureRecognizer(tapGestureRecogniser)
+            
+        }
+        
+    }
+    
+    
 }
