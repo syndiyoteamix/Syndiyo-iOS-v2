@@ -16,6 +16,9 @@ class HomePageVC: UIViewController {
         UserController.sharedInstance.saveUsersArray()
 
         // Do any additional setup after loading the view.
+        
+        UserController.sharedInstance.state = .view
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +38,8 @@ class HomePageVC: UIViewController {
             destination?.canEditDoctor = false
             destination?.requestingInfo = true
             destination?.sendingInfo = true
+            
+            UserController.sharedInstance.state = .requestingDoc
         }
         if segue.identifier == "sendEmail" {
             if let destination = segue.destinationViewController as? UINavigationController{
@@ -42,6 +47,8 @@ class HomePageVC: UIViewController {
                     root.canEditDoctor = false
                     root.requestingInfo = false
                     root.sendingInfo = true
+                    
+                    UserController.sharedInstance.state = .sendingDoc
                 }
             }
         }

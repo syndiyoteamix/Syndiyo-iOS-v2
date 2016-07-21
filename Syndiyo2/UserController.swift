@@ -12,6 +12,7 @@ import UIKit
 
 
 enum State {
+    
     case sendingDoc
     
     case requestingDoc
