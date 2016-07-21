@@ -9,8 +9,14 @@
 import UIKit
 
 class UIRoundTextField: UITextField {
-
-    let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 5);
+    
+    var padding: UIEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 5)
+    var padded: Bool = true {
+        didSet {
+            if padded == false { padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5) }
+            if padded == true { padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 5) }
+        }
+    }
     
     override func textRectForBounds(bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds, padding)
