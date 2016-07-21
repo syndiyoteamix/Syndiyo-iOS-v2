@@ -24,7 +24,33 @@ class HomePageVC: UIViewController {
     }
     
     
+    @IBAction func RequestButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("requestEmail", sender: self)
+    }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "requestEmail" {
+            let destination = segue.destinationViewController as? MyDoctorsVC
+            destination?.canEditDoctor = false
+            destination?.requestingInfo = true
+            destination?.sendingInfo = true
+        }
+        if segue.identifier == "sendEmail" {
+            let destination = segue.destinationViewController as? MyDoctorsVC
+            destination?.canEditDoctor = false
+            destination?.requestingInfo = false
+            destination?.sendingInfo = true
+        }
+    }
+    
+    
+    
+    
+    @IBAction func sendEmail(sender: AnyObject) {
+        performSegueWithIdentifier("sendEmail", sender: self)
+
+    }
     
 
     /*

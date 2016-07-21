@@ -56,7 +56,7 @@
                                         </constraints>
                                         <state key="normal" title="Request Documents" backgroundImage="RequestRecord"/>
                                         <connections>
-                                            <segue destination="UvL-d6-C1o" kind="show" id="DyR-7g-uPU"/>
+                                            <action selector="RequestButtonPressed:" destination="f7L-q8-AHa" eventType="touchUpInside" id="6sf-Dq-frR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-Au-Tnz">
@@ -67,7 +67,7 @@
                                         </constraints>
                                         <state key="normal" title="Send Documents" backgroundImage="SendRecord"/>
                                         <connections>
-                                            <segue destination="sMc-fo-GxQ" kind="show" id="08n-hR-T5c"/>
+                                            <action selector="sendEmail:" destination="f7L-q8-AHa" eventType="touchUpInside" id="74H-MY-nBb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-OC-BKp" userLabel="My Records">
@@ -105,6 +105,10 @@
                     <tabBarItem key="tabBarItem" title="Home" id="HsI-aq-Gno"/>
                     <navigationItem key="navigationItem" title="Home" id="DZR-Ht-Zi7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <segue destination="Smi-rj-cbE" kind="show" identifier="requestEmail" id="XSh-nQ-0aW"/>
+                        <segue destination="Smi-rj-cbE" kind="show" identifier="sendEmail" id="dQS-fI-6sX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-Aa-C9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srm-oa-GJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2041.5" y="454.5"/>
+            <point key="canvasLocation" x="1676.5" y="54.5"/>
         </scene>
         <!--ImportDocumentsVC-->
         <scene sceneID="m1h-Et-MsG">
@@ -567,11 +571,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Te4-Rm-ZdM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YRL-Wq-5BJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvp-GI-b40">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -586,6 +590,7 @@
                     <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr"/>
                     <connections>
                         <outlet property="tableView" destination="qvp-GI-b40" id="OF6-Qo-79C"/>
+                        <segue destination="0lT-g3-dRf" kind="show" identifier="selectRecords" id="wUo-K4-BhY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGP-zs-CWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -681,7 +686,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMP-7w-n3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2041.5" y="-573.5"/>
+            <point key="canvasLocation" x="2257.5" y="-525.5"/>
         </scene>
     </scenes>
     <resources>
@@ -691,7 +696,9 @@
         <image name="SendRecord" width="447" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dQS-fI-6sX"/>
         <segue reference="nFg-6M-fQH"/>
+        <segue reference="wUo-K4-BhY"/>
         <segue reference="da9-gg-mhC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
