@@ -100,7 +100,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     }
     
     
-    
+    //send request
     func sendButtonPressed() {
         let mailComposerVC = MFMailComposeViewController()
         
@@ -119,7 +119,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         
     }
     
-    
+    //send Records
     func sendEmail (){
         let mailComposerVC = MFMailComposeViewController()
     
@@ -157,6 +157,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     }
     
     
+    //add doctor view controller pops up
     func addButtonClicked(){
         let addDoctorsVC = AddDoctorViewController(nibName: "AddDoctorViewController", bundle: nil)
         
