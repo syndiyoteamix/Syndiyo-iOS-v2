@@ -71,6 +71,7 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         descriptionTV.text = currentRecord.notes
         descriptionTV.editable = false
         
+        editButton.layer.cornerRadius = 15
         
         self.navigationItem.title = currentRecord.name
         // Do any additional setup after loading the view.
