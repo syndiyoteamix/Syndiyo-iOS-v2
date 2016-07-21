@@ -32,6 +32,8 @@
 		4E662D441D40437D009B3A88 /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E662D421D40437D009B3A88 /* DoctorTableViewCell.xib */; };
 		4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */; };
 		4EAAF6C51D417725004A8723 /* AddDoctorsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAAF6C41D417725004A8723 /* AddDoctorsDelegate.swift */; };
+		4EAAF6C71D418233004A8723 /* MedicalHistoryNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAAF6C61D418233004A8723 /* MedicalHistoryNC.swift */; };
+		4EAAF6C91D418CE1004A8723 /* MedicalHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAAF6C81D418CE1004A8723 /* MedicalHistoryVC.swift */; };
 		4EACFD741D3F9E4000155698 /* SendDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACFD731D3F9E4000155698 /* SendDocVC.swift */; };
 		F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */; };
 		F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */; };
@@ -84,6 +86,8 @@
 		4E662D421D40437D009B3A88 /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
 		4E9FA14D1D3ED99500D6E637 /* RecordsToAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsToAddVC.swift; sourceTree = "<group>"; };
 		4EAAF6C41D417725004A8723 /* AddDoctorsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDoctorsDelegate.swift; sourceTree = "<group>"; };
+		4EAAF6C61D418233004A8723 /* MedicalHistoryNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalHistoryNC.swift; sourceTree = "<group>"; };
+		4EAAF6C81D418CE1004A8723 /* MedicalHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalHistoryVC.swift; sourceTree = "<group>"; };
 		4EACFD731D3F9E4000155698 /* SendDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDocVC.swift; sourceTree = "<group>"; };
 		F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 				4E662D351D3FF7F4009B3A88 /* DisplayDocVC.swift */,
 				4E60D5821D4053DC00A99FB0 /* MyDoctorsVC.swift */,
 				4EAAF6C41D417725004A8723 /* AddDoctorsDelegate.swift */,
+				4EAAF6C61D418233004A8723 /* MedicalHistoryNC.swift */,
+				4EAAF6C81D418CE1004A8723 /* MedicalHistoryVC.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -294,7 +300,7 @@
 				TargetAttributes = {
 					4E518E6D1D3D7D48007C2CCF = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2P6FJ7WR94;
+						DevelopmentTeam = 833368WCCJ;
 					};
 				};
 			};
@@ -357,7 +363,9 @@
 				F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */,
 				F3AC321A1D3FA9E90005DD5A /* GetStartedViewController.swift in Sources */,
 				4E518E8A1D3D7DF6007C2CCF /* ImportDocVC.swift in Sources */,
+				4EAAF6C71D418233004A8723 /* MedicalHistoryNC.swift in Sources */,
 				4E518EA81D3D8844007C2CCF /* MyRecordsTabTableVC.swift in Sources */,
+				4EAAF6C91D418CE1004A8723 /* MedicalHistoryVC.swift in Sources */,
 				F3AC31FA1D3E58030005DD5A /* UIValidationTextField.swift in Sources */,
 				4E1966061D3E84B000DE2982 /* EditRecordVC.swift in Sources */,
 				4E518E8F1D3D7E08007C2CCF /* LandingViewController.swift in Sources */,
@@ -494,7 +502,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Syndiyo2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ilhamnurjadin.Syndiyo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Alan-Yu-Syndiyo2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -509,7 +517,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Syndiyo2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ilhamnurjadin.Syndiyo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Alan-Yu-Syndiyo2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

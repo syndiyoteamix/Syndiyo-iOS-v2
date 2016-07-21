@@ -16,27 +16,18 @@ class MedicalInformation: NSObject, NSCoding {
     var allergies: String?
     var previousMedicalConditions: String?
     var medications: String?
-    
-//    init() {
-//        self.dob = NSDate()
-//        self.height = 0
-//        self.weight = 0
-//        self.allergies = [String]()
-//        self.previousMedicalConditions = [String]()
-//        self.medications = [String]()
-//    }
-    
+
     init(dob: NSDate?, height: String?, weight: String?, allergies: String?, previousMedicalConditions: String?, medications: String?) {
-        self.dob = dob
-        self.height = height
-        self.weight = weight
-        self.allergies = allergies
-        self.previousMedicalConditions = previousMedicalConditions
-        self.medications = medications
+        self.dob = dob ?? nil
+        self.height = height ?? ""
+        self.weight = weight ?? ""
+        self.allergies = allergies ?? ""
+        self.previousMedicalConditions = previousMedicalConditions ?? ""
+        self.medications = medications ?? ""
     }
     
     required init?(coder: NSCoder) {
-        self.dob = (coder.decodeObjectForKey("dob") as? NSDate) ?? NSDate()
+        self.dob = (coder.decodeObjectForKey("dob") as? NSDate) ?? nil
         self.height = (coder.decodeObjectForKey("height") as? String) ?? ""
         self.weight = (coder.decodeObjectForKey("weight") as? String) ?? ""
         self.allergies = (coder.decodeObjectForKey("allergies") as? String) ?? ""

@@ -41,7 +41,7 @@ class User : NSObject, NSCoding {
         self.password = password ?? ""
         self.ssn = ssn ?? 0
         self.doctorsArray = doctorsArray ?? []
-        self.medicalInfo = medicalInfo ?? nil
+        self.medicalInfo = medicalInfo ?? MedicalInformation(dob: nil, height: nil, weight: nil, allergies: nil, previousMedicalConditions: nil, medications: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +51,7 @@ class User : NSObject, NSCoding {
         self.password = (coder.decodeObjectForKey("password") as? String) ?? ""
         self.ssn = (coder.decodeObjectForKey("ssn") as? Int) ?? 0
         self.doctorsArray = (coder.decodeObjectForKey("doctorsArray") as? [Doctor]) ?? []
-        self.medicalInfo = (coder.decodeObjectForKey("medicalInfo") as? MedicalInformation) ?? nil
+        self.medicalInfo = (coder.decodeObjectForKey("medicalInfo") as? MedicalInformation) ?? MedicalInformation(dob: nil, height: nil, weight: nil, allergies: nil, previousMedicalConditions: nil, medications: nil)
         self.medicalRecords = (coder.decodeObjectForKey("medicalRecords") as? [MedicalRecord]) ?? []
         self.frontInsuranceCard = (coder.decodeObjectForKey("frontInsuranceCard") as? UIImage) ?? UIImage()
         self.backInsuranceCard = (coder.decodeObjectForKey("backInsuranceCard") as? UIImage) ?? UIImage()
