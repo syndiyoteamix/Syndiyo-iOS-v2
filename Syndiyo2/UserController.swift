@@ -68,10 +68,8 @@ class UserController {
             if person.email == email && person.password == password {
                 onCompletion(person, nil)
             }
-            else {
-                onCompletion(nil, "Email or password is incorrect")
-            }
         }
+        onCompletion(nil, "Email or password is incorrect")
     }
     
     

@@ -81,7 +81,6 @@ class LandingViewController: UIViewController {
                 let application = UIApplication.sharedApplication()
                 let window = application.keyWindow
                 window?.rootViewController = viewController
-
             } else {
                 self.createAlert(error!, submessage: "Please try again") { action in }
                 self.emailTextField.text = ""

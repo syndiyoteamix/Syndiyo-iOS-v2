@@ -58,7 +58,7 @@
                                             <constraint firstAttribute="height" constant="30" id="CJT-5q-5Zy"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="textFieldChanged:" destination="aVO-qh-ebK" eventType="editingChanged" id="scG-GH-Z5w"/>
@@ -85,7 +85,7 @@
                                             <constraint firstAttribute="height" constant="30" id="L9W-qo-MRi"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="textFieldChanged:" destination="aVO-qh-ebK" eventType="editingChanged" id="YkK-Uy-Xmv"/>
