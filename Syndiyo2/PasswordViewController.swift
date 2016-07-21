@@ -11,7 +11,7 @@ import UIKit
 class PasswordViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UIPasswordValidatingTextField!
-    @IBOutlet weak var verifyPasswordTextField: UIValidationTextField!
+    @IBOutlet weak var verifyPasswordTextField: UIVerifyPasswordTextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var topContainerView: UIView!
@@ -27,6 +27,7 @@ class PasswordViewController: UIViewController {
         
         nextButton.layer.cornerRadius = 15
         nextButton.alpha = 0.5
+        
     }
     
     @IBAction func textFieldChanged(sender: AnyObject) {
@@ -49,7 +50,9 @@ class PasswordViewController: UIViewController {
             }
         }
         
-        print("here")
+        verifyPasswordTextField.validateText = passwordTextField.text!
+        if !verifyPasswordTextField.isValid { return false }
+        
         return true
     }
 

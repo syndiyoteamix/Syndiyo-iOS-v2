@@ -13,7 +13,7 @@ class UISSNTextField: UIValidationTextField {
     override var isValid: Bool {
         if text == nil { return false }
         if text == "" { return false }
-        if text!.characters.count != 12 { return false }
+        if text!.characters.count != 9 { return false }
         return true
     }
 

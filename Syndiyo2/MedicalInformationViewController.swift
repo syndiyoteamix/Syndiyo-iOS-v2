@@ -24,10 +24,10 @@ class MedicalInformationViewController: UIViewController,UIGestureRecognizerDele
         super.viewDidLoad()
         
         // Configuration of SkipButton
-        //skipButton.layer.cornerRadius = 15
+        skipButton.layer.cornerRadius = 15
         
         // Configuration of nextButton
-        //nextButton.layer.cornerRadius = 15
+        nextButton.layer.cornerRadius = 15
         
         // Tap to dismiss keyboard
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))

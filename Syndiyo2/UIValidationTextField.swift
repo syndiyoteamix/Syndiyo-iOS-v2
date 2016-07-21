@@ -70,9 +70,8 @@ class UIValidationTextField: UIRoundTextField {
     func textUpdated() {
         // handler for when the text changes
         
-        if isValid {
-            self.imageView.image = correctImage
-        }
+        if isValid { self.imageView.image = correctImage }
+        else { self.imageView.image = nil }
         
     }
 

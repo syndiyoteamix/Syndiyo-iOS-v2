@@ -51,7 +51,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGQ-sA-6vC" userLabel="ContainerView">
                                 <rect key="frame" x="50" y="301" width="500" height="130"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHK-eo-7Rj" customClass="UIRoundTextField" customModule="Syndiyo2" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHK-eo-7Rj" customClass="UIRoundTextField" customModule="Syndiyo2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.99994122982025146" blue="0.99995887279510498" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -78,7 +78,7 @@
                                             <action selector="signInButtonPressed:" destination="aVO-qh-ebK" eventType="touchUpInside" id="CnK-tA-b5x"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X94-Xf-Ogf" customClass="UIRoundTextField" customModule="Syndiyo2" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X94-Xf-Ogf" customClass="UIRoundTextField" customModule="Syndiyo2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="500" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.9999412298" blue="0.99995887279999995" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                         <constraints>

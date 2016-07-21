@@ -10,7 +10,7 @@ import UIKit
 
 class SSNViewController: UIViewController {
 
-    @IBOutlet weak var ssnTextField: UITextField!
+    @IBOutlet weak var ssnTextField: UISSNTextField!
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class SSNViewController: UIViewController {
     func verified() -> Bool {
         
         if ssnTextField.text == nil { return false }
-        if ssnTextField.text == "" { return false }
+        if !ssnTextField.isValid { return false }
         
         return true
     }

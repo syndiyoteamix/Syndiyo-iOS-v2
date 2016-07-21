@@ -7,7 +7,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicalInformationViewController" customModule="Syndiyo2" customModuleProvider="target">
             <connections>
+                <outlet property="allergiesTextField" destination="Iro-uT-iPE" id="uGE-Um-CbW"/>
+                <outlet property="containerView" destination="t6p-IG-Yw5" id="I0s-0N-w6x"/>
+                <outlet property="dateOfBirthTextField" destination="Ifw-Vx-HW7" id="aQQ-Aa-Qy2"/>
+                <outlet property="heightTextField" destination="Dbc-7a-R34" id="NbM-Nx-n4N"/>
+                <outlet property="medicationsTextField" destination="6AW-nQ-lPX" id="XAI-x3-eP7"/>
+                <outlet property="nextButton" destination="Dhe-pb-e5P" id="EMh-vH-3ve"/>
+                <outlet property="previousMedicalConditionsTextfield" destination="Smb-wo-EkL" id="jPe-eK-DIz"/>
+                <outlet property="skipButton" destination="Hlt-m4-uTq" id="ard-qP-4GF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weightTextField" destination="Sfq-gf-pVQ" id="lPO-5g-A5C"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -107,9 +116,6 @@
                             <state key="normal" title="Next">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="nextButtonPressed:" destination="eM4-DR-Dsn" eventType="touchUpInside" id="kxp-Ae-hcu"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlt-m4-uTq" userLabel="Skip Button">
                             <rect key="frame" x="0.0" y="300" width="354" height="30"/>
@@ -195,32 +201,5 @@
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
         </view>
-        <viewController id="eM4-DR-Dsn" userLabel="Medical Information" customClass="MedicalInformationViewController" customModule="Syndiyo2" customModuleProvider="target">
-            <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="UN1-14-hF6"/>
-                <viewControllerLayoutGuide type="bottom" id="y3F-JE-HsY"/>
-            </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="Fca-sq-vSr">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-            </view>
-            <navigationItem key="navigationItem" title="Medical Information" id="0mo-gg-bDg">
-                <barButtonItem key="backBarButtonItem" title=" " id="vrC-sP-9QV"/>
-            </navigationItem>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <connections>
-                <outlet property="allergiesTextField" destination="Iro-uT-iPE" id="tkD-wP-79a"/>
-                <outlet property="containerView" destination="t6p-IG-Yw5" id="lfP-MY-f8H"/>
-                <outlet property="dateOfBirthTextField" destination="Ifw-Vx-HW7" id="oEx-QT-Wza"/>
-                <outlet property="heightTextField" destination="Dbc-7a-R34" id="3Np-PZ-v2M"/>
-                <outlet property="medicationsTextField" destination="6AW-nQ-lPX" id="tor-tA-fgP"/>
-                <outlet property="nextButton" destination="Dhe-pb-e5P" id="co2-87-H5b"/>
-                <outlet property="previousMedicalConditionsTextfield" destination="Smb-wo-EkL" id="np3-gW-PeG"/>
-                <outlet property="skipButton" destination="Hlt-m4-uTq" id="taF-5Q-810"/>
-                <outlet property="weightTextField" destination="Sfq-gf-pVQ" id="cUd-an-PME"/>
-            </connections>
-            <point key="canvasLocation" x="1716" y="1202"/>
-        </viewController>
     </objects>
 </document>

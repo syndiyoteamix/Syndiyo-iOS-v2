@@ -10,6 +10,12 @@ import UIKit
 
 class UIVerifyPasswordTextField: UIValidationTextField {
 
+    var validateText: String = ""
     
+    override var isValid: Bool {
+        if text == nil { return false }
+        if text != validateText { return false }
+        return true
+    }
     
 }
