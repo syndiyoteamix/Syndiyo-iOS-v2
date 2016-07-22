@@ -16,23 +16,21 @@ class User : NSObject, NSCoding {
     var email: String
     var password: String
     var ssn: Int
-    var doctorsArray: [Doctor]? = []
+    var doctorsArray: [Doctor]? = [Doctor(name: "James Collin", speciality: "eats a lot of chocolate", address: "22 cloverfield lane", email: "Collin@gmail.com", fax: "", phone: "9098768356", profilePic: nil), Doctor(name: "Sophia Deng", speciality: "Athletic Injuries", address: "1600 Pennsylvania Ave", email: "Sophia@gmail.com", fax: "", phone: "", profilePic: nil)]
     var medicalInfo: MedicalInformation?
-    var medicalRecords: [MedicalRecord]? = []
+    var medicalRecords: [MedicalRecord]? = [MedicalRecord(name: "Record1", notes: "", date: nil, image: UIImage(named: "record1"), category: ""), MedicalRecord(name: "Record2", notes: "", date: NSDate(), image: UIImage(named: "record2"), category: ""), MedicalRecord(name: "Recror3", notes: "", date: NSDate(), image: UIImage(named: "record3"), category: "")]
+        
+        
+  
+
     var frontInsuranceCard: UIImage?
     var backInsuranceCard: UIImage?
     var ID: NSUUID = NSUUID()
     
-//    init() {
-//        self.firstName = ""
-//        self.lastName = ""
-//        self.email = ""
-//        self.username = ""
-//        self.password = ""
-//        self.ssn = 0
-//        self.doctorsArray = [Doctor]()
-//        self.medicalInfo = MedicalInformation()
-//    }
+   
+    
+    
+    var fakeDoctor:[Doctor] = [Doctor(name: "James Collin", speciality: "eats a lot of chocolate", address: "22 cloverfield lane", email: "Collin@gmail.com", fax: "", phone: "9098768356", profilePic: nil), Doctor(name: "Sophia Deng", speciality: "Athletic Injuries", address: "1600 Pennsylvania Ave", email: "Sophia@gmail.com", fax: "", phone: "", profilePic: nil)]
     
     init(firstName: String?, lastName: String?, email: String?, password: String?, ssn: Int?, doctorsArray: [Doctor]?, medicalInfo: MedicalInformation?) {
         self.firstName = firstName ?? "No name"
@@ -40,7 +38,8 @@ class User : NSObject, NSCoding {
         self.email = email ?? ""
         self.password = password ?? ""
         self.ssn = ssn ?? 0
-        self.doctorsArray = doctorsArray ?? []
+        self.doctorsArray = doctorsArray ?? [Doctor(name: "James Collin", speciality: "eats a lot of chocolate", address: "22 cloverfield lane", email: "Collin@gmail.com", fax: "", phone: "9098768356", profilePic: nil), Doctor(name: "Sophia Deng", speciality: "Athletic Injuries", address: "1600 Pennsylvania Ave", email: "Sophia@gmail.com", fax: "", phone: "", profilePic: nil)]
+ 
         self.medicalInfo = medicalInfo ?? MedicalInformation(dob: nil, height: nil, weight: nil, allergies: nil, previousMedicalConditions: nil, medications: nil)
     }
     

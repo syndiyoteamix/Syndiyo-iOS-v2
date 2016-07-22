@@ -13,7 +13,23 @@ class UIEmailValidationTextField: UIValidationTextField {
     override var isValid: Bool {
         if text == nil { return false }
         if text == "" { return false }
-        return UserController.sharedInstance.checkUsernameAvailability(text!)
+
+        do{
+        let regex = try NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .CaseInsensitive)
+            
+//            let index = text!.rangeOfString("@")?.startIndex
+//            
+//            
+//            
+//            
+//            print(index!)
+//            
+
+        
+        return regex.firstMatchInString( text! , options: [], range: NSMakeRange(0, text!.characters.count)) != nil
+        }catch {
+          return  false
+        }
     }
 
 }

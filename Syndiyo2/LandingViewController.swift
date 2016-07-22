@@ -90,7 +90,7 @@ class LandingViewController: UIViewController {
                 
                 
                 
-                print("shit")
+          
                 self.createAlert(error!, submessage: "Please try again") { action in }
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""

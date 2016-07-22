@@ -26,12 +26,12 @@ class MedicalRecord : NSObject, NSCoding {
 //    }
     
     
-    init(name: String, notes: String?, date:NSDate, image: UIImage, category: String) {
+    init(name: String, notes: String?, date:NSDate?, image: UIImage??, category: String) {
         
         self.name = name
         self.notes = notes ?? ""
-        self.image = image
-        self.date = date
+        self.image = (image ?? UIImage(named: "GoodCamera"))!
+        self.date = date ?? NSDate()
         self.category = category
         
 //        // Getting date

@@ -13,8 +13,7 @@ class HomePageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserController.sharedInstance.saveUsersArray()
-        
+      
         // Do any additional setup after loading the view.
         
         
@@ -30,6 +29,8 @@ class HomePageVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         UserController.sharedInstance.state = .view
+        
+        UserController.sharedInstance.saveUsersArray()
     }
     
     @IBAction func RequestButtonPressed(sender: AnyObject) {
