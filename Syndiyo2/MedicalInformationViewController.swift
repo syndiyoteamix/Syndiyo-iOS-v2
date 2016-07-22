@@ -139,6 +139,13 @@ class MedicalInformationViewController: UIViewController,UIGestureRecognizerDele
         
     }
     
+    
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -147,6 +154,19 @@ class MedicalInformationViewController: UIViewController,UIGestureRecognizerDele
     //fix later!!!
     @IBAction func nextButtonPressed(sender: AnyObject) {
         UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: String(heightTextField.text!) ?? "", weight: String(weightTextField.text!) ?? "", allergies: allergiesTextField.text!, previousMedicalConditions: previousMedicalConditionsTextfield.text!, medications: medicationsTextField.text!)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        let application = UIApplication.sharedApplication()
+        let window = application.keyWindow
+        window?.rootViewController = viewController
+        
+//       UserController.sharedInstance.saveUsersArray()
+//        UserController.sharedInstance.currentUser = nil
+//        let storyboard = UIStoryboard(name: "OnBoarding", bundle: nil)
+//        let viewController = storyboard.instantiateInitialViewController()
+//        let application = UIApplication.sharedApplication()
+//        let window = application.keyWindow
+//        window?.rootViewController = viewController
     }
     
     //Calls this function when the tap is recognized.

@@ -274,7 +274,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         case .view:
             
             
-            greyView.hidden = true
+            greyView.hidden = false
             
             
             //change the navi bar

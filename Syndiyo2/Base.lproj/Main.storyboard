@@ -176,6 +176,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="dismissKeyboard:" destination="dZv-va-BXN" eventType="primaryActionTriggered" id="odW-lr-D3Q"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoh-ze-Dl4" userLabel="TitleTF">
                                         <rect key="frame" x="30" y="10" width="315" height="30"/>
@@ -183,7 +186,10 @@
                                             <constraint firstAttribute="height" constant="30" id="hUI-bu-T3n"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="dismissKeyboard:" destination="dZv-va-BXN" eventType="primaryActionTriggered" id="QS6-Jv-z0R"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,6 +223,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="kZa-xB-HGf" firstAttribute="leading" secondItem="dD6-dT-xMB" secondAttribute="leading" id="0KC-h2-XWg"/>
                             <constraint firstItem="K9V-C2-f86" firstAttribute="top" secondItem="GgX-Hg-AOk" secondAttribute="bottom" constant="20" id="5Ew-h6-mGG"/>
@@ -233,6 +240,9 @@
                             <constraint firstAttribute="trailing" secondItem="GgX-Hg-AOk" secondAttribute="trailing" id="tcn-vs-PLR"/>
                             <constraint firstAttribute="trailing" secondItem="K9V-C2-f86" secondAttribute="trailing" id="xGt-b5-FOE"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="U6h-bl-TNA" appends="YES" id="jSF-ba-009"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="RHN-47-jYQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -246,6 +256,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jg-Zj-MAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="U6h-bl-TNA">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="dZv-va-BXN" id="QTC-eE-b6M"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2991.5" y="-2332.5"/>
         </scene>
@@ -278,7 +293,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="40V-nK-OA9" userLabel="document">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoodCamera" translatesAutoresizingMaskIntoConstraints="NO" id="40V-nK-OA9" userLabel="document">
                                 <rect key="frame" x="74.5" y="71" width="225" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="62H-cv-A7n"/>
@@ -298,9 +313,9 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Aqa-HN-1Ir">
-                                <rect key="frame" x="87.5" y="308.5" width="200" height="30"/>
+                                <rect key="frame" x="0.0" y="308.5" width="375" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="IQV-Pt-4uZ"/>
                                     <constraint firstAttribute="height" constant="30" id="Yoh-PT-ISY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -310,37 +325,53 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="927-2V-C5v" userLabel="date" customClass="UIDateField" customModule="Syndiyo2" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="348.5" width="200" height="30"/>
+                                <rect key="frame" x="0.0" y="338.5" width="375" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Ufe-gD-TXk"/>
                                     <constraint firstAttribute="height" constant="30" id="rW4-Oh-a2f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="LzF-Fc-Dbq" eventType="primaryActionTriggered" id="Nhs-9x-Obg"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnh-6D-eZn" userLabel="documentType" customClass="UISelectionField" customModule="Syndiyo2" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="388.5" width="200" height="30"/>
+                                <rect key="frame" x="0.0" y="368.5" width="375" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2Eb-6X-0Z3"/>
-                                    <constraint firstAttribute="width" constant="200" id="t3r-u6-8Xx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="LzF-Fc-Dbq" eventType="primaryActionTriggered" id="neY-bn-mgS"/>
+                                </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="40V-nK-OA9" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="-150" id="02j-l2-dYz"/>
+                            <constraint firstItem="fnh-6D-eZn" firstAttribute="leading" secondItem="jaX-3X-nv4" secondAttribute="leading" id="9eX-o7-rJD"/>
                             <constraint firstItem="Aqa-HN-1Ir" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="Fa7-cu-gaW"/>
                             <constraint firstItem="ojX-U5-chL" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="HhA-XE-1PE"/>
-                            <constraint firstItem="927-2V-C5v" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="30" id="Kbs-81-co1"/>
+                            <constraint firstItem="fnh-6D-eZn" firstAttribute="top" secondItem="927-2V-C5v" secondAttribute="bottom" id="ItY-KN-Bfa"/>
+                            <constraint firstItem="927-2V-C5v" firstAttribute="top" secondItem="Aqa-HN-1Ir" secondAttribute="bottom" id="MAp-uX-GUQ"/>
+                            <constraint firstItem="927-2V-C5v" firstAttribute="leading" secondItem="jaX-3X-nv4" secondAttribute="leading" id="MNS-qj-49a"/>
                             <constraint firstItem="ojX-U5-chL" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="190" id="VrX-kL-kbg"/>
                             <constraint firstItem="40V-nK-OA9" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="Wbi-MM-96d"/>
                             <constraint firstItem="Aqa-HN-1Ir" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="-10" id="Y75-AI-E6f"/>
+                            <constraint firstAttribute="trailing" secondItem="Aqa-HN-1Ir" secondAttribute="trailing" id="a0y-e6-U4J"/>
                             <constraint firstItem="fnh-6D-eZn" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="h19-3L-FDY"/>
-                            <constraint firstItem="fnh-6D-eZn" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" constant="70" id="jdv-th-7Xe"/>
+                            <constraint firstAttribute="trailing" secondItem="927-2V-C5v" secondAttribute="trailing" id="hG6-g0-qzc"/>
                             <constraint firstItem="927-2V-C5v" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="lSC-KZ-31L"/>
+                            <constraint firstAttribute="trailing" secondItem="fnh-6D-eZn" secondAttribute="trailing" id="s8y-4c-COC"/>
+                            <constraint firstItem="Aqa-HN-1Ir" firstAttribute="leading" secondItem="jaX-3X-nv4" secondAttribute="leading" id="y7x-8j-j3w"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="owb-m7-2XF" appends="YES" id="6mH-Mn-nhc"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Select a Photo" id="38I-2V-oCn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -354,6 +385,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qwz-1a-26c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="owb-m7-2XF">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="LzF-Fc-Dbq" id="JwH-HT-53i"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2510.5" y="-1198.5"/>
         </scene>
@@ -524,11 +560,15 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zwq-2f-uP2" firstAttribute="leading" secondItem="VHI-bv-jZN" secondAttribute="leading" constant="30" id="D3r-h7-mzh"/>
                             <constraint firstItem="zwq-2f-uP2" firstAttribute="top" secondItem="VHI-bv-jZN" secondAttribute="top" constant="90" id="XmW-9T-Kgc"/>
                             <constraint firstAttribute="trailing" secondItem="zwq-2f-uP2" secondAttribute="trailing" constant="30" id="baw-5S-hPx"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="G3l-Ia-Vey" appends="YES" id="J3K-JC-Slv"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="o7E-Bf-jO0"/>
                     <connections>
@@ -541,6 +581,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQl-a9-yBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="G3l-Ia-Vey">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="Iru-DJ-CdO" id="bTD-R3-Gi5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1112" y="217"/>
         </scene>
@@ -706,16 +751,17 @@
     </scenes>
     <resources>
         <image name="AddRecord" width="1125" height="390"/>
+        <image name="GoodCamera" width="351" height="303"/>
         <image name="MyRecords" width="1125" height="390"/>
         <image name="RequestRecord" width="1125" height="390"/>
         <image name="SendRecords" width="1125" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hxK-6B-Elv"/>
-        <segue reference="nFg-6M-fQH"/>
         <segue reference="weU-tN-Wte"/>
-        <segue reference="da9-gg-mhC"/>
+        <segue reference="hxK-6B-Elv"/>
         <segue reference="7hG-El-c8R"/>
+        <segue reference="nFg-6M-fQH"/>
+        <segue reference="da9-gg-mhC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
