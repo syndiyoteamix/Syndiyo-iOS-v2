@@ -78,7 +78,7 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         descriptionTV.text = currentRecord.notes
         descriptionTV.editable = false
         
-        editButton.layer.cornerRadius = 15
+        //editButton.layer.cornerRadius = 15
         
         self.navigationItem.title = currentRecord.name
         // Do any additional setup after loading the view.
@@ -88,6 +88,8 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(documentTapped))
         recognizer.delegate = self
         self.documentImage.addGestureRecognizer(recognizer)
+        
+        setupKeyboardNotifications()
         
     }
 
@@ -157,14 +159,91 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    ///////////////
+    
+    @IBOutlet weak var heightOfTopViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightOfTopLine: NSLayoutConstraint!
+    @IBOutlet weak var heightOfBottomLine: NSLayoutConstraint!
+    @IBOutlet weak var topImageConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomImageConstraint: NSLayoutConstraint!
+    @IBOutlet weak var documentImageHeight: NSLayoutConstraint!
+    
+    //@IBOutlet weak var nextButtonToTextConstraint: NSLayoutConstraint!
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
+            let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            
+            //if the phone is < 5, then the keyboard will overlay the textfields when it comes up. accomodate for
+            self.updateUIForKeyboard(endFrame,keyboardDirectionUp:true)
+            
+            UIView.animateWithDuration(duration,
+                                       delay: NSTimeInterval(0),
+                                       options: animationCurve,
+                                       animations: {
+                                        self.view.layoutIfNeeded()
+                },
+                                       completion: nil)
+        }
     }
-    */
+    
+    
+    func updateUIForKeyboard(endFrame:CGRect!, keyboardDirectionUp:Bool)  {
+        if (keyboardDirectionUp) {
+            heightOfTopViewConstraint.constant = 0
+            heightOfTopLine.constant = 0
+            heightOfBottomLine.constant = 0
+            topImageConstraint.constant = 0
+            bottomImageConstraint.constant = 20
+            documentImageHeight.constant = 0
+            //nextButtonToTextConstraint.constant = 20
+        }
+        else {
+            heightOfTopViewConstraint.constant = 235
+            heightOfTopLine.constant = 1
+            heightOfBottomLine.constant = 1
+            topImageConstraint.constant = 20
+            bottomImageConstraint.constant = 20
+            documentImageHeight.constant = 195
+            //nextButtonToTextConstraint.constant = 30
+        } //the original value from the nib
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
+            let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            
+            self.view.endEditing(true);
+            self.resignFirstResponder()
+            //reset the frame to 0;0
+            var newFrame = self.view.frame
+            newFrame.origin.y = 0
+            newFrame.size.height = UIScreen.mainScreen().bounds.height
+            self.view.frame = newFrame
+            
+            self.updateUIForKeyboard(endFrame, keyboardDirectionUp:false)
+            
+            //do the animation
+            UIView.animateWithDuration(duration,
+                                       
+                                       delay: NSTimeInterval(0),
+                                       options: animationCurve,
+                                       animations: {
+                                        self.view.layoutIfNeeded()
+                },
+                                       completion: nil)
+        }
+        
+    }
 
 }
