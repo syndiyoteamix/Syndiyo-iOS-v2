@@ -10,6 +10,13 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    
+    
+    
+    
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +28,17 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logoutButtonClicked(sender: AnyObject) {
+        
+        UserController.sharedInstance.saveUsersArray()
+        UserController.sharedInstance.currentUser = nil
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        let application = UIApplication.sharedApplication()
+        let window = application.keyWindow
+        window?.rootViewController = viewController
+        
+    }
 
     /*
     // MARK: - Navigation
