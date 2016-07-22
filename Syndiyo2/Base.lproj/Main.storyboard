@@ -1097,7 +1097,6 @@
                             <constraint firstItem="qvp-GI-b40" firstAttribute="top" secondItem="ePG-FV-kLr" secondAttribute="bottom" id="z42-aj-6Z7"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr"/>
                     <connections>
                         <outlet property="greyView" destination="1eE-CK-6Wc" id="AWO-2Q-lwH"/>
