@@ -10,7 +10,7 @@
         <scene sceneID="rwR-pW-6jw">
             <objects>
                 <navigationController id="E5A-xk-fyr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="77P-2F-NdL"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home Tab" selectedImage="Home Tab" id="77P-2F-NdL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pVr-im-K6g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -832,7 +832,7 @@
         <scene sceneID="N6e-Sw-x7F">
             <objects>
                 <navigationController id="tyZ-eW-cZ6" userLabel="Profile" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="16y-QY-iiZ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile Tab" selectedImage="Profile Tab" id="16y-QY-iiZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gfz-CE-esm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1051,7 +1051,7 @@
         <scene sceneID="h1T-xw-eEe">
             <objects>
                 <navigationController id="KLh-D0-f7N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Doctors" id="QXm-9s-tjc"/>
+                    <tabBarItem key="tabBarItem" title="My Doctors" image="Doctor Tab" id="QXm-9s-tjc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mVG-LO-p7g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1073,15 +1073,15 @@
                         <viewControllerLayoutGuide type="bottom" id="Te4-Rm-ZdM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YRL-Wq-5BJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvp-GI-b40">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eE-CK-6Wc" userLabel="grey">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -1097,7 +1097,6 @@
                             <constraint firstItem="qvp-GI-b40" firstAttribute="top" secondItem="ePG-FV-kLr" secondAttribute="bottom" id="z42-aj-6Z7"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Title" id="5xA-c4-eMr"/>
                     <connections>
                         <outlet property="greyView" destination="1eE-CK-6Wc" id="AWO-2Q-lwH"/>
@@ -1111,18 +1110,21 @@
     </scenes>
     <resources>
         <image name="AddRecord" width="1125" height="390"/>
+        <image name="Doctor Tab" width="29" height="30"/>
         <image name="GoodCamera" width="351" height="303"/>
+        <image name="Home Tab" width="28" height="28"/>
         <image name="MyRecords" width="1125" height="390"/>
+        <image name="Profile Tab" width="30" height="30"/>
         <image name="ProfileIcon" width="456" height="456"/>
         <image name="RequestRecord" width="1125" height="390"/>
         <image name="SendRecords" width="1125" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ezj-sg-KJI"/>
-        <segue reference="nFg-6M-fQH"/>
-        <segue reference="VFk-jT-Txz"/>
-        <segue reference="XzD-iu-KfT"/>
         <segue reference="pYR-1M-APP"/>
+        <segue reference="Ezj-sg-KJI"/>
+        <segue reference="hxK-6B-Elv"/>
+        <segue reference="7hG-El-c8R"/>
+        <segue reference="nFg-6M-fQH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
