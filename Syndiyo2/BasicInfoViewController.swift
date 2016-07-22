@@ -14,7 +14,7 @@ class BasicInformationViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: UIEmailValidationTextField!
     
     
     override func viewDidLoad() {
@@ -28,6 +28,8 @@ class BasicInformationViewController: UIViewController {
         nextButton.layer.cornerRadius = 20
         nextButton.alpha = 0.5
         nextButton.enabled = false
+        
+        emailTextField.padded = false
         
         setupKeyboardNotifications()
         
@@ -74,6 +76,7 @@ class BasicInformationViewController: UIViewController {
     @IBOutlet weak var topImageConstraintToTop: NSLayoutConstraint!
     @IBOutlet weak var promptToTopImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerToPromptConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nextButtonToTextConstraint: NSLayoutConstraint!
     
     func keyboardWillShow(notification: NSNotification) {
         
@@ -103,11 +106,13 @@ class BasicInformationViewController: UIViewController {
             topImageConstraintToTop.constant = 20
             promptToTopImageConstraint.constant = 5
             containerToPromptConstraint.constant = 10
+            nextButtonToTextConstraint.constant = 20
         }
         else {
             topImageConstraintToTop.constant = 80
             promptToTopImageConstraint.constant = 20
             containerToPromptConstraint.constant = 30
+            nextButtonToTextConstraint.constant = 30
         } //the original value from the nib
     }
     

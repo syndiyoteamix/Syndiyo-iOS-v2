@@ -14,7 +14,11 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UIPaddedTextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var containerView: UIView!
+    
+    
     @IBOutlet weak var yOriginOfInputContainer: NSLayoutConstraint!
+    @IBOutlet weak var logoToTopConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,8 +134,14 @@ class LandingViewController: UIViewController {
     
     
         func updateUIForKeyboard(endFrame:CGRect!, keyboardDirectionUp:Bool)  {
-            if (keyboardDirectionUp) { yOriginOfInputContainer.constant = 30 }
-            else { yOriginOfInputContainer.constant = 100 } //the original value from the nib
+            if (keyboardDirectionUp) {
+                yOriginOfInputContainer.constant = 60
+                logoToTopConstraint.constant = 60
+            }
+            else {
+                yOriginOfInputContainer.constant = 100
+                logoToTopConstraint.constant = 120
+            } //the original value from the nib
         }
     
         func keyboardWillHide(notification: NSNotification) {

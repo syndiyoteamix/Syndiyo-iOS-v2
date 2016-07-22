@@ -64,6 +64,7 @@ class SSNViewController: UIViewController {
     @IBOutlet weak var topImageConstraintToTop: NSLayoutConstraint!
     @IBOutlet weak var promptToTopImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerToPromptConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nextButtonToTextConstraint: NSLayoutConstraint!
     
     func keyboardWillShow(notification: NSNotification) {
         
@@ -93,11 +94,13 @@ class SSNViewController: UIViewController {
             topImageConstraintToTop.constant = 40
             promptToTopImageConstraint.constant = 5
             containerToPromptConstraint.constant = 20
+            nextButtonToTextConstraint.constant = 20
         }
         else {
             topImageConstraintToTop.constant = 80
             promptToTopImageConstraint.constant = 20
             containerToPromptConstraint.constant = 30
+            nextButtonToTextConstraint.constant = 30
         } //the original value from the nib
     }
     

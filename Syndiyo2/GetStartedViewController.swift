@@ -19,8 +19,8 @@ class GetStartedViewController: UIViewController, UINavigationControllerDelegate
         
         imagePicker.delegate = self
 
-        continueButton.layer.cornerRadius = 15
-        profilePicture.layer.cornerRadius = 15
+        continueButton.layer.cornerRadius = 20
+        profilePicture.layer.cornerRadius = 20
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(documentTapped))
         recognizer.delegate = self

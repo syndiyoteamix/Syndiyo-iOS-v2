@@ -28,6 +28,9 @@ class PasswordViewController: UIViewController {
         nextButton.layer.cornerRadius = 20
         nextButton.alpha = 0.5
         
+        passwordTextField.padded = false
+        verifyPasswordTextField.padded = false
+        
         setupKeyboardNotifications()
         
     }
@@ -71,6 +74,7 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var topImageConstraintToTop: NSLayoutConstraint!
     @IBOutlet weak var promptToTopImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerToPromptConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nextButtonToTextConstraint: NSLayoutConstraint!
     
     func keyboardWillShow(notification: NSNotification) {
         
@@ -100,11 +104,13 @@ class PasswordViewController: UIViewController {
             topImageConstraintToTop.constant = 20
             promptToTopImageConstraint.constant = 5
             containerToPromptConstraint.constant = 10
+            nextButtonToTextConstraint.constant = 20
         }
         else {
             topImageConstraintToTop.constant = 80
             promptToTopImageConstraint.constant = 20
             containerToPromptConstraint.constant = 30
+            nextButtonToTextConstraint.constant = 30
         } //the original value from the nib
     }
     
