@@ -130,8 +130,8 @@ class LandingViewController: UIViewController {
     
     
         func updateUIForKeyboard(endFrame:CGRect!, keyboardDirectionUp:Bool)  {
-            if (keyboardDirectionUp) { yOriginOfInputContainer.constant = 50 }
-            else { yOriginOfInputContainer.constant = 150 } //the original value from the nib
+            if (keyboardDirectionUp) { yOriginOfInputContainer.constant = 30 }
+            else { yOriginOfInputContainer.constant = 100 } //the original value from the nib
         }
     
         func keyboardWillHide(notification: NSNotification) {
