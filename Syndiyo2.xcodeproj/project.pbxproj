@@ -220,7 +220,6 @@
 				F3C8C5261D3FEE5A00E3E54C /* AddDoctorViewController.xib */,
 				4E518EA91D3D8914007C2CCF /* RecordTabCustomCell.swift */,
 				4E518EAA1D3D8914007C2CCF /* RecordTabCustomCell.xib */,
-				F3FEFD731D419153000C81E3 /* ProfileViewController.swift */,
 				F3FEFD741D419153000C81E3 /* ProfileViewController.xib */,
 			);
 			name = Xibs;
@@ -255,6 +254,7 @@
 				4EAAF6C41D417725004A8723 /* AddDoctorsDelegate.swift */,
 				4EAAF6C61D418233004A8723 /* MedicalHistoryNC.swift */,
 				4EAAF6C81D418CE1004A8723 /* MedicalHistoryVC.swift */,
+				F3FEFD731D419153000C81E3 /* ProfileViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 				TargetAttributes = {
 					4E518E6D1D3D7D48007C2CCF = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2P6FJ7WR94;
+						DevelopmentTeam = 833368WCCJ;
 					};
 				};
 			};
@@ -510,7 +510,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Syndiyo2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ilhamnurjadin.Syndiyo2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Alan-Yu.Syndiyo2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -525,7 +525,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Syndiyo2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ilhamnurjadin.Syndiyo2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Alan-Yu.Syndiyo2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
