@@ -61,6 +61,8 @@ class AddDoctorViewController: UIViewController {
         
         self.navigationItem.title = "Add Doctor"
         self.navigationItem.leftBarButtonItem = cancelButton
+        
+        emailTextField.padded = false
 
         
     }

@@ -18,6 +18,8 @@ class SSNViewController: UIViewController {
         nextButton.layer.cornerRadius = 20
         nextButton.alpha = 0.5
         
+        ssnTextField.padded = false
+        
         setupKeyboardNotifications()
     }
     
