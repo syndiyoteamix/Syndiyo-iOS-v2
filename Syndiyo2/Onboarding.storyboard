@@ -587,7 +587,7 @@
                                             <constraint firstAttribute="width" constant="150" id="jqK-cV-JNN"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="We won't share it!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5g-T3-565" userLabel="Non Bold Text View">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="To help us verify your identity" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5g-T3-565" userLabel="Non Bold Text View">
                                         <rect key="frame" x="0.0" y="190" width="283" height="25"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
