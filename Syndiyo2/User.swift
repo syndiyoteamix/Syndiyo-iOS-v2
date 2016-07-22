@@ -16,9 +16,9 @@ class User : NSObject, NSCoding {
     var email: String
     var password: String
     var ssn: Int
-    var doctorsArray: [Doctor]?
+    var doctorsArray: [Doctor]? = []
     var medicalInfo: MedicalInformation?
-    var medicalRecords: [MedicalRecord]?
+    var medicalRecords: [MedicalRecord]? = []
     var frontInsuranceCard: UIImage?
     var backInsuranceCard: UIImage?
     var ID: NSUUID = NSUUID()

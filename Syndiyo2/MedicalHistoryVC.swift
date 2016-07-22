@@ -56,6 +56,13 @@ class MedicalHistoryVC: UIViewController {
           UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: DOB.date, height: String(height.text!) ?? "", weight: String(weight.text!) ?? "", allergies: allergies.text!, previousMedicalConditions: previousMedicalConditions.text!, medications: medications.text!)
     }
     
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
+    
 
     /*
     // MARK: - Navigation

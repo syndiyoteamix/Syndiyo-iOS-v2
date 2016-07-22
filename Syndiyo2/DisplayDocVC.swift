@@ -56,6 +56,13 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
             }
         }
     }
+    
+    
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,7 +29,7 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
         imagePicker.delegate = self
         imagePicker.sourceType = .PhotoLibrary
         
-        documentImage.image = UIImage(named: "CameraIcon")
+        documentImage.image = UIImage(named: "GoodCamera")
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(documentTapped))
         recognizer.delegate = self
@@ -41,6 +41,12 @@ class ImportDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigatio
         
     }
 
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

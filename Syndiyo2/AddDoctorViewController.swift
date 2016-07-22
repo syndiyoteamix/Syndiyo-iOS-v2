@@ -67,6 +67,13 @@ class AddDoctorViewController: UIViewController {
     
     
     
+    
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
     func cancelButtonClicked() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

@@ -196,12 +196,21 @@
                     </constraints>
                 </view>
             </subviews>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="m3M-ez-JwM" secondAttribute="trailing" constant="55" id="BfT-Jx-gLD"/>
                 <constraint firstItem="m3M-ez-JwM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="55" id="jNM-yQ-6fe"/>
                 <constraint firstItem="m3M-ez-JwM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="lEb-MH-CmZ"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="ZLq-h7-18q" appends="YES" id="joI-vP-pOy"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="ZLq-h7-18q">
+            <connections>
+                <action selector="dismissKeyboard:" destination="-1" id="zgk-E1-mB2"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>
