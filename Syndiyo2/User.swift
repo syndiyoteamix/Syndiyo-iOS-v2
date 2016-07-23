@@ -16,7 +16,7 @@ class User : NSObject, NSCoding {
     var email: String
     var password: String
     var ssn: Int
-    var doctorsArray: [Doctor]? = [Doctor(name: "Raffi", speciality: "eats a lot of chocolate", address: "22 cloverfield lane", email: "Rafi@ixperience.co.za", fax: "", phone: "9098768356", profilePic: nil), Doctor(name: "Alej", speciality: "Athletic Injuries", address: "1600 Pennsylvania Ave", email: "Alejandro@ixperience.co.za", fax: "", phone: "", profilePic: nil)]
+    var doctorsArray: [Doctor]? = [Doctor(name: "Rafi", speciality: "eats a lot of chocolate", address: "22 cloverfield lane", email: "Rafi@ixperience.co.za", fax: "", phone: "9098768356", profilePic: nil), Doctor(name: "Alej", speciality: "Athletic Injuries", address: "1600 Pennsylvania Ave", email: "Alejandro@ixperience.co.za", fax: "", phone: "", profilePic: nil)]
     var medicalInfo: MedicalInformation?
     var medicalRecords: [MedicalRecord]? = [MedicalRecord(name: "CT SCAN Lumbar", notes: "Inflamation Found, send for follow up in 3 weeks", date: nil, image: UIImage(named: "record1"), category: ""), MedicalRecord(name: "EKG", notes: "Check for heart imbalance", date: NSDate(), image: UIImage(named: "record2"), category: ""), MedicalRecord(name: "Sacrum MRI Scan", notes: "Everything checked out fine", date: NSDate(), image: UIImage(named: "record3"), category: "")]
         
@@ -38,7 +38,7 @@ class User : NSObject, NSCoding {
         self.email = email ?? ""
         self.password = password ?? ""
         self.ssn = ssn ?? 0
-        self.doctorsArray = doctorsArray ?? [Doctor(name: "Raffi", speciality: "eats a lot of chocolate", address: "22 cloverfield lane", email: "Rafi@ixperience.co.za", fax: "", phone: "9098768356", profilePic: nil), Doctor(name: "Alej", speciality: "Athletic Injuries", address: "1600 Pennsylvania Ave", email: "alejandro@ixperience.co.za", fax: "", phone: "", profilePic: nil)]
+        self.doctorsArray = doctorsArray ?? [Doctor(name: "Rafi", speciality: "eats a lot of chocolate", address: "22 cloverfield lane", email: "Rafi@ixperience.co.za", fax: "", phone: "9098768356", profilePic: nil), Doctor(name: "Alej", speciality: "Athletic Injuries", address: "1600 Pennsylvania Ave", email: "alejandro@ixperience.co.za", fax: "", phone: "", profilePic: nil)]
         self.medicalInfo = medicalInfo ?? MedicalInformation(dob: nil, height: nil, weight: nil, allergies: nil, previousMedicalConditions: nil, medications: nil)
     }
     

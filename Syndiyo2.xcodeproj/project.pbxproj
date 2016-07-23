@@ -34,6 +34,7 @@
 		4EAAF6C71D418233004A8723 /* MedicalHistoryNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAAF6C61D418233004A8723 /* MedicalHistoryNC.swift */; };
 		4EAAF6C91D418CE1004A8723 /* MedicalHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAAF6C81D418CE1004A8723 /* MedicalHistoryVC.swift */; };
 		4EACFD741D3F9E4000155698 /* SendDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACFD731D3F9E4000155698 /* SendDocVC.swift */; };
+		F38E5B241D42806900877A6F /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E5B231D42806900877A6F /* UITabBar.swift */; };
 		F3AC31E91D3D9F3D0005DD5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */; };
 		F3AC31EB1D3DA3300005DD5A /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */; };
 		F3AC31ED1D3E1AFD0005DD5A /* CustomRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */; };
@@ -90,6 +91,7 @@
 		4EAAF6C61D418233004A8723 /* MedicalHistoryNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalHistoryNC.swift; sourceTree = "<group>"; };
 		4EAAF6C81D418CE1004A8723 /* MedicalHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalHistoryVC.swift; sourceTree = "<group>"; };
 		4EACFD731D3F9E4000155698 /* SendDocVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDocVC.swift; sourceTree = "<group>"; };
+		F38E5B231D42806900877A6F /* UITabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F3AC31EA1D3DA3300005DD5A /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		F3AC31EC1D3E1AFD0005DD5A /* CustomRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRequestVC.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		4E518EA41D3D811B007C2CCF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F38E5B231D42806900877A6F /* UITabBar.swift */,
 				F3AC31E81D3D9F3D0005DD5A /* UIViewController.swift */,
 				F3AC321C1D3FAC3B0005DD5A /* UIColor.swift */,
 			);
@@ -394,6 +397,7 @@
 				F3FEFD751D419153000C81E3 /* ProfileViewController.swift in Sources */,
 				4E9FA14E1D3ED99500D6E637 /* RecordsToAddVC.swift in Sources */,
 				4E518E881D3D7DF6007C2CCF /* DocumentImageVC.swift in Sources */,
+				F38E5B241D42806900877A6F /* UITabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

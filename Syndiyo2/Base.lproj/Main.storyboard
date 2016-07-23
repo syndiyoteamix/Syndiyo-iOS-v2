@@ -10,7 +10,7 @@
         <scene sceneID="rwR-pW-6jw">
             <objects>
                 <navigationController id="E5A-xk-fyr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home Tab" selectedImage="Home Tab" id="77P-2F-NdL"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home Tab" id="77P-2F-NdL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pVr-im-K6g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -104,7 +104,7 @@
                             <constraint firstItem="9DS-1h-BbF" firstAttribute="leading" secondItem="H4F-nU-8Q8" secondAttribute="leading" constant="40" id="s5k-Jf-vnA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="HsI-aq-Gno"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home Tab" id="HsI-aq-Gno"/>
                     <navigationItem key="navigationItem" title="Home" id="DZR-Ht-Zi7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
@@ -832,7 +832,7 @@
         <scene sceneID="N6e-Sw-x7F">
             <objects>
                 <navigationController id="tyZ-eW-cZ6" userLabel="Profile" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile Tab" selectedImage="Profile Tab" id="16y-QY-iiZ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile Tab" id="16y-QY-iiZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gfz-CE-esm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -860,7 +860,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYD-Ge-dbI">
                                 <rect key="frame" x="0.0" y="90" width="414" height="274"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="F1I-X3-p8V">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alan" translatesAutoresizingMaskIntoConstraints="NO" id="F1I-X3-p8V">
                                         <rect key="frame" x="90" y="20" width="234" height="234"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="F1I-X3-p8V" secondAttribute="height" multiplier="1:1" id="YDN-Yn-1tv"/>
@@ -1042,6 +1042,9 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="63L-vN-c9x"/>
                     <navigationItem key="navigationItem" title="Profile" id="bh7-6G-tW1"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="profilePicture" destination="F1I-X3-p8V" id="mzn-7c-6Nb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPK-mQ-MsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1110,21 +1113,21 @@
     </scenes>
     <resources>
         <image name="AddRecord" width="1125" height="390"/>
+        <image name="Alan" width="5184" height="3456"/>
         <image name="Doctor Tab" width="29" height="30"/>
         <image name="GoodCamera" width="351" height="303"/>
         <image name="Home Tab" width="28" height="28"/>
         <image name="MyRecords" width="1125" height="390"/>
         <image name="Profile Tab" width="30" height="30"/>
-        <image name="ProfileIcon" width="456" height="456"/>
         <image name="RequestRecord" width="1125" height="390"/>
         <image name="SendRecords" width="1125" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pYR-1M-APP"/>
-        <segue reference="Ezj-sg-KJI"/>
         <segue reference="hxK-6B-Elv"/>
         <segue reference="7hG-El-c8R"/>
         <segue reference="nFg-6M-fQH"/>
+        <segue reference="Ezj-sg-KJI"/>
+        <segue reference="pYR-1M-APP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.33507913350000001" green="0.40604960919999999" blue="0.53473097089999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
