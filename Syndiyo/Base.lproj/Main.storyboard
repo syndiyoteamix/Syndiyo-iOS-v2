@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="swh-fR-aY4">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--MyRecords-->
+        <scene sceneID="twr-pj-uFb">
+            <objects>
+                <viewController id="Xd6-sx-KGG" userLabel="MyRecords" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CDa-Gx-dzU"/>
+                        <viewControllerLayoutGuide type="bottom" id="mA8-ve-Mzr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mMD-dF-FGa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="8qh-ex-5RK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J69-6B-Zfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="618"/>
+        </scene>
+        <!--MyAppts-->
+        <scene sceneID="aPc-Qo-AlA">
+            <objects>
+                <viewController id="hNg-k2-Iku" userLabel="MyAppts" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n0m-la-u5T"/>
+                        <viewControllerLayoutGuide type="bottom" id="hOU-RQ-Qtx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bbu-Dy-KIT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bth-zC-EVy" userLabel="item 3 "/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ej-Fe-hzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="1503"/>
+        </scene>
+        <!--HomePageTab-->
+        <scene sceneID="oWo-4R-SFp">
+            <objects>
+                <viewController title="HomePageTab" id="f7L-q8-AHa" userLabel="HomePageTab" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M6r-tE-saM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tj6-t1-3i3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H4F-nU-8Q8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srx-Lf-ROD">
+                                <rect key="frame" x="200.5" y="125" width="200" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NQh-tG-SBb"/>
+                                    <constraint firstAttribute="width" constant="200" id="QEh-kh-6cv"/>
+                                </constraints>
+                                <state key="normal" title="Import Docs"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-jv-med">
+                                <rect key="frame" x="200" y="225" width="200" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cAZ-K0-uEV"/>
+                                    <constraint firstAttribute="width" constant="200" id="lfN-tD-0fD"/>
+                                </constraints>
+                                <state key="normal" title="Request Documents"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-Au-Tnz">
+                                <rect key="frame" x="200" y="325" width="200" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1gH-Ps-Nfc"/>
+                                    <constraint firstAttribute="width" constant="200" id="GvU-Oa-91B"/>
+                                </constraints>
+                                <state key="normal" title="Send Documents"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Srx-Lf-ROD" firstAttribute="centerY" secondItem="H4F-nU-8Q8" secondAttribute="centerY" constant="-150" id="JkJ-y1-0tJ"/>
+                            <constraint firstItem="wa2-Au-Tnz" firstAttribute="centerX" secondItem="H4F-nU-8Q8" secondAttribute="centerX" id="a0W-qA-g7g"/>
+                            <constraint firstItem="2Wq-jv-med" firstAttribute="centerX" secondItem="H4F-nU-8Q8" secondAttribute="centerX" id="bG3-rE-bS6"/>
+                            <constraint firstItem="wa2-Au-Tnz" firstAttribute="centerY" secondItem="H4F-nU-8Q8" secondAttribute="centerY" constant="50" id="hYi-cp-H5S"/>
+                            <constraint firstItem="2Wq-jv-med" firstAttribute="centerY" secondItem="H4F-nU-8Q8" secondAttribute="centerY" constant="-50" id="j24-5n-Kwy"/>
+                            <constraint firstItem="Srx-Lf-ROD" firstAttribute="centerX" secondItem="H4F-nU-8Q8" secondAttribute="centerX" id="pTh-lj-dM5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="HsI-aq-Gno"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-Aa-C9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824" y="-167"/>
+        </scene>
+        <!--ImportDocumentsVC-->
+        <scene sceneID="m1h-Et-MsG">
+            <objects>
+                <viewController id="LzF-Fc-Dbq" userLabel="ImportDocumentsVC" customClass="ImportDocVC" customModule="Syndiyo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LWx-4D-RC9"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHA-IM-U9e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jaX-3X-nv4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="40V-nK-OA9">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="62H-cv-A7n"/>
+                                    <constraint firstAttribute="width" constant="300" id="fYx-iC-wlB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="40V-nK-OA9" firstAttribute="centerY" secondItem="jaX-3X-nv4" secondAttribute="centerY" id="02j-l2-dYz"/>
+                            <constraint firstItem="40V-nK-OA9" firstAttribute="centerX" secondItem="jaX-3X-nv4" secondAttribute="centerX" id="Wbi-MM-96d"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qwz-1a-26c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="-504"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="bc0-2o-CpW">
+            <objects>
+                <tabBarController id="swh-fR-aY4" customClass="TabBarController" customModule="Syndiyo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Fr0-4Y-p1O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="f7L-q8-AHa" kind="relationship" relationship="viewControllers" id="IaR-cz-5Ky"/>
+                        <segue destination="Xd6-sx-KGG" kind="relationship" relationship="viewControllers" id="xUw-NT-0DF"/>
+                        <segue destination="hNg-k2-Iku" kind="relationship" relationship="viewControllers" id="9lx-0e-1aq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EgO-2b-bud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-58" y="183"/>
+        </scene>
+    </scenes>
+</document>
