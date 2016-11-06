@@ -38,7 +38,7 @@ class SendDocVC: UIViewController, MFMailComposeViewControllerDelegate{
         
         
         for record in recordsToSend{
-            let imageData: NSData = UIImagePNGRepresentation(record.image)!
+            let imageData: Data = UIImagePNGRepresentation(record.image)!
             mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
         }
         
@@ -53,9 +53,9 @@ class SendDocVC: UIViewController, MFMailComposeViewControllerDelegate{
         sendMailErrorAlert.show()
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
     
     

@@ -27,20 +27,20 @@ class HomePageVC: UIViewController {
     
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         UserController.sharedInstance.state = .view
         
         UserController.sharedInstance.saveUsersArray()
     }
     
-    @IBAction func RequestButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("requestEmail", sender: self)
+    @IBAction func RequestButtonPressed(_ sender: AnyObject) {
+        performSegue(withIdentifier: "requestEmail", sender: self)
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "requestEmail" {
-            let destination = segue.destinationViewController as? MyDoctorsVC
+            let destination = segue.destination as? MyDoctorsVC
             destination?.canEditDoctor = false
             destination?.requestingInfo = true
             destination?.sendingInfo = true
@@ -52,8 +52,8 @@ class HomePageVC: UIViewController {
     
     
     
-    @IBAction func sendEmail(sender: AnyObject) {
-        performSegueWithIdentifier("sendEmail", sender: self)
+    @IBAction func sendEmail(_ sender: AnyObject) {
+        performSegue(withIdentifier: "sendEmail", sender: self)
         UserController.sharedInstance.state = .sendingDoc
         
     }

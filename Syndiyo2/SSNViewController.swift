@@ -23,13 +23,13 @@ class SSNViewController: UIViewController {
         setupKeyboardNotifications()
     }
     
-    @IBAction func textFieldChanged(sender: UITextField) {
+    @IBAction func textFieldChanged(_ sender: UITextField) {
         if verified() {
-            nextButton.enabled = true
+            nextButton.isEnabled = true
             nextButton.alpha = 1
         }
         else {
-            nextButton.enabled = false
+            nextButton.isEnabled = false
             nextButton.alpha = 0.5
         }
     }
@@ -43,7 +43,7 @@ class SSNViewController: UIViewController {
         return true
     }
     
-    @IBAction func nextButtonPressed(sender: AnyObject) {
+    @IBAction func nextButtonPressed(_ sender: AnyObject) {
         
         UserController.sharedInstance.registerUser { error in
             if error != nil {
@@ -68,20 +68,20 @@ class SSNViewController: UIViewController {
     @IBOutlet weak var containerToPromptConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButtonToTextConstraint: NSLayoutConstraint!
     
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: Notification) {
         
         if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
-            let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
             let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions().rawValue
             let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
             
             //if the phone is < 5, then the keyboard will overlay the textfields when it comes up. accomodate for
             self.updateUIForKeyboard(endFrame,keyboardDirectionUp:true)
             
-            UIView.animateWithDuration(duration,
-                                       delay: NSTimeInterval(0),
+            UIView.animate(withDuration: duration,
+                                       delay: TimeInterval(0),
                                        options: animationCurve,
                                        animations: {
                                         self.view.layoutIfNeeded()
@@ -91,7 +91,7 @@ class SSNViewController: UIViewController {
     }
     
     
-    func updateUIForKeyboard(endFrame:CGRect!, keyboardDirectionUp:Bool)  {
+    func updateUIForKeyboard(_ endFrame:CGRect!, keyboardDirectionUp:Bool)  {
         if (keyboardDirectionUp) {
             topImageConstraintToTop.constant = 40
             promptToTopImageConstraint.constant = 5
@@ -106,12 +106,12 @@ class SSNViewController: UIViewController {
         } //the original value from the nib
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: Notification) {
         if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
-            let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
             let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions().rawValue
             let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
             
             self.view.endEditing(true);
@@ -119,15 +119,15 @@ class SSNViewController: UIViewController {
             //reset the frame to 0;0
             var newFrame = self.view.frame
             newFrame.origin.y = 0
-            newFrame.size.height = UIScreen.mainScreen().bounds.height
+            newFrame.size.height = UIScreen.main.bounds.height
             self.view.frame = newFrame
             
             self.updateUIForKeyboard(endFrame, keyboardDirectionUp:false)
             
             //do the animation
-            UIView.animateWithDuration(duration,
+            UIView.animate(withDuration: duration,
                                        
-                                       delay: NSTimeInterval(0),
+                                       delay: TimeInterval(0),
                                        options: animationCurve,
                                        animations: {
                                         self.view.layoutIfNeeded()

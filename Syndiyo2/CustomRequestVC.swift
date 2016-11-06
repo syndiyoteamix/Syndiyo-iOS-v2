@@ -30,10 +30,10 @@ class CustomRequestVC: UIViewController,MFMailComposeViewControllerDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func SendButtonTapped(sender: AnyObject) {
+    @IBAction func SendButtonTapped(_ sender: AnyObject) {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+            self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
@@ -59,17 +59,17 @@ class CustomRequestVC: UIViewController,MFMailComposeViewControllerDelegate, UIT
         sendMailErrorAlert.show()
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
    
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
     
     
-    @IBAction func doctorEmailPrimaryAction(sender: UITextField) {
+    @IBAction func doctorEmailPrimaryAction(_ sender: UITextField) {
         sender.resignFirstResponder()
     }
     
-    @IBAction func emailSubjectPrimaryAction(sender: UITextField) {
+    @IBAction func emailSubjectPrimaryAction(_ sender: UITextField) {
         sender.resignFirstResponder()
     }
     

@@ -28,11 +28,11 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         didSet{
             if editMode == false {
       
-                titleTF.enabled = false
-                dateTF.enabled = false
-                descriptionTV.editable = false
+                titleTF.isEnabled = false
+                dateTF.isEnabled = false
+                descriptionTV.isEditable = false
                 
-                editButton.setTitle("Edit Record", forState: .Normal)
+                editButton.setTitle("Edit Record", for: UIControlState())
                 
                 
                 currentRecord.name = titleTF.text!
@@ -47,18 +47,18 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
             }
             if editMode == true {
                 
-                titleTF.enabled = true
-                dateTF.enabled = true
-                descriptionTV.editable = true
+                titleTF.isEnabled = true
+                dateTF.isEnabled = true
+                descriptionTV.isEditable = true
                 
-                editButton.setTitle("Finish Editing", forState: .Normal)
+                editButton.setTitle("Finish Editing", for: UIControlState())
 
             }
         }
     }
     
     
-    @IBAction func dismissKeyboard(sender: AnyObject) {
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -70,13 +70,13 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         //set inital values
         documentImage.image = currentRecord.image
         titleTF.text = currentRecord.name
-        titleTF.enabled = false
+        titleTF.isEnabled = false
         
         dateTF.date = currentRecord.date
-        dateTF.enabled = false
+        dateTF.isEnabled = false
         
         descriptionTV.text = currentRecord.notes
-        descriptionTV.editable = false
+        descriptionTV.isEditable = false
         
         //editButton.layer.cornerRadius = 15
         
@@ -105,47 +105,47 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
             print(" ")
             let alert = UIAlertController(title: nil,
                                           message: "Would you like to take a photo with the camera, or select an existing photo from your photo library?",
-                                          preferredStyle: .ActionSheet)
+                                          preferredStyle: .actionSheet)
             
             // If we have a photo in the photo view, offer an option to remove it.
             if documentImage.image != UIImage(named:"CameraIcon") {
-                alert.addAction(UIAlertAction(title: "Remove Photo", style: .Destructive) { action in
+                alert.addAction(UIAlertAction(title: "Remove Photo", style: .destructive) { action in
                     self.documentImage.image = UIImage(named:"CameraIcon")
                     })
             }
             
             // Always create an alert action option to choose the camera.
             // However, selectively disable it if a camera is not actually available on the device.
-            let camera = UIAlertAction(title: "Camera", style: .Default) { action in
-                self.imagePicker.sourceType = .Camera
-                self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            let camera = UIAlertAction(title: "Camera", style: .default) { action in
+                self.imagePicker.sourceType = .camera
+                self.present(self.imagePicker, animated: true, completion: nil)
             }
-            camera.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
+            camera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
             alert.addAction(camera)
             
             // The photo library will always exist, so we can safely add an option for it.
-            alert.addAction(UIAlertAction(title: "Photo Library", style: .Default) { action in
-                self.imagePicker.sourceType = .PhotoLibrary
-                self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Photo Library", style: .default) { action in
+                self.imagePicker.sourceType = .photoLibrary
+                self.present(self.imagePicker, animated: true, completion: nil)
                 })
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         } else {
             //
-            self.performSegueWithIdentifier("presentDocumentImage", sender: self)
+            self.performSegue(withIdentifier: "presentDocumentImage", sender: self)
         }
         
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as? DocumentImageVC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? DocumentImageVC
         destination?.placeholderImage = documentImage.image
     }
     
     
-    @IBAction func editButtonPressed(sender: UIButton) {
+    @IBAction func editButtonPressed(_ sender: UIButton) {
         if editMode {
             editMode = false
         } else {
@@ -153,7 +153,7 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         UserController.sharedInstance.currentRecord = self.currentRecord
         
     }
@@ -171,20 +171,20 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     
     //@IBOutlet weak var nextButtonToTextConstraint: NSLayoutConstraint!
     
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: Notification) {
         
         if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
-            let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
             let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions().rawValue
             let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
             
             //if the phone is < 5, then the keyboard will overlay the textfields when it comes up. accomodate for
             self.updateUIForKeyboard(endFrame,keyboardDirectionUp:true)
             
-            UIView.animateWithDuration(duration,
-                                       delay: NSTimeInterval(0),
+            UIView.animate(withDuration: duration,
+                                       delay: TimeInterval(0),
                                        options: animationCurve,
                                        animations: {
                                         self.view.layoutIfNeeded()
@@ -194,7 +194,7 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
     }
     
     
-    func updateUIForKeyboard(endFrame:CGRect!, keyboardDirectionUp:Bool)  {
+    func updateUIForKeyboard(_ endFrame:CGRect!, keyboardDirectionUp:Bool)  {
         if (keyboardDirectionUp) {
             heightOfTopViewConstraint.constant = 0
             heightOfTopLine.constant = 0
@@ -215,12 +215,12 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
         } //the original value from the nib
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: Notification) {
         if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
-            let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
             let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions().rawValue
             let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
             
             self.view.endEditing(true);
@@ -228,15 +228,15 @@ class DisplayDocVC: UIViewController,UIImagePickerControllerDelegate, UINavigati
             //reset the frame to 0;0
             var newFrame = self.view.frame
             newFrame.origin.y = 0
-            newFrame.size.height = UIScreen.mainScreen().bounds.height
+            newFrame.size.height = UIScreen.main.bounds.height
             self.view.frame = newFrame
             
             self.updateUIForKeyboard(endFrame, keyboardDirectionUp:false)
             
             //do the animation
-            UIView.animateWithDuration(duration,
+            UIView.animate(withDuration: duration,
                                        
-                                       delay: NSTimeInterval(0),
+                                       delay: TimeInterval(0),
                                        options: animationCurve,
                                        animations: {
                                         self.view.layoutIfNeeded()

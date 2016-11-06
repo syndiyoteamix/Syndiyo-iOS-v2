@@ -31,8 +31,8 @@ class DocumentImageVC: UIViewController {
     }
     
     
-    @IBAction func closeButtonTapped(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func closeButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
         
     }
     

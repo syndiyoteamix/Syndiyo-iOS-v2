@@ -33,8 +33,8 @@ class AddDoctorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.clearColor()
-        view.opaque = false
+        view.backgroundColor = UIColor.clear
+        view.isOpaque = false
         
         
         addButton.layer.cornerRadius = 15
@@ -53,11 +53,11 @@ class AddDoctorViewController: UIViewController {
             faxTextField.text = currentDoctor?.fax
             phoneTextField.text = currentDoctor?.phone
             
-            addButton.setTitle("Done", forState: .Normal)
+            addButton.setTitle("Done", for: UIControlState())
             topLabel.text = "Edit Doctor"
         }
         
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelButtonClicked))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked))
         
         self.navigationItem.title = "Add Doctor"
         self.navigationItem.leftBarButtonItem = cancelButton
@@ -70,14 +70,14 @@ class AddDoctorViewController: UIViewController {
     
     
     
-    @IBAction func dismissKeyboard(sender: AnyObject) {
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
     
     func cancelButtonClicked() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,14 +85,14 @@ class AddDoctorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addButtonClicked(sender: AnyObject) {
+    @IBAction func addButtonClicked(_ sender: AnyObject) {
         print(addingDoctor)
         print(editingDoctor)
         if addingDoctor {
             print("I'm here 1")
             let newDoctor = Doctor(name: doctorNameTextField.text!, speciality: nil, address: locationTextField.text!, email: emailTextField.text!, fax: faxTextField.text!, phone: phoneTextField.text!, profilePic: nil)
             UserController.sharedInstance.addDoctors([newDoctor])
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         } else if editingDoctor {
             print("i'm here 2")
             currentDoctor?.name = doctorNameTextField.text!
@@ -102,20 +102,20 @@ class AddDoctorViewController: UIViewController {
             currentDoctor?.phone = phoneTextField.text!
             
             UserController.sharedInstance.updateDoctorsArray()
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
         
     }
     
     
-    @IBAction func donePresed(sender: AnyObject) {
+    @IBAction func donePresed(_ sender: AnyObject) {
         
         sender.resignFirstResponder()
         
     }
     
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         delegate?.didDisappear()
     }
     

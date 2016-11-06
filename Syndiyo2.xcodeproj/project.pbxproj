@@ -310,6 +310,7 @@
 					4E518E6D1D3D7D48007C2CCF = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 2P6FJ7WR94;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -518,6 +519,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -533,6 +535,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

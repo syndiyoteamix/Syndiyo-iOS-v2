@@ -14,7 +14,7 @@ class UIDateField: UITextField {
     
     var datePicker = UIDatePicker()
     
-    var date: NSDate {
+    var date: Date {
         get {
             return datePicker.date
         }
@@ -34,22 +34,22 @@ class UIDateField: UITextField {
         setup()
     }
     
-    private func setup() {
+    fileprivate func setup() {
         let datePickerToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(closeDatePicker))
-        let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeDatePicker))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         datePickerToolbar.setItems([spacer, doneButton], animated: false)
         
         doneButton.tintColor = tintColor
         
-        datePicker.datePickerMode = .Date
-        datePicker.addTarget(self, action: #selector(formatDateText), forControlEvents: .ValueChanged)
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(formatDateText), for: .valueChanged)
         
         inputView = datePicker
         inputAccessoryView = datePickerToolbar
         
         // Hide the cursor.
-        tintColor = .clearColor()
+        tintColor = .clear
     }
     
     func closeDatePicker() {
@@ -58,9 +58,9 @@ class UIDateField: UITextField {
     }
     
     func formatDateText() {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, YYYY"
         
-        text = formatter.stringFromDate(datePicker.date)
+        text = formatter.string(from: datePicker.date)
     }
 }

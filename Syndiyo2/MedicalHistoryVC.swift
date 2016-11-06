@@ -52,11 +52,11 @@ class MedicalHistoryVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
           UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: DOB.date, height: String(height.text!) ?? "", weight: String(weight.text!) ?? "", allergies: allergies.text!, previousMedicalConditions: previousMedicalConditions.text!, medications: medications.text!)
     }
     
-    @IBAction func dismissKeyboard(sender: AnyObject) {
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }

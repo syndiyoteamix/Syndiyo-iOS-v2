@@ -50,10 +50,10 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         let doctorCell = UINib(nibName: "DoctorTableViewCell", bundle: nil)
         
         print(doctorCell)
-        self.tableView.registerNib(doctorCell, forCellReuseIdentifier: "doctorCell")
+        self.tableView.register(doctorCell, forCellReuseIdentifier: "doctorCell")
         
         if canEditDoctor {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
         
         self.navigationItem.title = "Doctors"
         self.navigationItem.rightBarButtonItem = addButton
@@ -66,17 +66,17 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         
         switch UserController.sharedInstance.state {
         case .view:
-            let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
+            let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
             
             self.navigationItem.title = "My Doctors"
             self.navigationItem.rightBarButtonItem = addButton
             
         case .requestingDoc:
             
-            let sendButton = UIBarButtonItem(title: "Send", style: .Plain, target: self, action: #selector(sendButtonPressed))
+            let sendButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendButtonPressed))
             
             
-            let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelButtonClicked))
+            let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked))
             
             self.navigationItem.title = "Select Doctor"
             self.navigationItem.rightBarButtonItem = sendButton
@@ -84,9 +84,9 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
 
         case .sendingDoc:
             
-            let sendDocButton = UIBarButtonItem(title: "Send", style: .Plain, target: self, action: #selector(sendEmail))
+            let sendDocButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendEmail))
             
-            let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(backButtonPressed))
+            let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonPressed))
             
             self.navigationItem.title = "Select Doctor"
             self.navigationItem.rightBarButtonItem = sendDocButton
@@ -94,14 +94,14 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         UserController.sharedInstance.saveUsersArray()
         
     }
     
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
         tableView.reloadData()
     }
@@ -109,11 +109,11 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     func didDisappear() {
         
-        greyView.hidden = true
+        greyView.isHidden = true
         myDoctors = UserController.sharedInstance.currentUser!.doctorsArray!
         tableView.reloadData()
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addButtonClicked))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
         
         self.navigationItem.title = "My Doctors"
         self.navigationItem.rightBarButtonItem = addButton
@@ -122,12 +122,12 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     }
     
     func cancelButtonClicked(){
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
     func backButtonPressed() {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -148,7 +148,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         
     
         if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposerVC, animated: true, completion: nil)
+            self.present(mailComposerVC, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
@@ -168,12 +168,12 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         
      
         for record in recordsToSend{
-            let imageData: NSData = UIImagePNGRepresentation(record.image)!
+            let imageData: Data = UIImagePNGRepresentation(record.image)!
             mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
         }
         
         if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposerVC, animated: true, completion: nil)
+            self.present(mailComposerVC, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
@@ -190,12 +190,12 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     func addButtonClicked(){
         
         
-        greyView.hidden = false
+        greyView.isHidden = false
         
         
         // change the navi bar 
         
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelButtonClicked))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked))
         self.navigationItem.title = "Add a New Doctor"
         self.navigationItem.rightBarButtonItem = nil
         self.navigationItem.leftBarButtonItem = cancelButton
@@ -204,15 +204,15 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         //present the vc
         let addDoctorsVC = AddDoctorViewController(nibName: "AddDoctorViewController", bundle: nil)
         
-        addDoctorsVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-        self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        addDoctorsVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
     
         
         self.definesPresentationContext = true
         addDoctorsVC.addingDoctor = true
         addDoctorsVC.editingDoctor = false
         addDoctorsVC.delegate = self
-        self.presentViewController(addDoctorsVC, animated: true, completion: nil)
+        self.present(addDoctorsVC, animated: true, completion: nil)
     }
     
     
@@ -222,9 +222,9 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
         sendMailErrorAlert.show()
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         UserController.sharedInstance.state = .view
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
    
     }
 
@@ -233,20 +233,20 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     
     // MARK: - Table view data source
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return myDoctors.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("doctorCell", forIndexPath: indexPath) as? DoctorTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "doctorCell", for: indexPath) as? DoctorTableViewCell
         cell?.nameTextField.text = myDoctors[indexPath.row].name
         cell?.emailTextField.text = myDoctors[indexPath.row].email
         cell?.profilePictureImageView.image = myDoctors[indexPath.row].profilePic
@@ -255,31 +255,31 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     }
     
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            myDoctors.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            myDoctors.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             UserController.sharedInstance.currentUser?.doctorsArray = myDoctors
             UserController.sharedInstance.saveUsersArray()
-        } else if editingStyle == .Insert {
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         switch UserController.sharedInstance.state {
         case .view:
             
             
-            greyView.hidden = false
+            greyView.isHidden = false
             
             
             //change the navi bar
             
-            let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelButtonClicked))
+            let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked))
             self.navigationItem.title = "Edit a doctor"
             self.navigationItem.rightBarButtonItem = nil
             self.navigationItem.leftBarButtonItem = cancelButton
@@ -289,8 +289,8 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
             //present the view
             let addDoctorsVC = AddDoctorViewController(nibName: "AddDoctorViewController", bundle: nil)
             
-            addDoctorsVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-            self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            addDoctorsVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
             
             addDoctorsVC.addingDoctor = false
             addDoctorsVC.editingDoctor = true
@@ -301,7 +301,7 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
             
             
             self.definesPresentationContext = true
-            self.presentViewController(addDoctorsVC, animated: true, completion: nil)
+            self.present(addDoctorsVC, animated: true, completion: nil)
 
         case .requestingDoc:
             requestEmail = myDoctors[indexPath.row].email
@@ -316,8 +316,8 @@ class MyDoctorsVC: UIViewController,UITableViewDataSource, UITableViewDelegate,M
     }
 
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as? MyRecordsTabTableVC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? MyRecordsTabTableVC
         destination?.sendingInfo = true
     }
     

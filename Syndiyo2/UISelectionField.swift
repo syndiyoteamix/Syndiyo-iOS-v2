@@ -20,7 +20,7 @@ class UISelectionField: UITextField, UIPickerViewDataSource, UIPickerViewDelegat
     
     override var text: String? {
         didSet {
-            picker?.selectRow(options.indexOf(text ?? "") ?? 0, inComponent: 0, animated: false)
+            picker?.selectRow(options.index(of: text ?? "") ?? 0, inComponent: 0, animated: false)
         }
     }
     
@@ -31,11 +31,11 @@ class UISelectionField: UITextField, UIPickerViewDataSource, UIPickerViewDelegat
         
         if picker == nil {
             picker = UIPickerView()
-            picker.selectRow(options.indexOf(text ?? "") ?? 0, inComponent: 0, animated: false)
+            picker.selectRow(options.index(of: text ?? "") ?? 0, inComponent: 0, animated: false)
             
             let pickerToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
-            let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(closePicker))
-            let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closePicker))
+            let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             pickerToolbar.setItems([spacer, doneButton], animated: false)
             
             picker.dataSource = self
@@ -45,7 +45,7 @@ class UISelectionField: UITextField, UIPickerViewDataSource, UIPickerViewDelegat
             inputAccessoryView = pickerToolbar
             
             // Hide the cursor.
-            tintColor = .clearColor()
+            tintColor = .clear
         }
     }
     
@@ -53,19 +53,19 @@ class UISelectionField: UITextField, UIPickerViewDataSource, UIPickerViewDelegat
         resignFirstResponder()
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return options.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return options[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         text = options[row]
     }
     

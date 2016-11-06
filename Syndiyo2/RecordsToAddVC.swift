@@ -29,7 +29,7 @@ class RecordsToAddVC: UITableViewController, MFMailComposeViewControllerDelegate
         
         
         let nibCell = UINib(nibName: "RecordTabCustomCell", bundle: nil)
-        self.tableView.registerNib(nibCell, forCellReuseIdentifier: "cell1")
+        self.tableView.register(nibCell, forCellReuseIdentifier: "cell1")
         self.tableView.dataSource = self
         
         
@@ -47,10 +47,10 @@ class RecordsToAddVC: UITableViewController, MFMailComposeViewControllerDelegate
     }
     
     
-    @IBAction func actionButtonPressed(sender: UIBarButtonItem) {
+    @IBAction func actionButtonPressed(_ sender: UIBarButtonItem) {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
-            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+            self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
         }
@@ -73,7 +73,7 @@ class RecordsToAddVC: UITableViewController, MFMailComposeViewControllerDelegate
         
         
         for record in recordsToSend{
-            let imageData: NSData = UIImagePNGRepresentation(record.image)!
+            let imageData: Data = UIImagePNGRepresentation(record.image)!
         mailComposerVC.addAttachmentData(imageData, mimeType: "image/png" , fileName: record.name)
         }
         
@@ -88,9 +88,9 @@ class RecordsToAddVC: UITableViewController, MFMailComposeViewControllerDelegate
         sendMailErrorAlert.show()
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
     
     
@@ -105,26 +105,26 @@ class RecordsToAddVC: UITableViewController, MFMailComposeViewControllerDelegate
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicalRecords.count
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //check more about this code
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell1") as? RecordTabCustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as? RecordTabCustomCell
         
         // Configure the cell...
         cell?.titleLabel.text = medicalRecords[indexPath.row].name
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, YYYY"
         
         
-        cell?.dateLabel.text = formatter.stringFromDate(medicalRecords[indexPath.row].date)
+        cell?.dateLabel.text = formatter.string(from: medicalRecords[indexPath.row].date as Date)
         
         
         return cell!
@@ -133,7 +133,7 @@ class RecordsToAddVC: UITableViewController, MFMailComposeViewControllerDelegate
     
     
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
@@ -141,21 +141,21 @@ class RecordsToAddVC: UITableViewController, MFMailComposeViewControllerDelegate
     
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
     
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         recordsToSend.append(medicalRecords[indexPath.row])
-        medicalRecords.removeAtIndex(indexPath.row)
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        medicalRecords.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
         
         
     }

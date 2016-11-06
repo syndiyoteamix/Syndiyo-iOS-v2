@@ -10,7 +10,7 @@ import UIKit
 
 extension UITabBar {
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         self.tintColor = .darkBlueColor()
     }

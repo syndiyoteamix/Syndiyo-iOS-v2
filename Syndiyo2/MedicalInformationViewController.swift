@@ -35,7 +35,7 @@ class MedicalInformationViewController: UIViewController,UIGestureRecognizerDele
     }
     
     
-    @IBAction func dismissKeyboard(sender: AnyObject) {
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -47,11 +47,11 @@ class MedicalInformationViewController: UIViewController,UIGestureRecognizerDele
     }
     
     //fix later!!!
-    @IBAction func nextButtonPressed(sender: AnyObject) {
+    @IBAction func nextButtonPressed(_ sender: AnyObject) {
         UserController.sharedInstance.currentUser?.medicalInfo = MedicalInformation(dob: dateOfBirthTextField.date, height: String(heightTextField.text!) ?? "", weight: String(weightTextField.text!) ?? "", allergies: allergiesTextField.text!, previousMedicalConditions: previousMedicalConditionsTextfield.text!, medications: medicationsTextField.text!)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
-        let application = UIApplication.sharedApplication()
+        let application = UIApplication.shared
         let window = application.keyWindow
         window?.rootViewController = viewController
         
@@ -71,10 +71,10 @@ class MedicalInformationViewController: UIViewController,UIGestureRecognizerDele
     }
     
     
-    @IBAction func skipButtonPressed(sender: AnyObject) {
+    @IBAction func skipButtonPressed(_ sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
-        let application = UIApplication.sharedApplication()
+        let application = UIApplication.shared
         let window = application.keyWindow
         window?.rootViewController = viewController
     }

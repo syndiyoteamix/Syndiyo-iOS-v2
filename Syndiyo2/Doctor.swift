@@ -18,7 +18,7 @@ class Doctor: NSObject, NSCoding {
     var fax: String?
     var phone: String?
     var profilePic: UIImage?
-    var UUID:NSUUID = NSUUID()
+    var UUID:Foundation.UUID = Foundation.UUID()
     
 //    init() {
 //        self.name = ""
@@ -36,25 +36,25 @@ class Doctor: NSObject, NSCoding {
     }
     
     required init?(coder: NSCoder) {
-        self.name = (coder.decodeObjectForKey("name") as? String) ?? ""
-        self.speciality = (coder.decodeObjectForKey("speciality") as? String) ?? ""
-        self.address = (coder.decodeObjectForKey("address") as? String) ?? ""
-        self.email = (coder.decodeObjectForKey("email") as? String) ?? ""
-        self.fax = (coder.decodeObjectForKey("fax") as? String) ?? ""
-        self.phone = (coder.decodeObjectForKey("phone") as? String) ?? ""
-        self.profilePic = (coder.decodeObjectForKey("profilePic") as? UIImage) ?? UIImage(named:"smallDoctor")
-        self.UUID = (coder.decodeObjectForKey("UUID") as? NSUUID) ?? NSUUID()
+        self.name = (coder.decodeObject(forKey: "name") as? String) ?? ""
+        self.speciality = (coder.decodeObject(forKey: "speciality") as? String) ?? ""
+        self.address = (coder.decodeObject(forKey: "address") as? String) ?? ""
+        self.email = (coder.decodeObject(forKey: "email") as? String) ?? ""
+        self.fax = (coder.decodeObject(forKey: "fax") as? String) ?? ""
+        self.phone = (coder.decodeObject(forKey: "phone") as? String) ?? ""
+        self.profilePic = (coder.decodeObject(forKey: "profilePic") as? UIImage) ?? UIImage(named:"smallDoctor")
+        self.UUID = (coder.decodeObject(forKey: "UUID") as? Foundation.UUID) ?? Foundation.UUID()
     }
     
-    func encodeWithCoder(coder: NSCoder) {
-        coder.encodeObject(name, forKey: "name")
-        coder.encodeObject(speciality, forKey: "speciality")
-        coder.encodeObject(address, forKey: "address")
-        coder.encodeObject(email, forKey: "email")
-        coder.encodeObject(fax, forKey: "fax")
-        coder.encodeObject(phone, forKey: "phone")
-        coder.encodeObject(profilePic, forKey: "profilePic")
-        coder.encodeObject(UUID, forKey: "UUID")
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(speciality, forKey: "speciality")
+        coder.encode(address, forKey: "address")
+        coder.encode(email, forKey: "email")
+        coder.encode(fax, forKey: "fax")
+        coder.encode(phone, forKey: "phone")
+        coder.encode(profilePic, forKey: "profilePic")
+        coder.encode(UUID, forKey: "UUID")
     }
     
 }

@@ -32,7 +32,7 @@ class UIValidationTextField: UIPaddedTextField {
         super.init(frame: frame)        // set the frame equal to whatever frame we pass to it
         
         // Sets up a way for the textfield to recognize different events
-        self.addTarget(self, action: #selector(textUpdated), forControlEvents: .EditingChanged)
+        self.addTarget(self, action: #selector(textUpdated), for: .editingChanged)
         // self -- what we connect the target to (tells self to start listening for this event)
         // If the event occurs, we call the action on self
         // forControlEvent -- the state of the textfield
@@ -41,19 +41,19 @@ class UIValidationTextField: UIPaddedTextField {
         self.addSubview(imageView)
         
         // Center image in imageView
-        imageView.contentMode = .ScaleToFill
+        imageView.contentMode = .scaleToFill
         
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        self.addTarget(self, action: #selector(textUpdated), forControlEvents: .EditingChanged)
+        self.addTarget(self, action: #selector(textUpdated), for: .editingChanged)
         
         self.addSubview(imageView)
         
         // Center image in imageView
-        imageView.contentMode = .ScaleToFill
+        imageView.contentMode = .scaleToFill
     }
     
     override func layoutSubviews() {

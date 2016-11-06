@@ -10,14 +10,14 @@ import Foundation
 
 class MedicalInformation: NSObject, NSCoding {
     
-    var dob: NSDate?
+    var dob: Date?
     var height: String?
     var weight: String?
     var allergies: String?
     var previousMedicalConditions: String?
     var medications: String?
 
-    init(dob: NSDate?, height: String?, weight: String?, allergies: String?, previousMedicalConditions: String?, medications: String?) {
+    init(dob: Date?, height: String?, weight: String?, allergies: String?, previousMedicalConditions: String?, medications: String?) {
         self.dob = dob ?? nil
         self.height = height ?? ""
         self.weight = weight ?? ""
@@ -27,21 +27,21 @@ class MedicalInformation: NSObject, NSCoding {
     }
     
     required init?(coder: NSCoder) {
-        self.dob = (coder.decodeObjectForKey("dob") as? NSDate) ?? nil
-        self.height = (coder.decodeObjectForKey("height") as? String) ?? ""
-        self.weight = (coder.decodeObjectForKey("weight") as? String) ?? ""
-        self.allergies = (coder.decodeObjectForKey("allergies") as? String) ?? ""
-        self.previousMedicalConditions = (coder.decodeObjectForKey("previousMedicalConditions") as? String) ?? ""
-        self.medications = (coder.decodeObjectForKey("medications") as? String) ?? ""
+        self.dob = (coder.decodeObject(forKey: "dob") as? Date) ?? nil
+        self.height = (coder.decodeObject(forKey: "height") as? String) ?? ""
+        self.weight = (coder.decodeObject(forKey: "weight") as? String) ?? ""
+        self.allergies = (coder.decodeObject(forKey: "allergies") as? String) ?? ""
+        self.previousMedicalConditions = (coder.decodeObject(forKey: "previousMedicalConditions") as? String) ?? ""
+        self.medications = (coder.decodeObject(forKey: "medications") as? String) ?? ""
     }
     
-    func encodeWithCoder(coder: NSCoder) {
-        coder.encodeObject(dob, forKey: "dob")
-        coder.encodeObject(height, forKey: "height")
-        coder.encodeObject(weight, forKey: "weight")
-        coder.encodeObject(allergies, forKey: "allergies")
-        coder.encodeObject(previousMedicalConditions, forKey: "previousMedicalConditions")
-        coder.encodeObject(medications, forKey: "medications")
+    func encode(with coder: NSCoder) {
+        coder.encode(dob, forKey: "dob")
+        coder.encode(height, forKey: "height")
+        coder.encode(weight, forKey: "weight")
+        coder.encode(allergies, forKey: "allergies")
+        coder.encode(previousMedicalConditions, forKey: "previousMedicalConditions")
+        coder.encode(medications, forKey: "medications")
     }
     
 }

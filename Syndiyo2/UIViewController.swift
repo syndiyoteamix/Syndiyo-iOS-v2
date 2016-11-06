@@ -10,19 +10,19 @@ import UIKit
 
 extension UIViewController {
     
-    func createAlert(titleMessage: String, submessage: String, onDismiss: (UIAlertAction) -> Void) {
+    func createAlert(_ titleMessage: String, submessage: String, onDismiss: @escaping (UIAlertAction) -> Void) {
         
         // creates an alert (programatically as opposed to using storyboard)
-        let alert = UIAlertController(title: titleMessage, message:  submessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: titleMessage, message:  submessage, preferredStyle: UIAlertControllerStyle.alert)
         
         // creating alert actions (buttons)
-        let alertActionDismiss = UIAlertAction(title: "Dismiss", style: .Cancel, handler: onDismiss)
+        let alertActionDismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: onDismiss)
         
         // add actions/buttons
         alert.addAction(alertActionDismiss)
         
         // present the alert in the view
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
@@ -32,11 +32,11 @@ extension UIViewController {
         self.resignFirstResponder()
     }
     
-    func setupKeyboardNotifications(addDropKeyboardRecogniser:Bool = true)   {
+    func setupKeyboardNotifications(_ addDropKeyboardRecogniser:Bool = true)   {
         
         //add this view as an observer to keyboard notifications
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        NotificationCenter.default.addObserver(self, selector: Selector("keyboardWillShow:"), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: Selector("keyboardWillHide:"), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
         
         if (addDropKeyboardRecogniser)   {
             

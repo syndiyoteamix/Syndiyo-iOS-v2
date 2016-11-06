@@ -24,7 +24,7 @@ enum State {
 
 class UserController {
     
-    let manager = NSFileManager.defaultManager()
+    let manager = FileManager.default
     
     static let sharedInstance = UserController()
     
@@ -41,7 +41,7 @@ class UserController {
     
     
     
-    var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", notes: "", date: NSDate(), image: UIImage(named: "CameraIcon")!,category:"Medical"),MedicalRecord(name: "Apple", notes: "", date: NSDate(), image: UIImage(named:"apple")!,category:"Medical"),MedicalRecord(name: "Bird", notes: "", date: NSDate(), image: UIImage(named: "angryBird")!,category:"Medical")]
+    var fakeMedicalRecords:[MedicalRecord] = [MedicalRecord(name: "MR1", notes: "", date: Date(), image: UIImage(named: "CameraIcon")!,category:"Medical"),MedicalRecord(name: "Apple", notes: "", date: Date(), image: UIImage(named:"apple")!,category:"Medical"),MedicalRecord(name: "Bird", notes: "", date: Date(), image: UIImage(named: "angryBird")!,category:"Medical")]
    
     var users: [User] = [User]()
     
@@ -51,9 +51,9 @@ class UserController {
     func updateUsersArray() {
         for user in users{
             if user.ID == currentUser!.ID {
-                let index:Int = users.indexOf(user)!
-                users.removeAtIndex(index)
-                users.insert(currentUser!, atIndex: index)
+                let index:Int = users.index(of: user)!
+                users.remove(at: index)
+                users.insert(currentUser!, at: index)
                 saveUsersArray()
             }
         }
@@ -61,7 +61,7 @@ class UserController {
     
     
     
-    func registerUser(onCompletion: (String?) -> Void) {
+    func registerUser(_ onCompletion: (String?) -> Void) {
         if currentUser != nil {
             users.append(currentUser!)
             onCompletion(nil)
@@ -73,7 +73,7 @@ class UserController {
     }
     
     
-    func loginUser(email: String, password: String, onCompletion: (User?, String?) -> Void) {
+    func loginUser(_ email: String, password: String, onCompletion: (User?, String?) -> Void) {
         if users.isEmpty {
             onCompletion(nil, "Email or password is incorrect")
         }
@@ -86,7 +86,7 @@ class UserController {
     }
     
     
-    func checkUsernameAvailability(email: String) -> Bool {
+    func checkUsernameAvailability(_ email: String) -> Bool {
         for person in users {
             if person.email == email { return false }
         }
@@ -95,14 +95,14 @@ class UserController {
    
     
     func saveUsersArray(){
-        let documents = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-        let fileURL = documents.URLByAppendingPathComponent("users.txt")
+        let documents = manager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documents.appendingPathComponent("users.txt")
         
-        NSKeyedArchiver.archiveRootObject(users, toFile: fileURL.path!)
+        NSKeyedArchiver.archiveRootObject(users, toFile: fileURL.path)
     }
     
     
-    func addMedicalRecord(record:MedicalRecord){
+    func addMedicalRecord(_ record:MedicalRecord){
         currentUser?.medicalRecords?.append(record)
      //   fakeMedicalRecords.append(record)
     }
@@ -116,20 +116,20 @@ class UserController {
         
     }
     
-    func updateMedicalInformation(medicalInfo: MedicalInformation) {
+    func updateMedicalInformation(_ medicalInfo: MedicalInformation) {
         
     }
     
-    func addDoctors(doctors: [Doctor]) {
-        currentUser?.doctorsArray!.appendContentsOf(doctors)
+    func addDoctors(_ doctors: [Doctor]) {
+        currentUser?.doctorsArray!.append(contentsOf: doctors)
     }
     
     func updateDoctorsArray() {
         for doct in currentUser!.doctorsArray! {
             if doct.UUID == currentDoctor!.UUID {
-                let index = currentUser!.doctorsArray!.indexOf(doct)!
-                currentUser?.doctorsArray!.removeAtIndex(index)
-                currentUser?.doctorsArray!.insert(doct, atIndex: index)
+                let index = currentUser!.doctorsArray!.index(of: doct)!
+                currentUser?.doctorsArray!.remove(at: index)
+                currentUser?.doctorsArray!.insert(doct, at: index)
             }
         }
     }

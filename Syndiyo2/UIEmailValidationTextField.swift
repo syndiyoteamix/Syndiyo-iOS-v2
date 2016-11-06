@@ -15,7 +15,7 @@ class UIEmailValidationTextField: UIValidationTextField {
         if text == "" { return false }
 
         do{
-        let regex = try NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .CaseInsensitive)
+        let regex = try NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
             
 //            let index = text!.rangeOfString("@")?.startIndex
 //            
@@ -26,7 +26,7 @@ class UIEmailValidationTextField: UIValidationTextField {
 //            
 
         
-        return regex.firstMatchInString( text! , options: [], range: NSMakeRange(0, text!.characters.count)) != nil
+        return regex.firstMatch( in: text! , options: [], range: NSMakeRange(0, text!.characters.count)) != nil
         }catch {
           return  false
         }

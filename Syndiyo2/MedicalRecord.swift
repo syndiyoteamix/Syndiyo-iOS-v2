@@ -13,7 +13,7 @@ class MedicalRecord : NSObject, NSCoding {
     
     var name: String
     var notes: String
-    var date: NSDate
+    var date: Date
     var image: UIImage
     //should make enum eventually
     var category: String
@@ -26,12 +26,12 @@ class MedicalRecord : NSObject, NSCoding {
 //    }
     
     
-    init(name: String, notes: String?, date:NSDate?, image: UIImage??, category: String) {
+    init(name: String, notes: String?, date:Date?, image: UIImage??, category: String) {
         
         self.name = name
         self.notes = notes ?? ""
         self.image = (image ?? UIImage(named: "GoodCamera"))!
-        self.date = date ?? NSDate()
+        self.date = date ?? Date()
         self.category = category
         
 //        // Getting date
@@ -44,27 +44,27 @@ class MedicalRecord : NSObject, NSCoding {
     
     func getDateString() -> String {
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .LongStyle
-        dateFormatter.timeStyle = .ShortStyle
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
         
-        return dateFormatter.stringFromDate(date)
+        return dateFormatter.string(from: date)
     }
     
     required init?(coder: NSCoder) {
-        self.name = (coder.decodeObjectForKey("name") as? String) ?? ""
-        self.notes = (coder.decodeObjectForKey("notes") as? String) ?? ""
-        self.date = (coder.decodeObjectForKey("date") as? NSDate) ?? NSDate()
-        self.image = (coder.decodeObjectForKey("image") as? UIImage) ?? UIImage()
-        self.category = (coder.decodeObjectForKey("category") as? String) ?? ""
+        self.name = (coder.decodeObject(forKey: "name") as? String) ?? ""
+        self.notes = (coder.decodeObject(forKey: "notes") as? String) ?? ""
+        self.date = (coder.decodeObject(forKey: "date") as? Date) ?? Date()
+        self.image = (coder.decodeObject(forKey: "image") as? UIImage) ?? UIImage()
+        self.category = (coder.decodeObject(forKey: "category") as? String) ?? ""
     }
     
-    func encodeWithCoder(coder: NSCoder) {
-        coder.encodeObject(name, forKey: "name")
-        coder.encodeObject(notes, forKey: "notes")
-        coder.encodeObject(date, forKey: "date")
-        coder.encodeObject(image, forKey: "image")
-        coder.encodeObject(category, forKey: "category")
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(notes, forKey: "notes")
+        coder.encode(date, forKey: "date")
+        coder.encode(image, forKey: "image")
+        coder.encode(category, forKey: "category")
     }
     
 }

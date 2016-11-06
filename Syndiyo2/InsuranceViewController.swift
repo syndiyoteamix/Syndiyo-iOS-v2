@@ -30,18 +30,18 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
         self.backImage.addGestureRecognizer(backRecognizer)
         
         frontImage.image = UIImage(named: "CameraIcon")
-        frontImage.contentMode = .Center
+        frontImage.contentMode = .center
         backImage.image = UIImage(named: "CameraIcon")
-        backImage.contentMode = .Center
+        backImage.contentMode = .center
         
         frontImagePicker.delegate = self
-        frontImagePicker.sourceType = .PhotoLibrary
+        frontImagePicker.sourceType = .photoLibrary
         backImagePicker.delegate = self
-        backImagePicker.sourceType = .PhotoLibrary
+        backImagePicker.sourceType = .photoLibrary
         
         nextButton.alpha = 0.5
         nextButton.layer.cornerRadius = 5
-        nextButton.enabled = false
+        nextButton.isEnabled = false
         
     }
 
@@ -51,43 +51,43 @@ class InsuranceViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     func frontImageTapped() {
-        self.presentViewController(frontImagePicker, animated: true, completion: nil)
+        self.present(frontImagePicker, animated: true, completion: nil)
     }
     
     func backImageTapped() {
-        self.presentViewController(backImagePicker, animated: true, completion: nil)
+        self.present(backImagePicker, animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if picker == frontImagePicker {
             if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
                 UserController.sharedInstance.currentUser?.frontInsuranceCard = pickedImage
                 self.frontImage.image = pickedImage
-                self.frontImage.contentMode = .ScaleAspectFit
+                self.frontImage.contentMode = .scaleAspectFit
             }
             if backImage.image != UIImage(named: "CameraIcon") {
                 self.nextButton.alpha = 1
-                nextButton.enabled = true
+                nextButton.isEnabled = true
             }
         }
         else {
             if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
                 UserController.sharedInstance.currentUser?.backInsuranceCard = pickedImage
                 self.backImage.image = pickedImage
-                self.backImage.contentMode = .ScaleAspectFit
+                self.backImage.contentMode = .scaleAspectFit
             }
             if frontImage.image != UIImage(named: "CameraIcon") {
                 self.nextButton.alpha = 1
-                nextButton.enabled = true
+                nextButton.isEnabled = true
             }
         }
         
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     // MAKE SURE THAT IMAGEVIEW IS SET TO CHOSEN IMAGE

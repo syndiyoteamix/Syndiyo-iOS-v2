@@ -46,7 +46,7 @@ class EditRecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         //set image picker
         imagePicker.delegate = self
-        imagePicker.sourceType = .PhotoLibrary
+        imagePicker.sourceType = .photoLibrary
         
         //add a gesture Recognizer
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(documentTapped))
@@ -61,11 +61,11 @@ class EditRecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     
 
-    @IBAction func editButtonPressed(sender: UIButton) {
+    @IBAction func editButtonPressed(_ sender: UIButton) {
         
         if editMode {
             //edit mode is true
-            editButton.setTitle("Edit Record", forState: .Normal)
+            editButton.setTitle("Edit Record", for: UIControlState())
             titleTF.allowsEditingTextAttributes = true
             dateTF.allowsEditingTextAttributes = true
             descriptionTextView.allowsEditingTextAttributes = true
@@ -73,7 +73,7 @@ class EditRecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             
         } else {
             //edit mode is false
-            editButton.setTitle("Finish Editing", forState: .Normal)
+            editButton.setTitle("Finish Editing", for: UIControlState())
             
             titleTF.allowsEditingTextAttributes = false
             dateTF.allowsEditingTextAttributes = false
@@ -90,7 +90,7 @@ class EditRecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         //there are two segues, if edit mode is true, go to camera role, else display the image in a image display
         if editMode {
             // go to camera role to select a new photo
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+            self.present(imagePicker, animated: true, completion: nil)
         }else {
             // go view an image!
             
@@ -98,13 +98,13 @@ class EditRecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         }
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         self.documentImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     

@@ -25,13 +25,13 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func logoutButtonClicked(sender: AnyObject) {
+    @IBAction func logoutButtonClicked(_ sender: AnyObject) {
         
         UserController.sharedInstance.saveUsersArray()
         UserController.sharedInstance.currentUser = nil
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
-        let application = UIApplication.sharedApplication()
+        let application = UIApplication.shared
         let window = application.keyWindow
         window?.rootViewController = viewController
         

@@ -31,30 +31,32 @@ class LandingViewController: UIViewController {
         emailTextField.padded = true
         passwordTextField.padded = true
         
+        emailTextField.isEnabled = true
+        
         // so we can react to keyboard
         setupKeyboardNotifications()
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //self.navigationController?.navigationBarHidden = true
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         //self.navigationController?.navigationBarHidden = false
         navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
     
-    @IBAction func textFieldChanged(sender: AnyObject) {
+    @IBAction func textFieldChanged(_ sender: AnyObject) {
         if verified() {
-            signInButton.enabled = true
+            signInButton.isEnabled = true
             signInButton.alpha = 1
         }
         else {
-            signInButton.enabled = false
+            signInButton.isEnabled = false
             signInButton.alpha = 0.5
         }
     }
@@ -72,7 +74,7 @@ class LandingViewController: UIViewController {
         return true
     }
     
-    @IBAction func signInButtonPressed(sender: AnyObject) {
+    @IBAction func signInButtonPressed(_ sender: AnyObject) {
         
         UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             
@@ -82,7 +84,7 @@ class LandingViewController: UIViewController {
                 UserController.sharedInstance.currentUser = user
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateInitialViewController()
-                let application = UIApplication.sharedApplication()
+                let application = UIApplication.shared
                 let window = application.keyWindow
                 window?.rootViewController = viewController
                
@@ -99,7 +101,7 @@ class LandingViewController: UIViewController {
         }
     }
     
-    @IBAction func dismissKeyboard(sender: AnyObject) {
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -110,20 +112,20 @@ class LandingViewController: UIViewController {
     
     
     
-        func keyboardWillShow(notification: NSNotification) {
+        func keyboardWillShow(_ notification: Notification) {
     
             if let userInfo = notification.userInfo {
-                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
-                let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+                let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
                 let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-                let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+                let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions().rawValue
                 let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
     
                 //if the phone is < 5, then the keyboard will overlay the textfields when it comes up. accomodate for
                 self.updateUIForKeyboard(endFrame,keyboardDirectionUp:true)
     
-                UIView.animateWithDuration(duration,
-                                           delay: NSTimeInterval(0),
+                UIView.animate(withDuration: duration,
+                                           delay: TimeInterval(0),
                                            options: animationCurve,
                                            animations: {
                                             self.view.layoutIfNeeded()
@@ -133,7 +135,7 @@ class LandingViewController: UIViewController {
         }
     
     
-        func updateUIForKeyboard(endFrame:CGRect!, keyboardDirectionUp:Bool)  {
+        func updateUIForKeyboard(_ endFrame:CGRect!, keyboardDirectionUp:Bool)  {
             if (keyboardDirectionUp) {
                 yOriginOfInputContainer.constant = 60
                 logoToTopConstraint.constant = 60
@@ -144,12 +146,12 @@ class LandingViewController: UIViewController {
             } //the original value from the nib
         }
     
-        func keyboardWillHide(notification: NSNotification) {
+        func keyboardWillHide(_ notification: Notification) {
             if let userInfo = notification.userInfo {
-                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
-                let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+                let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
                 let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-                let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+                let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions().rawValue
                 let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
     
                 self.view.endEditing(true);
@@ -157,15 +159,15 @@ class LandingViewController: UIViewController {
                 //reset the frame to 0;0
                 var newFrame = self.view.frame
                 newFrame.origin.y = 0
-                newFrame.size.height = UIScreen.mainScreen().bounds.height
+                newFrame.size.height = UIScreen.main.bounds.height
                 self.view.frame = newFrame
     
                 self.updateUIForKeyboard(endFrame, keyboardDirectionUp:false)
     
                 //do the animation
-                UIView.animateWithDuration(duration,
+                UIView.animate(withDuration: duration,
     
-                                           delay: NSTimeInterval(0),
+                                           delay: TimeInterval(0),
                                            options: animationCurve,
                                            animations: {
                                             self.view.layoutIfNeeded()
